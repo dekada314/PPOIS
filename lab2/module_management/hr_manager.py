@@ -1,5 +1,5 @@
 import uuid
-from ..module_employee.worker import Worker
+from module_employee.worker import Worker
 
 
 class HRManager:

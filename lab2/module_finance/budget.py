@@ -1,5 +1,5 @@
 import uuid
-from ..exceptions import InvalidBudgetCategoryError
+from exceptions import InvalidBudgetCategoryError
 
 
 class Budget:

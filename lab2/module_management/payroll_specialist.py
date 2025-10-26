@@ -1,4 +1,4 @@
-from ..module_employee.worker import Worker
+from module_employee.worker import Worker
 from typing import List, Any
 
 

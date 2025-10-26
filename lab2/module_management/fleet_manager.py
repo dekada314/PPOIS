@@ -1,5 +1,5 @@
-from ..module_employee.worker import Worker
-from ..exceptions import VehicleInUseError
+from module_employee.worker import Worker
+from exceptions import VehicleInUseError
 
 
 class FleetManager(Worker):

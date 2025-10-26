@@ -1,7 +1,7 @@
 import uuid
 from datetime import date
-from ..associations import ToolAssignment
-from ..exceptions import ToolAlreadyIssuedError
+from associations import ToolAssignment
+from exceptions import ToolAlreadyIssuedError
 
 
 class Tool:

@@ -1,5 +1,5 @@
 from datetime import date
-from ..associations import ToolAssignment
+from associations import ToolAssignment
 import uuid
 
 class Worker:

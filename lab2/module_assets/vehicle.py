@@ -1,5 +1,5 @@
 import uuid
-from ..exceptions import VehicleInUseError
+from exceptions import VehicleInUseError
 
 
 class Vehicle:

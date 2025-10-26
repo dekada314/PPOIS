@@ -1,5 +1,5 @@
 import uuid
-from ..exceptions import PaymentFailedError
+from exceptions import PaymentFailedError
 
 
 class BankCard:

@@ -6,8 +6,8 @@ class ChiefManager:
         self.name = name
         self.departments: list[str] = []
 
-    def approve_budget(self, budget) -> None:
-        budget.approved = True
+    def approve_budget(self) -> None:
+        pass
 
     def strategic_planning(self) -> None:
         pass

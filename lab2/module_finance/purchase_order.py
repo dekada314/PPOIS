@@ -1,5 +1,5 @@
 import uuid
-from ..exceptions import PurchaseOrderAlreadyIssuedError
+from exceptions import PurchaseOrderAlreadyIssuedError
 
 
 class PurchaseOrder:

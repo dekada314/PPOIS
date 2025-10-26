@@ -1,6 +1,6 @@
 from datetime import date
 import uuid
-from ..exceptions import ContractAlreadySignedError
+from exceptions import ContractAlreadySignedError
 
 
 class Contract:

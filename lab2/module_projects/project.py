@@ -1,10 +1,9 @@
-# construction_company/module4_projects/project.py
 from datetime import date
 import uuid
 from typing import List, Any
-from ..module_finance.budget import Budget
-from ..module_finance.estimate import Estimate
-from ..exceptions import ProjectAlreadyStartedError, MilestoneNotCompletedError
+from module_finance.budget import Budget
+from module_finance.estimate import Estimate
+from exceptions import ProjectAlreadyStartedError, MilestoneNotCompletedError
 
 
 class Project:
@@ -31,7 +30,6 @@ class Project:
         self.status = "in_progress"
 
     def close(self) -> None:
-        # Проверка – все этапы завершены
         for milestone in self.milestones:
             if not getattr(milestone, "completed", False):
                 raise MilestoneNotCompletedError(

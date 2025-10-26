@@ -1,6 +1,6 @@
 import uuid
-from ..associations import MaterialUsage
-from ..exceptions import InsufficientMaterialError
+from associations import MaterialUsage
+from exceptions import InsufficientMaterialError
 
 
 class Storage:

@@ -1,4 +1,4 @@
-from ..module_employee.worker import Worker
+from module_employee.worker import Worker
 
 class ITManager(Worker):
     def __init__(self, name: str):

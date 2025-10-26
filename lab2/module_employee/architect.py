@@ -7,5 +7,5 @@ class Architect(Worker):
     def create_blueprint(self, project) -> str:
         return f"Чертеж для {project.name}"
 
-    def revise_drawing(self, blueprint: str, changes: str) -> None:
+    def revise_drawing(self) -> None:
         pass

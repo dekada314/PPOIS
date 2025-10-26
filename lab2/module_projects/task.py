@@ -1,7 +1,7 @@
 import uuid
 from datetime import date
-from ..associations import Assignment
-from ..exceptions import TaskAlreadyCompletedError
+from associations import Assignment
+from exceptions import TaskAlreadyCompletedError
 
 
 class Task:

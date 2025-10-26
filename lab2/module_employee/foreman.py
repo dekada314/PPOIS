@@ -1,6 +1,6 @@
 from .worker import Worker
-from ..associations import Assignment
-from ..exceptions import WorkerAlreadyAssignedError
+from associations import Assignment
+from exceptions import WorkerAlreadyAssignedError
 
 
 class Foreman(Worker):

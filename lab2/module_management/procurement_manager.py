@@ -1,4 +1,4 @@
-from ..module_employee.worker import Worker
+from module_employee.worker import Worker
 from typing import List, Any
 
 
@@ -8,7 +8,7 @@ class ProcurementManager(Worker):
         self.orders: List[Any] = []
 
     def create_order(self, materials: List[Any]) -> Any:
-        from ..module_finance.purchase_order import PurchaseOrder
+        from module_finance.purchase_order import PurchaseOrder
         order = PurchaseOrder(materials)
         self.orders.append(order)
         return order

@@ -1,6 +1,6 @@
 from datetime import date
 import uuid
-from ..exceptions import InsuranceExpiredError
+from exceptions import InsuranceExpiredError
 
 
 class InsurancePolicy:
