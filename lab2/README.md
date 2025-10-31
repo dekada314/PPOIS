@@ -1,4 +1,4 @@
-Worker 9 3 ->  ToolAssignment
+Worker 9 4 ->  ToolAssignment
 Foreman 4 1 -> Worker, Task, Assignment
 Driver 5 2 -> 
 Engineer 3 2 -> Project
@@ -14,7 +14,7 @@ Surveyor 3 1 -> Project
 
 BankCard 5 2
 Contract 7 3 -> Project
-Salary 7 3 -> Worker
+Salary 7 4 -> Worker
 Invoice 6 2 -> Project
 Payment 5 1 -> Invoice
 Budget 5 3 -> Project
@@ -25,7 +25,7 @@ Tender 4 2 -> Project
 Estimate 4 2 -> Project
 PurchaseOrder 4 2 -> 
 
-Storage 4 3 -> Material, Task, MaterialUsage
+Storage 4 4 -> Material, Task, MaterialUsage
 FleetManager 3 2 -> Driver, Vehicle
 HRManager 3 3 -> Worker
 ProcurementManager 4 2 -> PurchaseOrder
@@ -36,7 +36,7 @@ PayrollSpecialist 3 1 -> Salary
 ChiefManager 4 3 -> Project
 GeneralManager 4 1 -> 
 
-Project 12 3 -> Estimate, Budget, Milestone
+Project 12 4 -> Estimate, Budget, Milestone
 Task 10 3 -> Worker, Project
 Milestone 6 2 -> Task
 Timeline 2 1 -> Project
@@ -46,7 +46,7 @@ ProgressReport 3 1 -> Task
 
 Tool 5 3 -> Worker, ToolAssignment
 Material 6 2 -> Storage, PurchaseOrder, MaterialUsage
-Vehicle 5 3 -> Driver, FleetManager
+Vehicle 5 4 -> Driver, FleetManager
 Equipment 5 3 -> InsurancePolicy
 
 Assignment 6 1 -> Worker, Task
@@ -54,5 +54,5 @@ MaterialUsage 5 0 -> Material, Task
 ToolAssignment 5 1 -> Tool, Worker
 
 Поля: 222
-Поведения: 93
+Поведения: 100
 Ассоциации: 53
