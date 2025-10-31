@@ -12,6 +12,11 @@ class ProcurementManager(Worker):
         order = PurchaseOrder(materials)
         self.orders.append(order)
         return order
+    
+    def delete_order(self, order):
+        if order in self.orders:
+            self.order.remove(order)
+            
 
-    def track_order(self, order_id: str) -> str:
+    def track_order(self, order: str) -> str:
         return "В пути"

@@ -43,3 +43,9 @@ class Project:
             return 0.0
         completed = sum(1 for t in self.tasks if t.status == "completed")
         return (completed / len(self.tasks)) * 100
+    
+    def get_progress_percent(self):
+        if not self.tasks:
+            return 0
+        completed = sum(1 for t in self.tasks if t.status == "completed")
+        return int(completed / len(self.tasks) * 100)

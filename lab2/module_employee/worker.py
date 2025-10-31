@@ -23,3 +23,6 @@ class Worker:
 
     def request_tool(self, tool):
         return ToolAssignment(tool, self, date.today())
+    
+    def get_total_earnings(self):
+        return self.hourly_rate * self.hours_worked

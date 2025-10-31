@@ -19,3 +19,6 @@ class Salary:
 
     def deduct_tax(self, percent: float) -> None:
         self.deductions += self.base * percent / 100
+        
+    def get_net_salary(self):
+        return self.base + self.bonus - self.deductions

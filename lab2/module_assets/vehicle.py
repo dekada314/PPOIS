@@ -23,3 +23,6 @@ class Vehicle:
 
     def log_trip(self, km: float) -> None:
         self.mileage += km
+        
+    def needs_service(self):
+        return self.mileage >= 10000

@@ -15,7 +15,7 @@ class Equipment:
         self.last_maintenance = date
 
     def register_usage(self, hours: float) -> None:
-        pass
+        print('Пользователь зарегистрирован')
 
     def decommission(self) -> None:
         self.status = "decommissioned"

@@ -6,7 +6,7 @@ class CraneOperator(Worker):
         self.crane = None
 
     def lift_material(self, material, height: float) -> None:
-        pass
+        print(f'Поднят {material} на высоту {height}')
 
     def park_crane(self) -> None:
         pass

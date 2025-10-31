@@ -27,3 +27,6 @@ class Storage:
             if m.name == material_name:
                 return m.quantity
         return 0.0
+    
+    def get_total_value(self):
+        return sum(m.price_per_unit * m.quantity for m in self.materials)

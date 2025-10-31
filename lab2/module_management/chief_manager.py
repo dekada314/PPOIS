@@ -9,5 +9,4 @@ class ChiefManager:
     def approve_budget(self) -> None:
         pass
 
-    def strategic_planning(self) -> None:
-        pass
+    

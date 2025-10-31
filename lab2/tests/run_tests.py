@@ -14,7 +14,6 @@ def run_all_tests():
         ".",  
         "--cov=.", 
         "--cov-report=term-missing",
-        "--cov-report=html:../htmlcov_all",
         "--cov-fail-under=85",
         "--cov-branch",
         "-v"
@@ -24,10 +23,9 @@ def run_all_tests():
     result = subprocess.run(cmd, env=env, cwd=os.path.dirname(__file__))
 
     if result.returncode == 0:
-        print("\nУСПЕХ: Покрытие >=95% для всех модулей")
-        print("Отчёт: ../htmlcov_all/index.html")
+        print("\nУСПЕХ: Покрытие >=85% для всех модулей")
     else:
-        print("\nОШИБКА: Покрытие <95% или тесты упали")
+        print("\nОШИБКА: Покрытие <85% или тесты упали")
         sys.exit(1)
 
 if __name__ == "__main__":
