@@ -1,14 +1,8 @@
-from datetime import date
+class DiscountPolicy:
+    def __init__(self, policy_id: str, name: str, percent: float):
+        self.policy_id = policy_id
+        self.name = name
+        self.percent = percent
 
-class Statement:
-    def __init__(self, statement_id: str, account):
-        self.statement_id = statement_id
-        self.account = account
-        self.period_start = date.today()
-        self.generated = False
-
-    def generate(self):
-        self.generated = True
-
-    def outstanding_balance(self) -> float:
-        return self.account.total_due()
+    def apply(self, amount: float) -> float:
+        return amount * (1 - self.percent)
