@@ -35,6 +35,7 @@ Accountant 3 1 ->
 PayrollSpecialist 3 1 -> Salary
 ChiefManager 4 3 -> Project
 GeneralManager 4 1 -> 
+Safety_manager 4 3 -> Worker
 
 Project 12 4 -> Estimate, Budget, Milestone
 Task 10 3 -> Worker, Project
@@ -53,6 +54,6 @@ Assignment 6 1 -> Worker, Task
 MaterialUsage 5 0 -> Material, Task
 ToolAssignment 5 1 -> Tool, Worker
 
-Поля: 222
-Поведения: 100
-Ассоциации: 53
+Поля: 226
+Поведения: 103
+Ассоциации: 54
