@@ -1,4 +1,3 @@
-# lab3/module_medical/doctor.py
 class Doctor:
     def __init__(self, doctor_id: str, name: str, specialty: str):
         self.doctor_id = doctor_id
