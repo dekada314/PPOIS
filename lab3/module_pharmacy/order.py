@@ -11,3 +11,4 @@ class Order:
 
     def finalize(self):
         self.status = "sent"
+        
