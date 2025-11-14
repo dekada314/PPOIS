@@ -1,9 +1,8 @@
-from typing import List
 from .diagnosis import Diagnosis
 
 class MedicalRecord:
     def __init__(self):
-        self.diagnoses: List[Diagnosis] = []
+        self.diagnoses: list[Diagnosis] = []
         self.visit_count = 0
         self.prescriptions = []
 

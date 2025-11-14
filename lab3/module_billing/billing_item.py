@@ -10,3 +10,6 @@ class BillingItem:
 
     def is_covered(self) -> bool:
         return self.covered
+
+    def tax_amount(self, rate: float = 0.08) -> float:
+        return self.amount * rate

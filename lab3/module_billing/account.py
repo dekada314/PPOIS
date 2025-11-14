@@ -16,3 +16,8 @@ class Account:
         if amount > self.balance:
             raise ValueError("Overpayment not allowed")
         self.balance -= amount
+
+    def has_overdue(self, days: int = 30) -> bool:
+        from datetime import datetime, timedelta
+        cutoff = datetime.now() - timedelta(days=days)
+        return any(inv.date < cutoff.isoformat()[:10] and not inv.paid for inv in self.invoices)
