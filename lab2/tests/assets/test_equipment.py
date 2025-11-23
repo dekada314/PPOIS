@@ -1,4 +1,3 @@
-import pytest
 from module_assets.equipment import Equipment
 from datetime import date
 

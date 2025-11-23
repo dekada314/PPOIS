@@ -1,4 +1,3 @@
-from module_employee.worker import Worker
 
 class SafetyManager:
     def __init__(self, name):

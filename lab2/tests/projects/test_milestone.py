@@ -1,4 +1,3 @@
-import pytest
 from module_projects.milestone import Milestone
 
 def test_milestone_init():

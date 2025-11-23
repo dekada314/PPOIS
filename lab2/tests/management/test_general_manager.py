@@ -1,6 +1,4 @@
-import pytest
 from module_management.general_manager import GeneralManager
-from module_projects.project import Project
 
 def test_general_manager_init():
     gm = GeneralManager("Генеральный")

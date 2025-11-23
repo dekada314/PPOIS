@@ -1,4 +1,3 @@
-import pytest
 from module_management.accountant import Accountant
 
 def test_accountant_report():

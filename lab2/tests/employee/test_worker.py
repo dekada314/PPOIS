@@ -1,4 +1,3 @@
-import pytest
 from module_employee.worker import Worker
 from module_assets.tool import Tool
 from associations import ToolAssignment

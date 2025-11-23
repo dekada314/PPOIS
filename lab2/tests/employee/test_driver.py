@@ -1,4 +1,3 @@
-import pytest
 from module_employee.driver import Driver
 from module_assets.vehicle import Vehicle
 

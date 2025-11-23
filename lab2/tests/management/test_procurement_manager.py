@@ -1,4 +1,3 @@
-import pytest
 from module_management.procurement_manager import ProcurementManager
 from module_finance.purchase_order import PurchaseOrder
 

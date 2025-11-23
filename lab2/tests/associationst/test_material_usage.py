@@ -1,4 +1,3 @@
-import pytest
 from associations import MaterialUsage
 from datetime import date
 

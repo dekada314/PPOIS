@@ -1,4 +1,3 @@
-import pytest
 from associations import ToolAssignment
 from datetime import date
 

@@ -1,4 +1,3 @@
-import pytest
 from module_projects.progress_report import ProgressReport
 
 def test_progress_generate():

@@ -1,7 +1,4 @@
-import pytest
 from module_management.chief_manager import ChiefManager
-from module_finance.budget import Budget
-from module_projects.project import Project
 
 def test_chief_manager_init():
     cm = ChiefManager("Главный")

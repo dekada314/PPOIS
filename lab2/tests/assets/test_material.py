@@ -1,4 +1,3 @@
-import pytest
 from module_assets.material import Material
 
 def test_material_init():

@@ -1,4 +1,3 @@
-import pytest
 from module_employee.crane_operator import CraneOperator
 
 def test_crane_lift():

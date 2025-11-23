@@ -1,4 +1,3 @@
-import pytest
 from module_finance.estimate import Estimate
 
 def test_estimate_init():

@@ -1,4 +1,3 @@
-import pytest
 from module_employee.engineer import Engineer
 
 def test_engineer_init():

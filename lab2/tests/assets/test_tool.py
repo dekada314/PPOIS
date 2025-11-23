@@ -1,7 +1,5 @@
-import pytest
 from module_assets.tool import Tool
 from associations import ToolAssignment
-from exceptions import ToolAlreadyIssuedError
 from datetime import date
 
 def test_tool_init():

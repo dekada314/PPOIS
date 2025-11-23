@@ -1,4 +1,3 @@
-import pytest
 from module_employee.surveyor import Surveyor
 
 def test_surveyor_measure():

@@ -1,4 +1,3 @@
-import pytest
 from module_finance.tender import Tender
 from datetime import date
 

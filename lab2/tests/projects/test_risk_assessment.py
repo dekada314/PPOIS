@@ -1,4 +1,3 @@
-import pytest
 from module_projects.risk_assessment import RiskAssessment
 
 def test_mitigate():

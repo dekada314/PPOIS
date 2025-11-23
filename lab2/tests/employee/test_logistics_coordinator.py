@@ -1,4 +1,3 @@
-import pytest
 from module_employee.logistics_coordinator import LogisticsCoordinator
 
 def test_logistics_track():

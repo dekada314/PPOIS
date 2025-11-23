@@ -1,4 +1,3 @@
-import pytest
 from module_employee.quality_controller import QualityController
 
 def test_quality_test():

@@ -1,5 +1,6 @@
 from .worker import Worker
 
+
 class LogisticsCoordinator(Worker):
     def __init__(self, name: str):
         super().__init__(name, "Логист", 35.0)

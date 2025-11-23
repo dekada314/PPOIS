@@ -1,4 +1,3 @@
-import pytest
 from module_management.hr_manager import HRManager
 from module_employee.worker import Worker
 

@@ -1,4 +1,3 @@
-import pytest
 from module_employee.architect import Architect
 
 def test_architect_init():

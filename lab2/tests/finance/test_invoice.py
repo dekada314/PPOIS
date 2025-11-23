@@ -1,4 +1,3 @@
-import pytest
 from module_finance.invoice import Invoice
 
 def test_invoice_init():

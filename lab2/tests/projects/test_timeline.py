@@ -1,4 +1,3 @@
-import pytest
 from module_projects.timeline import Timeline
 
 def test_timeline_gantt():

@@ -1,4 +1,3 @@
-import pytest
 from module_projects.change_request import ChangeRequest
 
 def test_change_approve():

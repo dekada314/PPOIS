@@ -1,4 +1,3 @@
-import pytest
 from module_employee.plumber import Plumber
 
 def test_plumber_install():

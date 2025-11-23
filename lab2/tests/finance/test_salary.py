@@ -1,4 +1,3 @@
-import pytest
 from module_finance.salary import Salary
 from module_employee.worker import Worker
 

@@ -1,7 +1,6 @@
 import subprocess
 import sys
 import os
-import pytest
 
 def run_all_tests():
 
