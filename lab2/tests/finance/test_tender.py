@@ -1,5 +1,7 @@
-from module_finance.tender import Tender
 from datetime import date
+
+from module_finance.tender import Tender
+
 
 def test_tender_init():
     project = type("Project", (), {})

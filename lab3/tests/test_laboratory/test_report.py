@@ -1,6 +1,7 @@
 from lab3.module_laboratory.report import Report
 from lab3.module_laboratory.sample import Sample
 
+
 def test_generate():
     sample = Sample("S1", "P1", "2025-11-14")
     report = Report("REP1", sample)

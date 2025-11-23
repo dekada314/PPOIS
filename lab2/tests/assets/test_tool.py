@@ -1,6 +1,8 @@
-from module_assets.tool import Tool
-from associations import ToolAssignment
 from datetime import date
+
+from associations import ToolAssignment
+from module_assets.tool import Tool
+
 
 def test_tool_init():
     t = Tool("Перфоратор", "HILTI-001")

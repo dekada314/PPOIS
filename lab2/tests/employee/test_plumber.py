@@ -1,5 +1,6 @@
 from module_employee.plumber import Plumber
 
+
 def test_plumber_install():
     p = Plumber("Николай")
     task = type("Task", (), {"status": "pending"})

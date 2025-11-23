@@ -1,5 +1,6 @@
-from datetime import date
 import uuid
+from datetime import date
+
 
 class Assignment:
     def __init__(self, worker, task, hours_planned: float):

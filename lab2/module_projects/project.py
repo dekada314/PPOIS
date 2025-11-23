@@ -1,9 +1,10 @@
-from datetime import date
 import uuid
-from typing import List, Any
+from datetime import date
+from typing import Any, List
+
+from exceptions import MilestoneNotCompletedError, ProjectAlreadyStartedError
 from module_finance.budget import Budget
 from module_finance.estimate import Estimate
-from exceptions import ProjectAlreadyStartedError, MilestoneNotCompletedError
 
 
 class Project:

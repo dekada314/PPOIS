@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta
+
 from .medication import Medication
+
 
 class Prescription:
     def __init__(self, med: Medication, doctor, dosage: str, days: int):

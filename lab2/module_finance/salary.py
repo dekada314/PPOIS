@@ -1,5 +1,6 @@
 import uuid
 
+
 class Salary:
     def __init__(self, worker, month: str):
         self.id = str(uuid.uuid4())

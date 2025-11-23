@@ -1,4 +1,5 @@
-from module_employee.safety_inspector import SafetyInspector
+from lab2.module_employee.SafetyInspector import SafetyInspector
+
 
 def test_safety_train():
     si = SafetyInspector("Ольга")

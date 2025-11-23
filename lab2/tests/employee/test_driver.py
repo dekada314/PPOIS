@@ -1,5 +1,6 @@
-from module_employee.driver import Driver
 from module_assets.vehicle import Vehicle
+from module_employee.driver import Driver
+
 
 def test_driver_init():
     d = Driver("Михаил")

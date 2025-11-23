@@ -1,5 +1,6 @@
 from .test import Test
 
+
 class Sample:
     def __init__(self, sample_id: str, patient_id: str, collection_date: str):
         self.sample_id = sample_id

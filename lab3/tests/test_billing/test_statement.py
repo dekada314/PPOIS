@@ -1,5 +1,6 @@
-from lab3.module_billing.statement import Statement
 from lab3.module_billing.account import Account
+from lab3.module_billing.statement import Statement
+
 
 def test_generate():
     acc = Account("ACC001", "P123")

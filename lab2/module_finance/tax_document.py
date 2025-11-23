@@ -1,5 +1,6 @@
 import uuid
 
+
 class TaxDocument:
     def __init__(self, company: str, year: int):
         self.id = str(uuid.uuid4())

@@ -1,4 +1,5 @@
-from typing import List, Any
+from typing import Any, List
+
 
 class Timeline:
     def __init__(self, project: Any):

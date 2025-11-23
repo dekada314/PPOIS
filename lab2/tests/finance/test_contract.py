@@ -1,7 +1,9 @@
-import pytest
-from module_finance.contract import Contract
-from exceptions import ContractAlreadySignedError
 from datetime import date
+
+import pytest
+from exceptions import ContractAlreadySignedError
+from module_finance.contract import Contract
+
 
 def test_contract_init():
     project = type("Project", (), {})

@@ -1,5 +1,6 @@
 from .sample import Sample
 
+
 class Lab:
     def __init__(self, lab_id: str, name: str, accreditation: str):
         self.lab_id = lab_id

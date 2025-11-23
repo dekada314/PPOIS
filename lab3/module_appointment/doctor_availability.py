@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta
+
 from .time_slot import TimeSlot
+
 
 class DoctorAvailability:
     def __init__(self, doctor_id: str, day: str, start: str, end: str):

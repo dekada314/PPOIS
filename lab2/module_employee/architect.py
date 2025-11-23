@@ -1,4 +1,5 @@
-from .worker import Worker
+from .Worker import Worker
+
 
 class Architect(Worker):
     def __init__(self, name: str):

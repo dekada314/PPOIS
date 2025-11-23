@@ -1,5 +1,6 @@
-from datetime import date
 import uuid
+from datetime import date
+
 
 class Equipment:
     def __init__(self, name: str, model: str):

@@ -1,7 +1,8 @@
-from lab3.module_appointment.booking import Booking
 from lab3.module_appointment.appointment import Appointment
-from lab3.module_appointment.time_slot import TimeSlot
+from lab3.module_appointment.booking import Booking
 from lab3.module_appointment.room import Room
+from lab3.module_appointment.time_slot import TimeSlot
+
 
 def test_release():
     room = Room("R102", "Exam Room", 1)

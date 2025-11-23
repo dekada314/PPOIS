@@ -1,5 +1,6 @@
 import uuid
 
+
 class ExpenseReport:
     def __init__(self, worker, items: list[dict]):
         self.id = str(uuid.uuid4())

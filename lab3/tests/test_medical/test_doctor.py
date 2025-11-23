@@ -1,5 +1,6 @@
 from lab3.module_medical.doctor import Doctor
 
+
 def test_schedule_conflict():
     doc = Doctor("D1", "Dr. Smith", "Cardio")
     app1 = type("App", (), {"time": "10:00"})()

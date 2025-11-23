@@ -1,5 +1,6 @@
 from module_projects.timeline import Timeline
 
+
 def test_timeline_gantt():
     proj = type("Project", (), {})
     tl = Timeline(proj)

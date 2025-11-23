@@ -1,5 +1,6 @@
 from lab3.module_appointment.calendar import Calendar
 
+
 def test_add_event_and_conflicts():
     cal = Calendar()
     cal.add_event("Meeting", "2025-11-15T10:00:00")

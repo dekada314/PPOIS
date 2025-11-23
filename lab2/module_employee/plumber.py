@@ -1,4 +1,4 @@
-from .worker import Worker
+from .Worker import Worker
 
 
 class Plumber(Worker):

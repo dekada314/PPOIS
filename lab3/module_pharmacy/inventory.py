@@ -1,5 +1,6 @@
 from typing import Dict
 
+
 class Inventory:
     def __init__(self):
         self.stock: Dict[str, int] = {}

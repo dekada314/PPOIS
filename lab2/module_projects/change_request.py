@@ -1,5 +1,6 @@
 import uuid
 
+
 class ChangeRequest:
     def __init__(self, project, description: str):
         self.id = str(uuid.uuid4())

@@ -1,5 +1,6 @@
 from .inventory import Inventory
 
+
 class Pharmacy:
     def __init__(self, pharm_id: str, name: str, address: str):
         self.pharm_id = pharm_id

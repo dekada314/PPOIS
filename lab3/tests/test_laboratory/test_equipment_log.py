@@ -1,5 +1,6 @@
 from lab3.module_laboratory.equipment_log import EquipmentLog
 
+
 def test_log_use():
     log = EquipmentLog()
     log.log_use("EQ1", "TechA")

@@ -1,5 +1,6 @@
 from lab3.module_pharmacy.order import Order
 
+
 def test_finalize():
     supplier = type("Sup", (), {})()
     order = Order("O1", supplier)

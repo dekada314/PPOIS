@@ -1,5 +1,6 @@
-from datetime import date
 import uuid
+from datetime import date
+
 
 class Tender:
     def __init__(self, project, deadline: date):

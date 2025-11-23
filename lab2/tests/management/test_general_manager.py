@@ -1,5 +1,6 @@
 from module_management.general_manager import GeneralManager
 
+
 def test_general_manager_init():
     gm = GeneralManager("Генеральный")
     assert gm.name == "Генеральный"

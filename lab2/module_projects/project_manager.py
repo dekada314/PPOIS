@@ -1,5 +1,6 @@
-from ..module_employee.worker import Worker
-from typing import List, Any
+from typing import Any, List
+
+from ..module_employee.Worker import Worker
 
 
 class ProjectManager(Worker):

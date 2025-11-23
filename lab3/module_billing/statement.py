@@ -1,5 +1,6 @@
 from datetime import date
 
+
 class Statement:
     def __init__(self, statement_id: str, account):
         self.statement_id = statement_id

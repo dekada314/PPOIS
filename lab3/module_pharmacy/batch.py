@@ -1,5 +1,6 @@
 from datetime import date
 
+
 class Batch:
     def __init__(self, batch_id: str, drug_name: str, expiry: str):
         self.batch_id = batch_id

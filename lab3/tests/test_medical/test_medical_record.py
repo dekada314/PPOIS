@@ -1,5 +1,6 @@
-from lab3.module_medical.medical_record import MedicalRecord
 from lab3.module_medical.diagnosis import Diagnosis
+from lab3.module_medical.medical_record import MedicalRecord
+
 
 def test_add_diagnosis():
     rec = MedicalRecord()

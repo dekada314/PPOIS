@@ -1,8 +1,9 @@
 import pytest
-from module_management.fleet_manager import FleetManager
+from exceptions import VehicleInUseError
 from module_assets.vehicle import Vehicle
 from module_employee.driver import Driver
-from exceptions import VehicleInUseError
+from module_management.fleet_manager import FleetManager
+
 
 def test_fleet_manager_init():
     fm = FleetManager("Автопарк")

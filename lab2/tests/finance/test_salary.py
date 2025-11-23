@@ -1,5 +1,7 @@
 from module_finance.salary import Salary
-from module_employee.worker import Worker
+
+from lab2.module_employee.Worker import Worker
+
 
 def test_salary_init():
     w = Worker("Иван", "Бетонщик", 25.0)

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class AuditLog:
     def __init__(self):
         self.records = []

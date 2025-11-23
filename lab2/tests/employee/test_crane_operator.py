@@ -1,4 +1,5 @@
-from module_employee.crane_operator import CraneOperator
+from lab2.module_employee.CraneOperator import CraneOperator
+
 
 def test_crane_lift():
     co = CraneOperator("Степан")

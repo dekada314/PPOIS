@@ -1,6 +1,8 @@
-from module_employee.worker import Worker
-from module_assets.tool import Tool
 from associations import ToolAssignment
+from module_assets.tool import Tool
+
+from lab2.module_employee.Worker import Worker
+
 
 def test_worker_init():
     w = Worker("Иван", "Бетонщик", 25.0)

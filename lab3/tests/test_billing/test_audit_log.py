@@ -1,5 +1,6 @@
 from lab3.module_billing.audit_log import AuditLog
 
+
 def test_log_action_and_count():
     log = AuditLog()
     log.log_action("Create Invoice", "admin")

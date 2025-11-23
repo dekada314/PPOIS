@@ -1,5 +1,6 @@
 import uuid
 
+
 class ChiefManager:
     def __init__(self, name: str):
         self.id = str(uuid.uuid4())

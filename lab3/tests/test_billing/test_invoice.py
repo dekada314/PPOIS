@@ -1,5 +1,6 @@
-from lab3.module_billing.invoice import Invoice
 from lab3.module_billing.billing_item import BillingItem
+from lab3.module_billing.invoice import Invoice
+
 
 def test_add_item_and_total():
     inv = Invoice("INV001", "P123", "2025-11-14")

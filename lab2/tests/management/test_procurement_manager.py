@@ -1,5 +1,6 @@
-from module_management.procurement_manager import ProcurementManager
 from module_finance.purchase_order import PurchaseOrder
+from module_management.procurement_manager import ProcurementManager
+
 
 def test_procurement_init():
     pm = ProcurementManager("Закупки")

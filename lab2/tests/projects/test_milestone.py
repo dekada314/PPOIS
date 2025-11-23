@@ -1,5 +1,6 @@
 from module_projects.milestone import Milestone
 
+
 def test_milestone_init():
     proj = type("Project", (), {})
     m = Milestone("Этап 1", proj)

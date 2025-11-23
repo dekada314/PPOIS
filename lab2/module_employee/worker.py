@@ -1,6 +1,8 @@
-from datetime import date
-from associations import ToolAssignment
 import uuid
+from datetime import date
+
+from associations import ToolAssignment
+
 
 class Worker:
     def __init__(self, name: str, position: str, hourly_rate: float):

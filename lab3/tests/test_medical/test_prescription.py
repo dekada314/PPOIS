@@ -1,6 +1,8 @@
-from lab3.module_medical.prescription import Prescription
-from lab3.module_medical.medication import Medication
 from datetime import datetime, timedelta
+
+from lab3.module_medical.medication import Medication
+from lab3.module_medical.prescription import Prescription
+
 
 def test_is_valid():
     med = Medication("Aspirin", "tab", "100mg")

@@ -1,6 +1,7 @@
 from lab3.module_laboratory.analyzer import Analyzer
 from lab3.module_laboratory.sample import Sample
 
+
 def test_analyze_not_calibrated():
     analyzer = Analyzer("ModelX", "SN123")
     analyzer.calibrated = False

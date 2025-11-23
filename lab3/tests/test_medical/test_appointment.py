@@ -1,5 +1,6 @@
 from lab3.module_medical.appointment import Appointment
 
+
 def test_reschedule():
     p = type("P", (), {})()
     d = type("D", (), {})()

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class DispenseLog:
     def __init__(self):
         self.entries = []

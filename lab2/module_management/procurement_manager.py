@@ -1,5 +1,6 @@
-from module_employee.worker import Worker
-from typing import List, Any
+from typing import Any, List
+
+from lab2.module_employee.Worker import Worker
 
 
 class ProcurementManager(Worker):

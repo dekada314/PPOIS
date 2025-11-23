@@ -1,5 +1,6 @@
 from lab3.module_medical.insurance import Insurance
 
+
 def test_add_patient():
     ins = Insurance("POL123", "MediCare")
     p = type("P", (), {})()

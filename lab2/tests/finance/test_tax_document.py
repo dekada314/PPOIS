@@ -1,5 +1,6 @@
 from module_finance.tax_document import TaxDocument
 
+
 def test_tax_document_init():
     td = TaxDocument("Компания", 2025)
     assert td.company == "Компания"

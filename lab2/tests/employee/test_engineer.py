@@ -1,5 +1,6 @@
 from module_employee.engineer import Engineer
 
+
 def test_engineer_init():
     e = Engineer("Виктор")
     assert e.name == "Виктор"

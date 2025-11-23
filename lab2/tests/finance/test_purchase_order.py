@@ -1,6 +1,7 @@
 import pytest
-from module_finance.purchase_order import PurchaseOrder
 from exceptions import PurchaseOrderAlreadyIssuedError
+from module_finance.purchase_order import PurchaseOrder
+
 
 def test_purchase_order_init():
     material = type("Material", (), {"price_per_unit": 450, "quantity": 10})

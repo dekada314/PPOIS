@@ -1,5 +1,6 @@
 from .chief_manager import ChiefManager
 
+
 class GeneralManager(ChiefManager):
     def __init__(self, name: str):
         super().__init__(name)

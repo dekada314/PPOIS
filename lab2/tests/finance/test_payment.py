@@ -1,5 +1,6 @@
-from module_finance.payment import Payment
 from module_finance.invoice import Invoice
+from module_finance.payment import Payment
+
 
 def test_payment_process_success():
     project = type("Project", (), {})

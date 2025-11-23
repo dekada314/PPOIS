@@ -1,5 +1,7 @@
 from module_management.hr_manager import HRManager
-from module_employee.worker import Worker
+
+from lab2.module_employee.Worker import Worker
+
 
 def test_hr_init():
     hr = HRManager("HR")

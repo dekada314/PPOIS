@@ -1,7 +1,8 @@
 import pytest
+from exceptions import VehicleInUseError
 from module_assets.vehicle import Vehicle
 from module_employee.driver import Driver
-from exceptions import VehicleInUseError
+
 
 def test_vehicle_init():
     v = Vehicle("Газель", "A123BC")

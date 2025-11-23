@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class Payment:
     def __init__(self, payment_id: str, invoice, amount: float):
         self.payment_id = payment_id

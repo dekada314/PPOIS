@@ -1,6 +1,7 @@
 from lab3.module_appointment.schedule import Schedule
 from lab3.module_appointment.time_slot import TimeSlot
 
+
 def test_add_slot_and_available():
     sched = Schedule("SCH001", "D123")
     slot1 = TimeSlot("2025-11-15T10:00:00", 30)

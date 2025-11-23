@@ -1,5 +1,6 @@
 from lab3.module_pharmacy.inventory import Inventory
 
+
 def test_low_stock_items():
     inv = Inventory()
     inv.add("Aspirin", 5)

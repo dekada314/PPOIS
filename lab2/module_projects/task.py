@@ -1,5 +1,6 @@
 import uuid
 from datetime import date
+
 from associations import Assignment
 from exceptions import TaskAlreadyCompletedError
 

@@ -1,8 +1,10 @@
-import pytest
-from module_projects.project import Project
-from module_projects.milestone import Milestone
-from exceptions import ProjectAlreadyStartedError, MilestoneNotCompletedError
 from datetime import date
+
+import pytest
+from exceptions import MilestoneNotCompletedError, ProjectAlreadyStartedError
+from module_projects.milestone import Milestone
+from module_projects.project import Project
+
 
 def test_project_init():
     pm = type("PM", (), {})

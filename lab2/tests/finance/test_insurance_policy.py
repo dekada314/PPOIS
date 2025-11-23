@@ -1,7 +1,9 @@
-import pytest
-from module_finance.insurance_policy import InsurancePolicy
-from exceptions import InsuranceExpiredError
 from datetime import date, timedelta
+
+import pytest
+from exceptions import InsuranceExpiredError
+from module_finance.insurance_policy import InsurancePolicy
+
 
 def test_insurance_init():
     equipment = type("Equipment", (), {})

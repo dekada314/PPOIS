@@ -1,8 +1,10 @@
 import pytest
-from module_employee.foreman import Foreman
-from module_employee.worker import Worker
 from associations import Assignment
 from exceptions import WorkerAlreadyAssignedError
+from module_employee.foreman import Foreman
+
+from lab2.module_employee.Worker import Worker
+
 
 def test_foreman_init():
     f = Foreman("Сергей")

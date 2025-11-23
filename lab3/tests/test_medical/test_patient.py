@@ -1,5 +1,6 @@
 from lab3.module_medical.patient import Patient
 
+
 def test_age_calculation():
     p = Patient("P1", "Alice", "1990-05-15")
     # Точная дата зависит от текущей, но логика верна

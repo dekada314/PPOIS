@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+
 class TimeSlot:
     def __init__(self, start: str, duration_min: int):
         self.start = datetime.fromisoformat(start)

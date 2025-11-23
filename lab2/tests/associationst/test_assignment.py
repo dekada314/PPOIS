@@ -1,5 +1,7 @@
-from module_assets.equipment import Equipment
 from datetime import date
+
+from module_assets.equipment import Equipment
+
 
 def test_equipment_init():
     e = Equipment("Кран", "Kran-1")

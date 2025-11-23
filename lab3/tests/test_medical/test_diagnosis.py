@@ -1,5 +1,6 @@
 from lab3.module_medical.diagnosis import Diagnosis
 
+
 def test_is_chronic():
     doc = type("Doc", (), {})()
     diag1 = Diagnosis("E11.9", "Diabetes", doc)

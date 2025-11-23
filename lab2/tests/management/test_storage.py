@@ -1,8 +1,9 @@
 import pytest
-from module_management.storage import Storage
-from module_assets.material import Material
 from associations import MaterialUsage
 from exceptions import InsufficientMaterialError
+from module_assets.material import Material
+from module_management.storage import Storage
+
 
 def test_storage_init():
     s = Storage("Склад 1")

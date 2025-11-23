@@ -1,5 +1,6 @@
 import uuid
 
+
 class Material:
     def __init__(self, name: str, unit: str, price_per_unit: float):
         self.id = str(uuid.uuid4())

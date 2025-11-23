@@ -1,5 +1,6 @@
 from module_finance.estimate import Estimate
 
+
 def test_estimate_init():
     project = type("Project", (), {})
     e = Estimate(project)

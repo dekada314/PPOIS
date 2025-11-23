@@ -1,5 +1,7 @@
-from associations import ToolAssignment
 from datetime import date
+
+from associations import ToolAssignment
+
 
 def test_tool_assignment_init():
     tool = type("Tool",(),{})

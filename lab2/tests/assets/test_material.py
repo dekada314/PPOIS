@@ -1,5 +1,6 @@
 from module_assets.material import Material
 
+
 def test_material_init():
     m = Material("Цемент", "мешок", 450.0)
     assert m.name == "Цемент"

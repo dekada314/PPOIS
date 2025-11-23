@@ -1,5 +1,6 @@
 from module_employee.architect import Architect
 
+
 def test_architect_init():
     a = Architect("Елена")
     assert a.name == "Елена"

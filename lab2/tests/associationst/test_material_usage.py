@@ -1,5 +1,7 @@
-from associations import MaterialUsage
 from datetime import date
+
+from associations import MaterialUsage
+
 
 def test_material_usage_init():
     m = type("Material",(),{})

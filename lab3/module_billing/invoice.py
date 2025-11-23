@@ -1,5 +1,6 @@
 from .billing_item import BillingItem
 
+
 class Invoice:
     def __init__(self, invoice_id: str, patient_id: str, date: str):
         self.invoice_id = invoice_id

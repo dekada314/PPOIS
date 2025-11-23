@@ -1,5 +1,6 @@
-from lab3.module_billing.refund import Refund
 from lab3.module_billing.invoice import Invoice
+from lab3.module_billing.refund import Refund
+
 
 def test_process_refund():
     inv = Invoice("INV001", "P123", "2025-11-14")

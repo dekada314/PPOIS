@@ -1,5 +1,7 @@
 from datetime import date
+
 from .medical_record import MedicalRecord
+
 
 class Patient:
     def __init__(self, patient_id: str, name: str, birth_date: str):

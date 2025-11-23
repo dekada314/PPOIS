@@ -1,4 +1,5 @@
 import uuid
+
 from associations import MaterialUsage
 from exceptions import InsufficientMaterialError
 

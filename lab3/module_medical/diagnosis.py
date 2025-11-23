@@ -1,5 +1,6 @@
 from datetime import date
 
+
 class Diagnosis:
     def __init__(self, code: str, desc: str, doctor):
         self.code = code

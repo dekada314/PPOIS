@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class EquipmentLog:
     def __init__(self):
         self.entries = []

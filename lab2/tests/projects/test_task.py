@@ -1,8 +1,10 @@
 import pytest
-from module_projects.task import Task
-from module_employee.worker import Worker
 from associations import Assignment
 from exceptions import TaskAlreadyCompletedError
+from module_projects.task import Task
+
+from lab2.module_employee.Worker import Worker
+
 
 def test_task_init():
     proj = type("Project", (), {})

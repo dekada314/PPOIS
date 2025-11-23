@@ -1,5 +1,6 @@
 from .time_slot import TimeSlot
 
+
 class Schedule:
     def __init__(self, schedule_id: str, doctor_id: str):
         self.schedule_id = schedule_id

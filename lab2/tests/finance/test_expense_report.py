@@ -1,5 +1,6 @@
 from module_finance.expense_report import ExpenseReport
 
+
 def test_expense_report_init():
     worker = type("Worker", (), {"name": "Иван"})
     items = [{"amount": 100}, {"amount": 200}]

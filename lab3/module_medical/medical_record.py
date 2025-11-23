@@ -1,5 +1,6 @@
 from .diagnosis import Diagnosis
 
+
 class MedicalRecord:
     def __init__(self):
         self.diagnoses: list[Diagnosis] = []

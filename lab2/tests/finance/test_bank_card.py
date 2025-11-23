@@ -1,6 +1,7 @@
 import pytest
 from module_finance.bank_card import BankCard
 
+
 def test_bank_card_init():
     bc = BankCard("1234567890123456", "Иван")
     assert bc.number.endswith("3456")

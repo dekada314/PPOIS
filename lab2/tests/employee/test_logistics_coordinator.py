@@ -1,4 +1,5 @@
-from module_employee.logistics_coordinator import LogisticsCoordinator
+from lab2.module_employee.LogisticsCoordinator import LogisticsCoordinator
+
 
 def test_logistics_track():
     lc = LogisticsCoordinator("Мария")

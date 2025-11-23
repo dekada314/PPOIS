@@ -1,6 +1,7 @@
 from lab3.module_billing.insurance_claim import InsuranceClaim
 from lab3.module_billing.invoice import Invoice
 
+
 def test_approve_deny():
     inv = Invoice("INV001", "P123", "2025-11-14")
     claim = InsuranceClaim("CLM001", inv)

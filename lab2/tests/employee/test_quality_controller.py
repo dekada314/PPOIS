@@ -1,4 +1,5 @@
-from module_employee.quality_controller import QualityController
+from lab2.module_employee.QualityController import QualityController
+
 
 def test_quality_test():
     qc = QualityController("Татьяна")

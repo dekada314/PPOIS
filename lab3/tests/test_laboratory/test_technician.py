@@ -1,5 +1,6 @@
-from lab3.module_laboratory.technician import Technician
 from lab3.module_laboratory.sample import Sample
+from lab3.module_laboratory.technician import Technician
+
 
 def test_assign():
     tech = Technician("T1", "Alice", "CLIA")

@@ -1,5 +1,6 @@
 from lab3.module_pharmacy.dispense_log import DispenseLog
 
+
 def test_today_count():
     log = DispenseLog()
     log.log("RX1", "P1", "Aspirin")

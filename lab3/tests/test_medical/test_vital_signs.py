@@ -1,5 +1,6 @@
 from lab3.module_medical.vital_signs import VitalSigns
 
+
 def test_risk_level():
     vs = VitalSigns()
     vs.record(190, 100, 170, 37.0)

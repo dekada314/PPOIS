@@ -1,5 +1,6 @@
 from lab3.module_medical.medication import Medication
 
+
 def test_full_name():
     med = Medication("Paracetamol", "tablet", "500mg")
     assert med.full_name() == "Paracetamol 500mg"

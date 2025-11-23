@@ -1,5 +1,6 @@
 from module_finance.invoice import Invoice
 
+
 def test_invoice_init():
     project = type("Project", (), {})
     i = Invoice(project, 50000)

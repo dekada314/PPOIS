@@ -1,5 +1,6 @@
-from lab3.module_billing.payment import Payment
 from lab3.module_billing.invoice import Invoice
+from lab3.module_billing.payment import Payment
+
 
 def test_apply_payment():
     inv = Invoice("INV001", "P123", "2025-11-14")

@@ -1,5 +1,7 @@
 import pytest
+
 from lab3.module_pharmacy.pharmacy import Pharmacy
+
 
 def test_dispense_insufficient():
     pharm = Pharmacy("PH1", "City Pharm", "123 St")

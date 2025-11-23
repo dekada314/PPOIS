@@ -1,5 +1,6 @@
 from lab3.module_pharmacy.pharmacist import Pharmacist
 
+
 def test_total_dispensed():
     ph = Pharmacist("L123", "Anna")
     ph.dispense_prescription(None)

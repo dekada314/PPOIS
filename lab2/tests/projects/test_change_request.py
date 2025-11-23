@@ -1,5 +1,6 @@
 from module_projects.change_request import ChangeRequest
 
+
 def test_change_approve():
     proj = type("Project", (), {})
     cr = ChangeRequest(proj, "Добавить окно")
