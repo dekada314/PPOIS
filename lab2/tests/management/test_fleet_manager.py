@@ -2,6 +2,7 @@ import pytest
 from exceptions import VehicleInUseError
 from module_assets.Vehicle import Vehicle
 from module_employee.Driver import Driver
+
 from lab2.module_management.FleetManager import FleetManager
 
 

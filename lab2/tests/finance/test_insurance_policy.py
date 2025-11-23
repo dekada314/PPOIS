@@ -2,6 +2,7 @@ from datetime import date, timedelta
 
 import pytest
 from exceptions import InsuranceExpiredError
+
 from lab2.module_finance.InsurancePolicy import InsurancePolicy
 
 

@@ -1,7 +1,7 @@
 from module_finance.Salary import Salary
-from lab2.module_management.PayrollSpecialist import PayrollSpecialist
 
 from lab2.module_employee.Worker import Worker
+from lab2.module_management.PayrollSpecialist import PayrollSpecialist
 
 
 def test_payroll_process():

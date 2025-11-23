@@ -1,6 +1,5 @@
-from lab2.module_management.HRManager import HRManager
-
 from lab2.module_employee.Worker import Worker
+from lab2.module_management.HRManager import HRManager
 
 
 def test_hr_init():

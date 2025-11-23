@@ -1,5 +1,6 @@
 import pytest
 from exceptions import PurchaseOrderAlreadyIssuedError
+
 from lab2.module_finance.PurchaseOrder import PurchaseOrder
 
 
