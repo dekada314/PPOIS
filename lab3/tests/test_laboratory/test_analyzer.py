@@ -1,4 +1,3 @@
-import pytest
 from lab3.module_laboratory.analyzer import Analyzer
 from lab3.module_laboratory.sample import Sample
 

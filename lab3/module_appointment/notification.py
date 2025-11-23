@@ -1,4 +1,3 @@
-from datetime import datetime
 
 class Notification:
     def __init__(self, notif_id: str, appointment):

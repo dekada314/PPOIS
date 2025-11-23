@@ -1,4 +1,3 @@
-import pytest
 from lab3.module_laboratory.lab import Lab
 from lab3.module_laboratory.sample import Sample
 

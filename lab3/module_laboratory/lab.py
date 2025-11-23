@@ -1,5 +1,4 @@
 from .sample import Sample
-from .test_result import TestResult
 
 class Lab:
     def __init__(self, lab_id: str, name: str, accreditation: str):

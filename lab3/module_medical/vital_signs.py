@@ -1,4 +1,3 @@
-from datetime import datetime
 
 class VitalSigns:
     def __init__(self):

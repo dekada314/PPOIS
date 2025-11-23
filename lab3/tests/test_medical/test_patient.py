@@ -1,7 +1,4 @@
-import pytest
-from datetime import date
 from lab3.module_medical.patient import Patient
-from lab3.module_medical.medical_record import MedicalRecord
 
 def test_age_calculation():
     p = Patient("P1", "Alice", "1990-05-15")
