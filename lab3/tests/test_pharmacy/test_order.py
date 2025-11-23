@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.order import Order
+from lab3.module_pharmacy.Order import Order
 
 
 def test_finalize():

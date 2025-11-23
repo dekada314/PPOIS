@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.refill_request import RefillRequest
+from lab3.module_pharmacy.RefillRequest import RefillRequest
 
 
 def test_approve_reject():

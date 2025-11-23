@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.inventory import Inventory
+from lab3.module_pharmacy.Inventory import Inventory
 
 
 def test_low_stock_items():

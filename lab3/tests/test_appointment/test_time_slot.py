@@ -1,4 +1,4 @@
-from lab3.module_appointment.time_slot import TimeSlot
+from lab3.module_appointment.TimeSlot import TimeSlot
 
 
 def test_book_and_available():

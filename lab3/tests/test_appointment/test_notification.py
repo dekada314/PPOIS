@@ -1,6 +1,6 @@
-from lab3.module_appointment.appointment import Appointment
-from lab3.module_appointment.notification import Notification
-from lab3.module_appointment.time_slot import TimeSlot
+from lab3.module_appointment.Appointment import Appointment
+from lab3.module_appointment.Notification import Notification
+from lab3.module_appointment.TimeSlot import TimeSlot
 
 
 def test_send():

@@ -1,4 +1,4 @@
-from lab3.module_billing.audit_log import AuditLog
+from lab3.module_billing.AuditLog import AuditLog
 
 
 def test_log_action_and_count():

@@ -1,4 +1,4 @@
-from lab3.module_billing.billing_service import BillingService
+from lab3.module_billing.BillingService import BillingService
 
 
 def test_calculate_and_discount():

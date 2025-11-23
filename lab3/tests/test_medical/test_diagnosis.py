@@ -1,4 +1,4 @@
-from lab3.module_medical.diagnosis import Diagnosis
+from lab3.module_medical.Diagnosis import Diagnosis
 
 
 def test_is_chronic():

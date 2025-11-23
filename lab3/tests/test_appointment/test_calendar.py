@@ -1,4 +1,4 @@
-from lab3.module_appointment.calendar import Calendar
+from lab3.module_appointment.Calendar import Calendar
 
 
 def test_add_event_and_conflicts():

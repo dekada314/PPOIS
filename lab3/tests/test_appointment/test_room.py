@@ -1,4 +1,4 @@
-from lab3.module_appointment.room import Room
+from lab3.module_appointment.Room import Room
 
 
 def test_occupy_free():

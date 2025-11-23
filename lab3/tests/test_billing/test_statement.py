@@ -1,5 +1,5 @@
-from lab3.module_billing.account import Account
-from lab3.module_billing.statement import Statement
+from lab3.module_billing.Account import Account
+from lab3.module_billing.Statement import Statement
 
 
 def test_generate():

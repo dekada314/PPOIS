@@ -1,4 +1,4 @@
-from .inventory import Inventory
+from .Inventory import Inventory
 
 
 class Pharmacy:

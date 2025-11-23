@@ -1,6 +1,6 @@
 from datetime import date
 
-from .medical_record import MedicalRecord
+from .MedicalRecord import MedicalRecord
 
 
 class Patient:

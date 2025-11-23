@@ -1,4 +1,4 @@
-from lab3.module_medical.hospital import Hospital
+from lab3.module_medical.Hospital import Hospital
 
 
 def test_admit_discharge():

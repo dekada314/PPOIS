@@ -1,4 +1,4 @@
-from .billing_item import BillingItem
+from .BillingItem import BillingItem
 
 
 class Invoice:

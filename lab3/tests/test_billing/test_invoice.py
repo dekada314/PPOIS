@@ -1,5 +1,5 @@
-from lab3.module_billing.billing_item import BillingItem
-from lab3.module_billing.invoice import Invoice
+from lab3.module_billing.BillingItem import BillingItem
+from lab3.module_billing.Invoice import Invoice
 
 
 def test_add_item_and_total():

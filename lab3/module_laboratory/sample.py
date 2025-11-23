@@ -1,4 +1,4 @@
-from .test import Test
+from .Test import Test
 
 
 class Sample:

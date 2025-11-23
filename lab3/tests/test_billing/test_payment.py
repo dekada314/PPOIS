@@ -1,5 +1,5 @@
-from lab3.module_billing.invoice import Invoice
-from lab3.module_billing.payment import Payment
+from lab3.module_billing.Invoice import Invoice
+from lab3.module_billing.Payment import Payment
 
 
 def test_apply_payment():

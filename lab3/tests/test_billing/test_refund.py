@@ -1,5 +1,5 @@
-from lab3.module_billing.invoice import Invoice
-from lab3.module_billing.refund import Refund
+from lab3.module_billing.Invoice import Invoice
+from lab3.module_billing.Refund import Refund
 
 
 def test_process_refund():

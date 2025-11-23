@@ -1,4 +1,4 @@
-from .diagnosis import Diagnosis
+from .Diagnosis import Diagnosis
 
 
 class MedicalRecord:

@@ -1,4 +1,4 @@
-from lab3.module_medical.appointment import Appointment
+from lab3.module_medical.Appointment import Appointment
 
 
 def test_reschedule():

@@ -1,4 +1,4 @@
-from lab3.module_billing.discount_policy import DiscountPolicy
+from lab3.module_billing.DiscountPolicy import DiscountPolicy
 
 
 def test_apply():

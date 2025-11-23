@@ -1,4 +1,4 @@
-from lab3.module_medical.insurance import Insurance
+from lab3.module_medical.Insurance import Insurance
 
 
 def test_add_patient():

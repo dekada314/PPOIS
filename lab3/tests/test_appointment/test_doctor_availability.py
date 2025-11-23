@@ -1,4 +1,4 @@
-from lab3.module_appointment.doctor_availability import DoctorAvailability
+from lab3.module_appointment.DoctorAvailability import DoctorAvailability
 
 
 def test_generate_slots():

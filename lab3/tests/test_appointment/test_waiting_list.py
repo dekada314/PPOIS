@@ -1,5 +1,5 @@
-from lab3.module_appointment.time_slot import TimeSlot
-from lab3.module_appointment.waiting_list import WaitingList
+from lab3.module_appointment.TimeSlot import TimeSlot
+from lab3.module_appointment.WaitingList import WaitingList
 
 
 def test_add_and_find_match():

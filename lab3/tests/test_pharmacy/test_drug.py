@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.drug import Drug
+from lab3.module_pharmacy.Drug import Drug
 
 
 def test_mark_generic():

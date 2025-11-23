@@ -1,4 +1,4 @@
-from lab3.module_medical.medication import Medication
+from lab3.module_medical.Medication import Medication
 
 
 def test_full_name():

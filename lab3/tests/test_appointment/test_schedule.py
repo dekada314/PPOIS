@@ -1,5 +1,5 @@
-from lab3.module_appointment.schedule import Schedule
-from lab3.module_appointment.time_slot import TimeSlot
+from lab3.module_appointment.Schedule import Schedule
+from lab3.module_appointment.TimeSlot import TimeSlot
 
 
 def test_add_slot_and_available():

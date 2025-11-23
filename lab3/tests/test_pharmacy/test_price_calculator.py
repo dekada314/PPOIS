@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.price_calculator import PriceCalculator
+from lab3.module_pharmacy.PriceCalculator import PriceCalculator
 
 
 def test_with_insurance():

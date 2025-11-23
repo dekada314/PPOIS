@@ -1,6 +1,6 @@
-from lab3.module_billing.account import Account
-from lab3.module_billing.billing_item import BillingItem
-from lab3.module_billing.invoice import Invoice
+from lab3.module_billing.Account import Account
+from lab3.module_billing.BillingItem import BillingItem
+from lab3.module_billing.Invoice import Invoice
 
 
 def test_add_invoice_and_balance():

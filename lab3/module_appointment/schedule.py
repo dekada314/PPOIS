@@ -1,4 +1,4 @@
-from .time_slot import TimeSlot
+from .TimeSlot import TimeSlot
 
 
 class Schedule:

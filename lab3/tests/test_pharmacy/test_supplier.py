@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.supplier import Supplier
+from lab3.module_pharmacy.Supplier import Supplier
 
 
 def test_add_order():

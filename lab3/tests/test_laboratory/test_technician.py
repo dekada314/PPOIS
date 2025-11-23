@@ -1,5 +1,5 @@
-from lab3.module_laboratory.sample import Sample
-from lab3.module_laboratory.technician import Technician
+from lab3.module_laboratory.Sample import Sample
+from lab3.module_laboratory.Technician import Technician
 
 
 def test_assign():

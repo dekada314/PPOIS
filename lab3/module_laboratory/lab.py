@@ -1,4 +1,4 @@
-from .sample import Sample
+from .Sample import Sample
 
 
 class Lab:

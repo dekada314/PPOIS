@@ -1,4 +1,4 @@
-from lab3.module_laboratory.reference_range import ReferenceRange
+from lab3.module_laboratory.ReferenceRange import ReferenceRange
 
 
 def test_validate():

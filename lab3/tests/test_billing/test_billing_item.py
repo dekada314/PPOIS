@@ -1,4 +1,4 @@
-from lab3.module_billing.billing_item import BillingItem
+from lab3.module_billing.BillingItem import BillingItem
 
 
 def test_mark_covered():

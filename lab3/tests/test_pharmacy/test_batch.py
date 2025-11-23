@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.batch import Batch
+from lab3.module_pharmacy.Batch import Batch
 
 
 def test_days_until_expiry():

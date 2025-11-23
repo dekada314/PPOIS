@@ -1,5 +1,5 @@
-from lab3.module_laboratory.lab import Lab
-from lab3.module_laboratory.sample import Sample
+from lab3.module_laboratory.Lab import Lab
+from lab3.module_laboratory.Sample import Sample
 
 
 def test_receive_sample():

@@ -1,6 +1,6 @@
 import pytest
 
-from lab3.module_pharmacy.pharmacy import Pharmacy
+from lab3.module_pharmacy.Pharmacy import Pharmacy
 
 
 def test_dispense_insufficient():

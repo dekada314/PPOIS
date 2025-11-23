@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.pharmacist import Pharmacist
+from lab3.module_pharmacy.Pharmacist import Pharmacist
 
 
 def test_total_dispensed():

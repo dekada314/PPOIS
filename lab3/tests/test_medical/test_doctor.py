@@ -1,4 +1,4 @@
-from lab3.module_medical.doctor import Doctor
+from lab3.module_medical.Doctor import Doctor
 
 
 def test_schedule_conflict():

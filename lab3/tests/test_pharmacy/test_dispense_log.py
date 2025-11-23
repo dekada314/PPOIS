@@ -1,4 +1,4 @@
-from lab3.module_pharmacy.dispense_log import DispenseLog
+from lab3.module_pharmacy.DispenseLog import DispenseLog
 
 
 def test_today_count():

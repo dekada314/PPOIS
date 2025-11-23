@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from .medication import Medication
+from .Medication import Medication
 
 
 class Prescription:

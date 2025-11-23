@@ -1,5 +1,5 @@
-from lab3.module_laboratory.report import Report
-from lab3.module_laboratory.sample import Sample
+from lab3.module_laboratory.Report import Report
+from lab3.module_laboratory.Sample import Sample
 
 
 def test_generate():

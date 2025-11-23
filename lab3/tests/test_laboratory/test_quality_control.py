@@ -1,4 +1,4 @@
-from lab3.module_laboratory.quality_control import QualityControl
+from lab3.module_laboratory.QualityControl import QualityControl
 
 
 def test_run_check():

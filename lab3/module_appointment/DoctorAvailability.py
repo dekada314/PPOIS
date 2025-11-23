@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from .time_slot import TimeSlot
+from .TimeSlot import TimeSlot
 
 
 class DoctorAvailability:

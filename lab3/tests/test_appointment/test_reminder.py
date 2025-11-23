@@ -1,8 +1,8 @@
 from datetime import timedelta
 
-from lab3.module_appointment.appointment import Appointment
-from lab3.module_appointment.reminder import Reminder
-from lab3.module_appointment.time_slot import TimeSlot
+from lab3.module_appointment.Appointment import Appointment
+from lab3.module_appointment.Reminder import Reminder
+from lab3.module_appointment.TimeSlot import TimeSlot
 
 
 def test_trigger_time():

@@ -1,4 +1,4 @@
-from lab3.module_medical.vital_signs import VitalSigns
+from lab3.module_medical.VitalSigns import VitalSigns
 
 
 def test_risk_level():

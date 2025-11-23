@@ -1,5 +1,5 @@
-from lab3.module_laboratory.analyzer import Analyzer
-from lab3.module_laboratory.sample import Sample
+from lab3.module_laboratory.Analyzer import Analyzer
+from lab3.module_laboratory.Sample import Sample
 
 
 def test_analyze_not_calibrated():

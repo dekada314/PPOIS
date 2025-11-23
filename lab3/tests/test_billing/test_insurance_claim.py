@@ -1,5 +1,5 @@
-from lab3.module_billing.insurance_claim import InsuranceClaim
-from lab3.module_billing.invoice import Invoice
+from lab3.module_billing.InsuranceClaim import InsuranceClaim
+from lab3.module_billing.Invoice import Invoice
 
 
 def test_approve_deny():

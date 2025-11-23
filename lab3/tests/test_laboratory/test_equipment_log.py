@@ -1,4 +1,4 @@
-from lab3.module_laboratory.equipment_log import EquipmentLog
+from lab3.module_laboratory.EquipmentLog import EquipmentLog
 
 
 def test_log_use():
