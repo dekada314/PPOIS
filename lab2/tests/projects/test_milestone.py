@@ -1,4 +1,4 @@
-from module_projects.milestone import Milestone
+from module_projects.Milestone import Milestone
 
 
 def test_milestone_init():

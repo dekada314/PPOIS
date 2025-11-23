@@ -1,4 +1,4 @@
-from module_employee.electrician import Electrician
+from module_employee.Electrician import Electrician
 
 
 def test_electrician_install():

@@ -1,4 +1,4 @@
-from module_finance.expense_report import ExpenseReport
+from lab2.module_finance.ExpenseReport import ExpenseReport
 
 
 def test_expense_report_init():

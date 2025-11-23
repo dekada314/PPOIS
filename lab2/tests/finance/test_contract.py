@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 from exceptions import ContractAlreadySignedError
-from module_finance.contract import Contract
+from module_finance.Contract import Contract
 
 
 def test_contract_init():

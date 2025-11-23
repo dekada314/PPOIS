@@ -1,5 +1,5 @@
-from module_finance.purchase_order import PurchaseOrder
-from module_management.procurement_manager import ProcurementManager
+from lab2.module_finance.PurchaseOrder import PurchaseOrder
+from lab2.module_management.ProcurementManager import ProcurementManager
 
 
 def test_procurement_init():

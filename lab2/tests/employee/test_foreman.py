@@ -1,7 +1,7 @@
 import pytest
 from associations import Assignment
 from exceptions import WorkerAlreadyAssignedError
-from module_employee.foreman import Foreman
+from module_employee.Foreman import Foreman
 
 from lab2.module_employee.Worker import Worker
 

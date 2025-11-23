@@ -1,4 +1,4 @@
-from module_projects.timeline import Timeline
+from module_projects.TimeLine import Timeline
 
 
 def test_timeline_gantt():

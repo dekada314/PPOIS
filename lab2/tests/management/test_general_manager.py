@@ -1,4 +1,4 @@
-from module_management.general_manager import GeneralManager
+from lab2.module_management.GeneralManager import GeneralManager
 
 
 def test_general_manager_init():

@@ -1,6 +1,6 @@
 import pytest
 from exceptions import PurchaseOrderAlreadyIssuedError
-from module_finance.purchase_order import PurchaseOrder
+from lab2.module_finance.PurchaseOrder import PurchaseOrder
 
 
 def test_purchase_order_init():

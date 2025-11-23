@@ -1,6 +1,6 @@
 from datetime import date
 
-from associations import ToolAssignment
+from lab2.associations import ToolAssignment
 
 
 def test_tool_assignment_init():

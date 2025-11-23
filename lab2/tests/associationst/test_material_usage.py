@@ -1,6 +1,6 @@
 from datetime import date
 
-from associations import MaterialUsage
+from lab2.associations import MaterialUsage
 
 
 def test_material_usage_init():

@@ -1,6 +1,6 @@
 from datetime import date
 
-from module_assets.equipment import Equipment
+from module_assets.Equipment import Equipment
 
 
 def test_equipment_init():

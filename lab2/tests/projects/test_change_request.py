@@ -1,4 +1,4 @@
-from module_projects.change_request import ChangeRequest
+from lab2.module_projects.ChangeRequest import ChangeRequest
 
 
 def test_change_approve():

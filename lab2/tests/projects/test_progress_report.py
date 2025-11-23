@@ -1,4 +1,4 @@
-from module_projects.progress_report import ProgressReport
+from lab2.module_projects.ProgressPeport import ProgressReport
 
 
 def test_progress_generate():

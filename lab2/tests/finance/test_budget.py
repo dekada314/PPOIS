@@ -1,6 +1,6 @@
 import pytest
 from exceptions import InvalidBudgetCategoryError
-from module_finance.budget import Budget
+from module_finance.Budget import Budget
 
 
 def test_budget_init():

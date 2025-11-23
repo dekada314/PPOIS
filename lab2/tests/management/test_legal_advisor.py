@@ -1,4 +1,4 @@
-from module_management.legal_advisor import LegalAdvisor
+from lab2.module_management.LegalAdvisor import LegalAdvisor
 
 
 def test_legal_review():

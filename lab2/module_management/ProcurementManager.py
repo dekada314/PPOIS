@@ -9,7 +9,7 @@ class ProcurementManager(Worker):
         self.orders: List[Any] = []
 
     def create_order(self, materials: List[Any]) -> Any:
-        from module_finance.purchase_order import PurchaseOrder
+        from lab2.module_finance.PurchaseOrder import PurchaseOrder
         order = PurchaseOrder(materials)
         self.orders.append(order)
         return order

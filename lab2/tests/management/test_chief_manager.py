@@ -1,4 +1,4 @@
-from module_management.chief_manager import ChiefManager
+from lab2.module_management.ChiefManager import ChiefManager
 
 
 def test_chief_manager_init():

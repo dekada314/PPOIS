@@ -9,7 +9,7 @@ class ProjectManager(Worker):
         self.projects: List[Any] = []
 
     def create_project(self, name: str, budget: float) -> Any:
-        from .project import Project
+        from .Project import Project
         project = Project(name, budget, self)
         self.projects.append(project)
         return project

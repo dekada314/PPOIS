@@ -1,4 +1,4 @@
-from module_employee.plumber import Plumber
+from module_employee.Plumber import Plumber
 
 
 def test_plumber_install():

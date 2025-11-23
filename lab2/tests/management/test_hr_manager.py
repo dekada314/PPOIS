@@ -1,4 +1,4 @@
-from module_management.hr_manager import HRManager
+from lab2.module_management.HRManager import HRManager
 
 from lab2.module_employee.Worker import Worker
 

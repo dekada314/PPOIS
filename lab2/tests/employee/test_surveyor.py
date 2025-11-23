@@ -1,4 +1,4 @@
-from module_employee.surveyor import Surveyor
+from module_employee.Surveyor import Surveyor
 
 
 def test_surveyor_measure():

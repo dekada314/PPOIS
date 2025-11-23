@@ -1,4 +1,4 @@
-from module_finance.tax_document import TaxDocument
+from lab2.module_finance.TaxDocument import TaxDocument
 
 
 def test_tax_document_init():

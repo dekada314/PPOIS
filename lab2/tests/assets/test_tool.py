@@ -1,7 +1,7 @@
 from datetime import date
 
 from associations import ToolAssignment
-from module_assets.tool import Tool
+from module_assets.Tool import Tool
 
 
 def test_tool_init():

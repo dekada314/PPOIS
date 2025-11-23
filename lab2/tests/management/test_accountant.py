@@ -1,4 +1,4 @@
-from module_management.accountant import Accountant
+from module_management.Accountant import Accountant
 
 
 def test_accountant_report():

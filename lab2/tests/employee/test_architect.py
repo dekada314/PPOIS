@@ -1,4 +1,4 @@
-from module_employee.architect import Architect
+from module_employee.Architect import Architect
 
 
 def test_architect_init():

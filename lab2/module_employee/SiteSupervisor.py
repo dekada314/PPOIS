@@ -1,4 +1,4 @@
-from .foreman import Foreman
+from .Foreman import Foreman
 
 
 class SiteSupervisor(Foreman):

@@ -1,5 +1,5 @@
-from module_finance.salary import Salary
-from module_management.payroll_specialist import PayrollSpecialist
+from module_finance.Salary import Salary
+from lab2.module_management.PayrollSpecialist import PayrollSpecialist
 
 from lab2.module_employee.Worker import Worker
 

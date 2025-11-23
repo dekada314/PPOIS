@@ -1,4 +1,4 @@
-from module_finance.salary import Salary
+from module_finance.Salary import Salary
 
 from lab2.module_employee.Worker import Worker
 

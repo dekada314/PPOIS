@@ -1,4 +1,4 @@
-from module_projects.risk_assessment import RiskAssessment
+from lab2.module_projects.RiskAssessment import RiskAssessment
 
 
 def test_mitigate():

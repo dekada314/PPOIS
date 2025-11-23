@@ -1,5 +1,5 @@
 import pytest
-from module_finance.bank_card import BankCard
+from lab2.module_finance.BankCard import BankCard
 
 
 def test_bank_card_init():

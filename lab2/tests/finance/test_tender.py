@@ -1,6 +1,6 @@
 from datetime import date
 
-from module_finance.tender import Tender
+from module_finance.Tender import Tender
 
 
 def test_tender_init():

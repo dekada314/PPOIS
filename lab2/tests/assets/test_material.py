@@ -1,4 +1,4 @@
-from module_assets.material import Material
+from module_assets.Material import Material
 
 
 def test_material_init():

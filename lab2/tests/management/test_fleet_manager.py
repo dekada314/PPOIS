@@ -1,8 +1,8 @@
 import pytest
 from exceptions import VehicleInUseError
-from module_assets.vehicle import Vehicle
-from module_employee.driver import Driver
-from module_management.fleet_manager import FleetManager
+from module_assets.Vehicle import Vehicle
+from module_employee.Driver import Driver
+from lab2.module_management.FleetManager import FleetManager
 
 
 def test_fleet_manager_init():

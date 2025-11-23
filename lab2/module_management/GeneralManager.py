@@ -1,4 +1,4 @@
-from .chief_manager import ChiefManager
+from .ChiefManager import ChiefManager
 
 
 class GeneralManager(ChiefManager):

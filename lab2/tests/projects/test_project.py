@@ -2,8 +2,8 @@ from datetime import date
 
 import pytest
 from exceptions import MilestoneNotCompletedError, ProjectAlreadyStartedError
-from module_projects.milestone import Milestone
-from module_projects.project import Project
+from module_projects.Milestone import Milestone
+from module_projects.Project import Project
 
 
 def test_project_init():

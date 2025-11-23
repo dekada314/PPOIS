@@ -1,4 +1,4 @@
-from module_finance.invoice import Invoice
+from module_finance.Invoice import Invoice
 
 
 def test_invoice_init():

@@ -1,7 +1,7 @@
 import pytest
 from associations import Assignment
 from exceptions import TaskAlreadyCompletedError
-from module_projects.task import Task
+from module_projects.Task import Task
 
 from lab2.module_employee.Worker import Worker
 

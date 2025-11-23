@@ -1,5 +1,5 @@
-from module_finance.invoice import Invoice
-from module_finance.payment import Payment
+from module_finance.Invoice import Invoice
+from module_finance.Payment import Payment
 
 
 def test_payment_process_success():
