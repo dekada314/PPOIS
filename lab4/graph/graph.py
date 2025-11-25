@@ -46,7 +46,7 @@ class Graph[T]:
             return len(self._adjacency_list[vertex])
         raise NotVertexError
 
-    def get_adjacency_vertices(self, vertex):
+    def get_adjacency_vertices(self, vertex: T) -> list:
         adj_vertices = []
         for key, value in self._adjacency_list.items():
             if key == vertex:
@@ -55,10 +55,10 @@ class Graph[T]:
                 adj_vertices.append(key)
         return sorted(adj_vertices)
                 
-    def get_incident_edges(self, vertex):
+    def get_incident_edges(self, vertex: T) -> list:
         return list(filter(lambda edge: vertex in edge, self._edges))
 
-    def get_edge_degree(self, edge: tuple[int, int]):
+    def get_edge_degree(self, edge: tuple[int, int]) -> int:
         if self.check_for_edge(edge):
             degree = 0
             for value in self._adjacency_list[edge[0]]:
@@ -77,7 +77,7 @@ class Graph[T]:
         self._vertices: list[T] = []
         self._edges: list[tuple[int, int]] = []
 
-    def __deepcopy__(self, memo=None):
+    def __deepcopy__(self, memo=None) -> 'Graph':
         new_adjacency_list: type_adjancy_list = deepcopy(self._adjacency_list, memo)
         new_graph = Graph[T](new_adjacency_list)
         new_graph._vertices = deepcopy(self._vertices, memo)
@@ -85,74 +85,74 @@ class Graph[T]:
 
         return new_graph
 
-    def __lt__(self, other):
+    def __lt__(self, other: 'Graph') -> bool:
         main_sum = len(self._edges)
         other_sum = len(other._edges)
         return main_sum < other_sum
 
-    def __eq__(self, other):
+    def __eq__(self, other: 'Graph') -> bool:
         return self._adjacency_list == other._adjacency_list
 
-    def __gt__(self, other):
+    def __gt__(self, other: 'Graph') -> bool:
         main_sum = len(self._edges)
         other_sum = len(other._edges)
         return main_sum > other_sum
 
-    def __del__(self):
+    def __del__(self) -> None:
         print(f"Deleted {self.__class__.__name__} object")
 
-    def iterator_for_vertices(self):
+    def iterator_for_vertices(self) -> 'BidirIterator':
         return BidirIterator(self._vertices)
 
-    def reverse_iterator_for_vertices(self):
+    def reverse_iterator_for_vertices(self) -> 'BidirIterator':
         return BidirIterator(self._vertices, reverse=True)
 
-    def const_iterator_for_vertices(self):
+    def const_iterator_for_vertices(self) -> 'BidirIterator':
         return ConstBidirIterator(self._vertices)
 
-    def conts_reverse_iterator_for_vertices(self):
+    def conts_reverse_iterator_for_vertices(self) -> 'ConstBidirIterator':
         return ConstBidirIterator(self._vertices, reverse=True)
     
-    def iterator_for_adjacency_vertices(self, vertex):
+    def iterator_for_adjacency_vertices(self, vertex: T) -> 'BidirIterator':
         vertices = self.get_adjacency_vertices(vertex)
         return BidirIterator(vertices)
 
-    def reverse_iterator_for_adjacency_verties(self, vertex):
+    def reverse_iterator_for_adjacency_verties(self, vertex: T) -> 'BidirIterator':
         vertices = self.get_adjacency_vertices(vertex)
         return BidirIterator(vertices, reverse=True)
     
-    def const_iterator_for_adjacency_verties(self, vertex):
+    def const_iterator_for_adjacency_verties(self, vertex: T) -> 'BidirIterator':
         vertices = self.get_adjacency_vertices(vertex)
         return ConstBidirIterator(vertices)
     
-    def const_reverse_iterator_for_adjacency_verties(self, vertex):
+    def const_reverse_iterator_for_adjacency_verties(self, vertex: T) -> 'ConstBidirIterator':
         vertices = self.get_adjacency_vertices(vertex)
         return ConstBidirIterator(vertices, reverse=True)
     
-    def iterator_for_edges(self):
+    def iterator_for_edges(self) -> 'BidirIterator':
         return BidirIterator(self._edges)
 
-    def reverse_iterator_for_edges(self):
+    def reverse_iterator_for_edges(self) -> 'BidirIterator':
         return BidirIterator(self._edges, reverse=True)
 
-    def const_iterator_for_edges(self):
+    def const_iterator_for_edges(self) -> 'ConstBidirIterator':
         return ConstBidirIterator(self._edges)
 
-    def conts_reverse_iterator_for_edges(self):
+    def conts_reverse_iterator_for_edges(self) -> 'ConstBidirIterator':
         return ConstBidirIterator(self._edges, reverse=True)
     
-    def iterator_for_incident_edges(self, vertex):
+    def iterator_for_incident_edges(self, vertex: T) -> 'BidirIterator':
         incid_edges = self.get_incident_edges(vertex)
         return BidirIterator(incid_edges)
     
-    def reverse_iterator_for_incident_edges(self, vertex):
+    def reverse_iterator_for_incident_edges(self, vertex: T) -> 'BidirIterator':
         incid_edges = self.get_incident_edges(vertex)
         return BidirIterator(incid_edges, reverse=True)
     
-    def const_iterator_for_incident_edges(self, vertex):
+    def const_iterator_for_incident_edges(self, vertex: T) -> 'ConstBidirIterator':
         incid_edges = self.get_incident_edges(vertex)
         return ConstBidirIterator(incid_edges)
     
-    def const_reverse_iterator_for_incident_edges(self, vertex):
+    def const_reverse_iterator_for_incident_edges(self, vertex) -> 'ConstBidirIterator':
         incid_edges = self.get_incident_edges(vertex)
         return ConstBidirIterator(incid_edges, reverse=True)
