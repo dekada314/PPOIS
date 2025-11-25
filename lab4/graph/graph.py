@@ -49,12 +49,14 @@ class Graph[T]:
     def get_adjacency_vertices(self, vertex):
         adj_vertices = []
         for key, value in self._adjacency_list.items():
-            if vertex == key or vertex in value:
-                adj_vertices.append(vertex)
-        return adj_vertices
+            if key == vertex:
+                adj_vertices.extend(value)
+            elif vertex in value:
+                adj_vertices.append(key)
+        return sorted(adj_vertices)
                 
     def get_incident_edges(self, vertex):
-        return filter(lambda edge: vertex in edge, self._edges)
+        return list(filter(lambda edge: vertex in edge, self._edges))
 
     def get_edge_degree(self, edge: tuple[int, int]):
         if self.check_for_edge(edge):
