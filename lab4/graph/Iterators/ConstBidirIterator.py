@@ -52,3 +52,6 @@ class ConstBidirIterator:
             if self._position + 1 >= len(self._elements):
                 raise StopIteration
             return self._elements[self._position + 1]
+        
+    def current(self):
+        return self._elements[self._position]
