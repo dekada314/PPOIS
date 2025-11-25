@@ -1,10 +1,10 @@
-class NotEdgeError:
+class NotEdgeError(Exception):
     """Ребра не существует"""
 
 
-class NotVertexError:
+class NotVertexError(Exception):
     """Вершины не существует"""
 
 
-class EmptyAdjList:
+class EmptyAdjListError(Exception):
     """Списка смежности не существует"""
