@@ -4,18 +4,24 @@ from lab4.graph.exceptions import EmptyAdjListError, NotEdgeError, NotVertexErro
 from lab4.graph.Iterators.BidirIterator import BidirIterator
 from lab4.graph.Iterators.ConstBidirIterator import ConstBidirIterator
 
-type type_adjancy_list = list[list[int]] | dict[int : list[int]]
+type type_adjancy_list = dict[int : list[int]]
+type type_edge = list[tuple[int, int]]
 
 class Graph[T]:
     def __init__(self, adjancy_list) -> None:
         self._adjacency_list: type_adjancy_list = adjancy_list
         self._vertices: list[T] = []
-        self._edges: list[tuple[int, int]] = []
+        self._edges: type_edge = []
 
     def _get_vertices(self) -> list[T]:
+        if not self._adjacency_list:
+            raise EmptyAdjListError
         self._vertices = list(self._adjacency_list.keys())
+        
 
-    def _get_edges(self) -> list[tuple[int, int]]:
+    def _get_edges(self) -> type_edge:
+        if not self._adjacency_list:
+            raise EmptyAdjListError
         for start_vertex, values in self._adjacency_list.items():
             for end_vertex in values:
                 self._edges.append((start_vertex, end_vertex))
@@ -68,14 +74,32 @@ class Graph[T]:
             raise NotEdgeError
 
         return degree
-
+    
+    def add_vertex(self, vertex):
+        self._adjacency_list[vertex] = []
+    
+    def remove_vertex(self, vertex: T) -> None:
+        for key, value in self._adjacency_list.items():
+            if vertex == key:
+                del self._adjacency_list[key]
+            elif vertex in value:
+                value.remove(vertex)
+                
+    def add_edge(self, edge):
+        if self.check_for_vertex(edge[0]) and self.check_for_vertex(edge[1]):
+            self._adjacency_list[edge[0]].append(edge[1])
+                
+    def remove_edge(self, edge):
+        if self.check_for_edge(edge):
+            self._adjacency_list[edge[0]].remove(edge[1])            
+                
     def empty(self) -> bool:
         return not (self._adjacency_list and self._vertices and self._edges)
 
     def clear(self) -> None:
         self._adjacency_list: type_adjancy_list = []
         self._vertices: list[T] = []
-        self._edges: list[tuple[int, int]] = []
+        self._edges: type_edge = []
 
     def __deepcopy__(self, memo=None) -> 'Graph':
         new_adjacency_list: type_adjancy_list = deepcopy(self._adjacency_list, memo)
@@ -153,6 +177,8 @@ class Graph[T]:
         incid_edges = self.get_incident_edges(vertex)
         return ConstBidirIterator(incid_edges)
     
-    def const_reverse_iterator_for_incident_edges(self, vertex) -> 'ConstBidirIterator':
+    def const_reverse_iterator_for_incident_edges(self, vertex: T) -> 'ConstBidirIterator':
         incid_edges = self.get_incident_edges(vertex)
         return ConstBidirIterator(incid_edges, reverse=True)
+
+
