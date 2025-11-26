@@ -1,4 +1,5 @@
 import pytest
+
 from lab4.sort.insertion_sort import insertion_sort
 
 

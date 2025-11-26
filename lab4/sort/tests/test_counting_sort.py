@@ -1,6 +1,7 @@
 import pytest
-from lab4.sort.MyClass import Myclass
+
 from lab4.sort.counting_sort import counting_sort
+from lab4.sort.MyClass import Myclass
 
 
 def test_counting_sort_nums(non_sorted_nums, sorted_nums):
