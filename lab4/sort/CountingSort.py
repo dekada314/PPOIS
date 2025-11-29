@@ -1,6 +1,5 @@
 class CountingSort():
-    @staticmethod
-    def counting_sort(non_sorted):
+    def counting_sort(self, non_sorted):
         if len(non_sorted) <= 1:
             return non_sorted
 

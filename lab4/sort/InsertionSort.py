@@ -1,6 +1,5 @@
 class InsertionSort():
-    @staticmethod
-    def insertion_sort(array):
+    def insertion_sort(self, array):
         for i in range(1, len(array)):
             key = array[i]
             j = i - 1

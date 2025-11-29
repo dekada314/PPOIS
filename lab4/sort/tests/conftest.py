@@ -1,6 +1,16 @@
 import pytest
 
 from lab4.sort.MyClass import Myclass
+from lab4.sort.InsertionSort import InsertionSort
+from lab4.sort.CountingSort import CountingSort
+
+@pytest.fixture
+def insertion_sorter():
+    return InsertionSort()
+
+@pytest.fixture
+def countring_sorter():
+    return CountingSort()
 
 
 @pytest.fixture
