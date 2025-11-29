@@ -1,6 +1,6 @@
 import pytest
 
-from lab4.sort.insertion_sort import InsertionSort
+from lab4.sort.InsertionSort import InsertionSort
 
 
 def test_insertion_sort_nums(non_sorted_nums, sorted_nums):

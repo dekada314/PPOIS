@@ -1,6 +1,6 @@
 import pytest
 
-from lab4.sort.counting_sort import CountingSort
+from lab4.sort.CountingSort import CountingSort
 from lab4.sort.MyClass import Myclass
 
 
