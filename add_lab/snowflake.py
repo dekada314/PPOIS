@@ -32,7 +32,6 @@ def main():
     for _ in range(4):
         for _ in range(len(coord_to_draw)):
             coord_to_draw += (draw_snowflake(*(coord_to_draw.pop(0))))
-            print(coord_to_draw)
         
 if __name__ == '__main__':
     main()
