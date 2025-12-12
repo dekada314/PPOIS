@@ -36,18 +36,17 @@ def pythagoras_tree(z, s, a, depth, max_depth, theta):
     u = s * complex(-math.sin(a), math.cos(a))
     top_left = z + u
 
-    sL = s * math.cos(theta)
-    sR = s * math.sin(theta)
+    sl = s * math.cos(theta)
+    sr = s * math.sin(theta)
 
-    zL = top_left
-    aL = a + theta
+    zl = top_left
+    al = a + theta
 
-    zR = top_left + sL * complex(math.cos(aL), math.sin(aL))
-    aR = a - (math.pi / 2 - theta)
+    zr = top_left + sl * complex(math.cos(al), math.sin(al))
+    ar = a - (math.pi / 2 - theta)
 
-    pythagoras_tree(zL, sL, aL, depth + 1, max_depth, theta)
-    pythagoras_tree(zR, sR, aR, depth + 1, max_depth, theta)
-
+    pythagoras_tree(zl, sl, al, depth + 1, max_depth, theta)
+    pythagoras_tree(zr, sr, ar, depth + 1, max_depth, theta)
 
 max_depth = 5
 theta = math.pi / 4
