@@ -18,80 +18,95 @@ EDGES = np.array([
 ], dtype=int)
 
 FACES = np.array([
-    [0, 3, 2, 1], 
-    [4, 5, 6, 7], 
-    [0, 4, 7, 3], 
-    [1, 2, 6, 5], 
-    [0, 1, 5, 4], 
-    [3, 2, 6, 7]  
+    [0, 3, 2, 1],
+    [4, 5, 6, 7],
+    [0, 4, 7, 3],
+    [1, 2, 6, 5],
+    [0, 1, 5, 4],
+    [3, 2, 6, 7]
 ], dtype=int)
 
-BLUE_FILL = (0.19, 0.31, 0.8)  
-WHITE_LINE = (1.0, 1.0, 1.0)   
+BLUE_FILL = (0.19, 0.31, 0.8)
+WHITE_LINE = (1.0, 1.0, 1.0)
 
 def draw_cube(size, fill_color, line_color, alpha):
-    """
-    Рисует куб заданного размера с заполнением и каркасом.
-    """
-    
+
     glPushMatrix()
-    glScalef(size, size, size) 
-    
+    glScalef(size, size, size)
+
     if alpha > 0.0:
         glEnable(GL_BLEND)
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-        
+
+        glDepthMask(GL_FALSE)
+
         glColor4f(fill_color[0], fill_color[1], fill_color[2], alpha)
-        
+
         glBegin(GL_QUADS)
         for face in FACES:
-            for vertex_index in face:
-                glVertex3fv(VERTICES[vertex_index])
+            for idx in face:
+                glVertex3fv(VERTICES[idx])
         glEnd()
-        
+
+        glDepthMask(GL_TRUE)
         glDisable(GL_BLEND)
 
-    
-    glColor3f(line_color[0], line_color[1], line_color[2])
-    glLineWidth(2.5) 
+    glColor3f(*line_color)
+    glLineWidth(2.5)
 
     glBegin(GL_LINES)
     for edge in EDGES:
-        for vertex_index in edge:
-            glVertex3fv(VERTICES[vertex_index])
+        for idx in edge:
+            glVertex3fv(VERTICES[idx])
     glEnd()
-    
+
     glPopMatrix()
+
+
+def draw_connecting_edges(size_big, size_small, line_color):
+
+    glColor3f(*line_color)
+    glLineWidth(2.0)
+
+    glBegin(GL_LINES)
+    for i in range(8):  
+        v_big = VERTICES[i] * size_big
+        v_small = VERTICES[i] * size_small
+        glVertex3fv(v_big)
+        glVertex3fv(v_small)
+    glEnd()
 
 def display():
     global rot_angle
-    
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
-    
-    glRotatef(rot_angle, 0.5, 1.0, 0.0) 
+
+    glRotatef(rot_angle, 0.5, 1.0, 0.0)
 
     draw_cube(
-        size=0.7, 
-        fill_color=BLUE_FILL, 
-        line_color=WHITE_LINE, 
-        alpha=0.6 
+        size=0.7,
+        fill_color=BLUE_FILL,
+        line_color=WHITE_LINE,
+        alpha=0.6
     )
     draw_cube(
-        size=0.35, 
-        fill_color=(0.0, 0.0, 0.0), 
-        line_color=WHITE_LINE, 
-        alpha=0.0 
+        size=0.35,
+        fill_color=(0.0, 0.0, 0.0),
+        line_color=WHITE_LINE,
+        alpha=0.0
     )
+    draw_connecting_edges(0.7, 0.35, WHITE_LINE)
     glutSwapBuffers()
 
 def update_rotation(value):
     global rot_angle
-    rot_angle += 0.5 
-    if rot_angle > 360:
+
+    rot_angle += 0.5
+    if rot_angle >= 360:
         rot_angle -= 360
     glutPostRedisplay()
-    glutTimerFunc(16, update_rotation, 0) 
+    glutTimerFunc(16, update_rotation, 0)
 
 def reshape(width, height):
     glViewport(0, 0, width, height)
@@ -110,11 +125,11 @@ def main():
     glutInit(sys.argv)
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH)
     glutInitWindowSize(800, 800)
-    glutCreateWindow(b"Exact Nested Translucent Cube")
-    
-    glClearColor(0.0, 0.0, 0.0, 1.0) 
-    glEnable(GL_DEPTH_TEST) 
-    
+    glutCreateWindow(b"4D Tesseract Visualization")
+
+    glClearColor(0.0, 0.0, 0.0, 1.0)
+    glEnable(GL_DEPTH_TEST)
+
     glutDisplayFunc(display)
     glutReshapeFunc(reshape)
     glutTimerFunc(16, update_rotation, 0)
