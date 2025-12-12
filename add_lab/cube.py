@@ -1,9 +1,9 @@
-from OpenGL.GL import *
-from OpenGL.GLUT import *
-from OpenGL.GLU import *
-import numpy as np
 import sys
 
+import numpy as np
+from OpenGL.GL import *
+from OpenGL.GLU import *
+from OpenGL.GLUT import *
 
 rot_angle = 0.0
 VERTICES = np.array([
