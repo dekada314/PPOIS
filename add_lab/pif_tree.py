@@ -24,7 +24,7 @@ def draw_square(z, s, a, color="C0", lw=1):
 
 
 def pythagoras_tree(z, s, a, depth, max_depth, theta):
-    colors = ["#b2225a", "#c33b7e", "#59a6d9", "#66c55b"]
+    colors = ["#b2225a", "#c33b7e","#0b5180", "#59a6d9","#61c8b3", "#66c55b"]
     color = colors[min(depth, len(colors) - 1)]
 
     draw_square(z, s, a, color=color)
