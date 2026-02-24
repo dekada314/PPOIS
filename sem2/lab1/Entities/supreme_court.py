@@ -1,2 +1,0 @@
-class SupremeCourt:
-    pass
