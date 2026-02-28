@@ -75,7 +75,9 @@ def test_tax_change_updates_tax_ratio_for_valid_change(economy):
     assert economy._tax_ratio == pytest.approx(0.22)
 
 
-def test_allocate_budget_reduces_state_budget_and_returns_allocated(economy, monkeypatch):
+def test_allocate_budget_reduces_state_budget_and_returns_allocated(
+    economy, monkeypatch
+):
     monkeypatch.setattr("Entities.economy.randint", lambda _a, _b: 10)
 
     allocated = economy.allocate_budget(max_share=0.25)

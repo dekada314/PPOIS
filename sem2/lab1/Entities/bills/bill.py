@@ -42,5 +42,4 @@ class Bill(ABC):
             raise NotValidBillStateError
 
     @abstractmethod
-    def create_law(self):
-        ...
+    def create_law(self): ...

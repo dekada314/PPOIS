@@ -7,10 +7,8 @@ class EconomicLaw(Law):
     def __init__(self, source_bill_id, tax_delta: int | float):
         super().__init__(source_bill_id)
         self.tax_delta = tax_delta
-    
+
     def apply(self, economy: Economy) -> None:
         if not self.active:
             raise LawCantBeAppliedError
         economy.tax_change(self.tax_delta)
-        
-    

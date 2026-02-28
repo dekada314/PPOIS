@@ -43,7 +43,7 @@ class Economy:
     def _validate_tax_ratio(self, value: float) -> None:
         if not isinstance(value, float) or not 0 < value < 1:
             raise NotValidTaxRatioError
-        
+
     def _validate_tax_change(self, tax_delta: IntFl) -> None:
         if tax_delta / self._tax_ratio > 0.1:
             raise ValueError

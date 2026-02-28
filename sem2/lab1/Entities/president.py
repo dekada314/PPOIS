@@ -13,5 +13,5 @@ class President:
     def veto(self, bill: Bill) -> None:
         bill.veto()
 
-    def approve_state_budget(self,economy: Economy, new_value: int | float) -> None:
+    def approve_state_budget(self, economy: Economy, new_value: int | float) -> None:
         economy.change_state_budget(new_value)

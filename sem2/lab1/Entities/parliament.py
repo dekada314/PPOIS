@@ -17,4 +17,3 @@ class Parliament:
 
     def consider_budget_allocation(self) -> bool:
         return True if random() < 0.9 else False
-        
