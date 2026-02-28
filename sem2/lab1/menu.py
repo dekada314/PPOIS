@@ -8,7 +8,6 @@ state = State("Belarus")
 # print(citizens.mean_salary)
 
 
-state.add_organ('parliament', Parliament())
+state.add_organ("parliament", Parliament())
 print(state)
 # print(state.organs)
-

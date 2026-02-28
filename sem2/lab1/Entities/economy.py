@@ -1,11 +1,15 @@
 from random import randint
 
-from exceptions import NotValidNewMeanSalaryError
-
 from .citizens import Citizens
 from .economic_conditions import EconomicConditions
+from .exceptions import (
+    NotValidStateBudgetUpdateValueError,
+    NotValidStateBudgetValueError,
+    NotValidTaxRatioError,
+)
 
 type IntFl = int | float
+
 
 class Economy:
     def __init__(
@@ -13,40 +17,48 @@ class Economy:
         economic_cond: EconomicConditions,
         inflation_rate: IntFl,
         state_budget: IntFl,
-        income_tax: IntFl,
-        mean_salary: IntFl
+        tax_ratio: IntFl,
     ):
+        self._validate_inflation_rate(inflation_rate)
+        self._validate_state_budget(state_budget)
+        self._validate_tax_ratio(tax_ratio)
+
         self._economic_cond = economic_cond
         self._inflation_rate = inflation_rate
         self._state_budget = state_budget
-        self._income_tax = income_tax
-        self._mean_salary = mean_salary
-        
-    @property
-    def mean_salary(self):
-        return self._mean_salary
-        
-    def _taxation_calculate(self, precent: IntFl):
-        return precent * Citizens.mean_salary * Citizens.total_wa_people
-    
-    def _check_valid_mean_salary(self, new_value: IntFl):
-        if self._mean_salary > new_value:
-            raise NotValidNewMeanSalaryError
-        return True
-        
-    def taxation(self, precent: IntFl) -> str:
-        taxation_calculate = self._taxation_calculate(precent)
-        self._state_budget += taxation_calculate
-        return f"{taxation_calculate} в ходе налогооблажения было добавлено в бюджет"
-        
-    def allocate_budget(self) -> IntFl:
-        return self._state_budget * randint(1,5)
-    
-    def change_mean_salary(self, new_value = IntFl):
-        if self._check_valid_mean_salary(new_value):
-            self._mean_salary = new_value
-            
-        
-        
-        
-        
+        self._tax_ratio = tax_ratio
+
+    def _validate_inflation_rate(self, value: float) -> None:
+        if not isinstance(value, float) or not 0 < value < 1:
+            raise NotValidTaxRatioError
+
+    def _validate_state_budget(self, value: IntFl) -> None:
+        if not isinstance(value, (int, float)) or value < 0:
+            raise NotValidStateBudgetValueError
+
+    def _validate_state_budget_update(self, updated_value: IntFl) -> None:
+        if abs(1 - updated_value / self._state_budget) > 0.2:
+            raise NotValidStateBudgetUpdateValueError
+
+    def _validate_tax_ratio(self, value: float) -> None:
+        if not isinstance(value, float) or not 0 < value < 1:
+            raise NotValidTaxRatioError
+
+    def taxation(self, citizens: Citizens, tax_ratio: IntFl = None) -> None:
+        rate = self._tax_ratio if tax_ratio is None else tax_ratio
+        self._state_budget += citizens.tax_payment(rate)
+
+    def allocate_budget(self, max_share: float = 0.25) -> IntFl:
+        allocated_budget = self._state_budget * randint(5, int(max_share * 100)) / 100
+        self._state_budget -= allocated_budget
+        return allocated_budget
+
+    def change_mean_salary(self, citizens: Citizens, new_value: IntFl) -> None:
+        citizens.update_mean_salary(new_value)
+
+    def apply_infation(self, citizens: Citizens) -> None:
+        citizens.apply_inflation(self._inflation_rate)
+
+    def change_state_budget(self, new_value: IntFl) -> None:
+        self._validate_state_budget_update(new_value)
+        self._state_budget = new_value
