@@ -1,0 +1,139 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+
+class State {
+  +name: str
+  -_organs: dict
+  -_laws: list[Law]
+  -_bills: list[Bill]
+  +organs: str
+  +add_organ(name: str, organ_obj: object): None
+  +remove_organ(name: str): None
+  +register_bill(bill: Bill): None
+  +enact_law(bill: Bill): Law
+}
+
+class Citizens {
+  -_total_population: int
+  -_working_age_ratio: int|float
+  -_mean_salary: int|float
+  +population: int
+  +working_age_peoples: int
+  +mean_salary: int|float
+  +tax_payment(tax_ratio: int|float): int|float
+  +apply_inflation(inflation_rate: int|float): None
+  +update_mean_salary(new_value: int|float): None
+}
+
+class Economy {
+  -_economic_cond: EconomicConditions
+  -_inflation_rate: int|float
+  -_state_budget: int|float
+  -_tax_ratio: int|float
+  +taxation(citizens: Citizens, tax_ratio: int|float=None): None
+  +tax_change(tax_delta: int|float): None
+  +allocate_budget(max_share: float=0.25): int|float
+  +change_mean_salary(citizens: Citizens, new_value: int|float): None
+  +apply_inflation(citizens: Citizens): None
+  +change_state_budget(new_value: int|float): None
+}
+
+enum EconomicConditions {
+  RISE
+  PEAK
+  RECESSION
+  CRISIS
+}
+
+class Infrastructure {
+  -_roads_length: int|float
+  -_social_buildings_count: int
+  -_resource_availability: float
+  +costs: dict
+  +update_parametrs(allocated_budget: int|float): None
+}
+
+class Government {
+  -_prime_minister: str
+  -_prime_minister_deputies: list[str]
+  -_ministries: list[str]
+  +change_mean_salary(citizens: Citizens, new_value: int|float): None
+  +change_prime_minister(parliemant: Parliament, new_prime_minister: str): None
+}
+
+class Parliament {
+  +review(bill: Bill): None
+  +give_permission_to_new_pm(): bool
+  +consider_budget_allocation(): bool
+}
+
+class President {
+  +name: str
+  +age: int
+  +sign(bill: Bill): None
+  +veto(bill: Bill): None
+  +approve_state_budget(economy: Economy, new_value: int|float): None
+}
+
+abstract class Bill {
+  +uuid: UUID
+  +author: str
+  +creation_data: date
+  +state: BillState
+  +submit(): None
+  +review(): None
+  +approve(): None
+  +reject(): None
+  +sign(): None
+  +veto(): None
+  +create_law()
+}
+
+enum BillState {
+  CREATE
+  SUBMITTED
+  UNDER_REVIEW
+  APPROVED_BY_PARLIAMENT
+  REJECTED
+  SIGNED
+  VETOED
+}
+
+class EconomicBill {
+  +tax_delta: int|float
+  +create_law(bill: Bill): EconomicLaw
+}
+
+class Law {
+  +source_bill_id: UUID
+  +active: bool
+  +activate(): None
+  +deactivate(): None
+}
+
+class EconomicLaw {
+  +tax_delta: int|float
+  +apply(economy: Economy): None
+}
+
+Bill <|-- EconomicBill
+Law <|-- EconomicLaw
+
+Bill --> BillState
+Economy --> EconomicConditions
+
+State o-- "0..*" Bill : stores
+State o-- "0..*" Law : enacts
+State o-- "0..*" object : organs
+
+Government ..> Citizens
+Government ..> Parliament
+President ..> Bill
+President ..> Economy
+Parliament ..> Bill
+Economy ..> Citizens
+EconomicLaw ..> Economy
+EconomicBill ..> EconomicLaw
+
+@enduml

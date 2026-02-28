@@ -1,124 +1,124 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-class Государство {
-  -словарь_органов
-  +добавить_орган(название: str, орган: obj): None
-  +убрать_орган(название: str): None
+class State {
+  -organs_dict
+  +add_organ(name: str, organ: obj): None
+  +remove_organ(name: str): None
 }
 
-class Правительство {
-  #премьер_министр
-  #зам_премьер_министра
-  #министры
-  +рассмотреть_законопроект(номер: int): bool
-  +инициировать_законопроект(номер: int, название: str): None
-  +изменение_мин_зарплаты(новое_значение: float): str
+class Government {
+  #prime_minister
+  #deputy_prime_minister
+  #ministers
+  +review_bill(number: int): bool
+  +initiate_bill(number: int, title: str): None
+  +change_min_salary(new_value: float): str
 }
 
-class Парламент {
-  +дача_согласия_на_назначение_премьера(имя: str): bool
-  +инициировать_законопроект(номер: int, название: str): None
-  +рассмотреть_законопроект(номер: int): bool
-  +одобрить_бюджет(величина: float): bool 
+class Parliament {
+  +give_consent_for_pm_appointment(name: str): bool
+  +initiate_bill(number: int, title: str): None
+  +review_bill(number: int): bool
+  +approve_budget(amount: float): bool 
 }
-' #инфраструктура 
+' #infrastructure 
 
-class Президент {
-  -имя
-  -возраст
-  +назначить_премьера(имя: str): str
-  +утверждение_гос_бюджета(новое_значение: float): str   
-  +утвердить_законопроект(номер: int): str
-  +инициировать_законопроект(номер: int, название: str): None
+class President {
+  -name
+  -age
+  +appoint_prime_minister(name: str): str
+  +approve_state_budget(new_value: float): str   
+  +approve_bill(number: int): str
+  +initiate_bill(number: int, title: str): None
 }
-' республиканский бюджет
+' republican budget
 
-class Законопроект {
-  -название
-  -номер
-  -описание
-  +в_процессе_рассмотрения
+class Bill {
+  -title
+  -number
+  -description
+  +under_review
 } 
 
-class Закон {
-  -активный
-  +активировать_закон(номер: int): str
+class Law {
+  -active
+  +activate_law(number: int): str
 }
 
-class Население {
-  -общее_население
-  -процент_нетрудоспособных
-  +средняя_зп
-  +оплата_налогов(процент: float): float
-  +инициировать_законопроект(номер: int) -> str
+class Citizens {
+  -total_population
+  -unemployable_ratio
+  +average_salary
+  +pay_taxes(percent: float): float
+  +initiate_bill(number: int) -> str
 }
 
-class Инфраструктура{
-  -общаяя_протяженность_дорог
-  -колво_соц_зданий
-  -эл_и_вод_снабжение
-  -обновление(бюджет: float): str
+class Infrastructure{
+  -total_road_length
+  -social_buildings_count
+  -electricity_and_water_supply
+  -update(budget: float): str
 }
 
-class Экономика{
-  -состояние
-  -уровень_инфляции
-  -гос_бюджет
-  -подоходный_налог
-  +налогооблажение(процент: float): float
-  +выделить_бюджет(): float
-  +добавить_в_бюджет(сумма: float): str
-  +отнять_из_бюджета(сумма: float): str
+class Economy{
+  -state
+  -inflation_rate
+  -state_budget
+  -income_tax
+  +taxation(percent: float): float
+  +allocate_budget(): float
+  +add_to_budget(amount: float): str
+  +subtract_from_budget(amount: float): str
 }
 
-class Конституция{
-  -колво_законов
-  -разделы
-  -дата_принятия
-  -высшая_юр_сила
-  +добавить_закон(номер: int): str
-  +убрать_закон(номер: int): str
+class Constitution{
+  -laws_count
+  -sections
+  -adoption_date
+  -highest_legal_force
+  +add_law(number: int): str
+  +remove_law(number: int): str
 }
 
-interface Инициатор_законопроекта {
-  инициировать_законопроект()
+interface Bill_Initiator {
+  initiate_bill()
 }
-interface Ревьюер_законопроекта {
-  рассмотреть_законопроект()
-}
-
-abstract class Правовой_акт{
-
+interface Bill_Reviewer {
+  review_bill()
 }
 
+abstract class Legal_Act{
 
-Государство "1" *-- "1" Правительство
-Государство "1" *-- "1" Парламент
-Государство "1" *-- "1" Президент
-Государство "1" *-- "1" Конституция
-Государство "1" *-- "1" Экономика
-Государство "1" *-- "1" Инфраструктура
-Государство "1" *-- "1" Население
-Конституция "1" o-- "1..*" Закон
+}
 
-' Закон "1" --|> "1" Законопроект: наследует
 
-Закон ..|> Правовой_акт
-Законопроект ..|> Правовой_акт
+State "1" *-- "1" Government
+State "1" *-- "1" Parliament
+State "1" *-- "1" President
+State "1" *-- "1" Constitution
+State "1" *-- "1" Economy
+State "1" *-- "1" Infrastructure
+State "1" *-- "1" Citizens
+Constitution "1" o-- "1..*" Law
 
-Президент ..|> Инициатор_законопроекта
-Население ..|> Инициатор_законопроекта
-Парламент ..|> Инициатор_законопроекта
-Правительство ..|> Инициатор_законопроекта
+' Law "1" --|> "1" Bill: inherits
 
-Президент ..|> Ревьюер_законопроекта
-Парламент ..|> Ревьюер_законопроекта
-Правительство ..|> Ревьюер_законопроекта
+Law ..|> Legal_Act
+Bill ..|> Legal_Act
+
+President ..|> Bill_Initiator
+Citizens ..|> Bill_Initiator
+Parliament ..|> Bill_Initiator
+Government ..|> Bill_Initiator
+
+President ..|> Bill_Reviewer
+Parliament ..|> Bill_Reviewer
+Government ..|> Bill_Reviewer
 
 ' ClassName1 o-- ClassName2
 ' ClassName1 *-- ClassName2
-' ClassName3 --|> ClassName4: наследует
+' ClassName3 --|> ClassName4: inherits
 
 
 
