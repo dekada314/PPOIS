@@ -65,6 +65,7 @@ class Citizens:
         self.mean_salary = self._mean_salary * (1 + inflation_rate)
 
     def update_mean_salary(self, new_value: IntFl) -> None:
+        self._validate_mean_salary(new_value)
         self.mean_salary = new_value
 
     def __repr__(self) -> str:

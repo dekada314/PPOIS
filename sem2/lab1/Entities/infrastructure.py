@@ -33,7 +33,7 @@ class Infrastructure:
             raise NotValidSocialBuildingsCountError
 
     def _validate_resource_availability(self, value: float) -> None:
-        if not isinstance(value, float) or not 0 < value < 1:
+        if not isinstance(value, float) or not 0 <= value <= 1:
             raise NotValidResourceAvailabilityError
 
     def update_parametrs(self, allocated_budget: int | float) -> None:
