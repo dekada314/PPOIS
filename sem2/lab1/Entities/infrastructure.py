@@ -37,7 +37,7 @@ class Infrastructure:
             raise NotValidResourceAvailabilityError
 
     def update_parametrs(self, allocated_budget: int | float) -> None:
-        target = randint(0, 98) * 100 // 3
+        target = randint(0, 98) * 100 // 33
         match target:
             case 0:
                 if allocated_budget > self.costs["road"]:

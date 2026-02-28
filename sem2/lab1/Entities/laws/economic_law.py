@@ -9,7 +9,7 @@ class EconomicLaw(Law):
         self.tax_delta = tax_delta
     
     def apply(self, economy: Economy) -> None:
-        if not self.activate:
+        if not self.active:
             raise LawCantBeAppliedError
         economy.tax_change(self.tax_delta)
         

@@ -33,11 +33,11 @@ class Bill(ABC):
         self._require_state(BillState.REJECTED)
         self.state = BillState.SIGNED
 
-    def reject(self):
-        self._require_state(BillState.SIGN)
+    def veto(self):
+        self._require_state(BillState.SIGNED)
         self.state = BillState.VETOED
 
-    def _require_state(self, require_state: BillState) -> bool:
+    def _require_state(self, require_state: BillState) -> None:
         if self.state != require_state:
             raise NotValidBillStateError
 

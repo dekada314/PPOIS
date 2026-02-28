@@ -1,4 +1,3 @@
-from economy import Economy
 from exceptions import (
     NotValidNewMeanSalaryError,
     NotValidPopulationValueError,
@@ -15,6 +14,7 @@ class Citizens:
     ):
         self._validate_population(total_population)
         self._validate_working_age_ratio(working_age_ratio)
+        self._validate_mean_salary(mean_salary)
 
         self._total_population = total_population
         self._working_age_ratio = working_age_ratio
@@ -50,7 +50,7 @@ class Citizens:
             raise NotValidWorkingAgeRatioError
 
     def _validate_mean_salary(self, value: IntFl) -> None:
-        if not isinstance(value, (int, float)):
+        if not isinstance(value, (int, float)) or value < 0:
             raise NotValidNewMeanSalaryError
 
     def _taxation_calculate(self, tax_ratio: IntFl) -> IntFl:
@@ -64,7 +64,7 @@ class Citizens:
     def apply_inflation(self, inflation_rate: IntFl) -> None:
         self.mean_salary = self._mean_salary * (1 + inflation_rate)
 
-    def update_mean_salary(self, new_value=IntFl) -> None:
+    def update_mean_salary(self, new_value: IntFl) -> None:
         self.mean_salary = new_value
 
     def __repr__(self) -> str:

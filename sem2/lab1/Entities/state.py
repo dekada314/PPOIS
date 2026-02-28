@@ -24,7 +24,7 @@ class State:
         self._bills.append(bill)
     
     def enact_law(self, bill: Bill) -> Law:
-        law = bill.create_law()
+        law = bill.create_law(bill)
         law.activate()
         self._laws.append(law)
         return law

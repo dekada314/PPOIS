@@ -1,5 +1,3 @@
-from random import random
-
 from .citizens import Citizens
 from .parliament import Parliament
 

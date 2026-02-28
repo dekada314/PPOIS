@@ -43,12 +43,17 @@ class Economy:
     def _validate_tax_ratio(self, value: float) -> None:
         if not isinstance(value, float) or not 0 < value < 1:
             raise NotValidTaxRatioError
+        
+    def _validate_tax_change(self, tax_delta: IntFl) -> None:
+        if tax_delta / self._tax_ratio > 0.1:
+            raise ValueError
 
     def taxation(self, citizens: Citizens, tax_ratio: IntFl = None) -> None:
         rate = self._tax_ratio if tax_ratio is None else tax_ratio
         self._state_budget += citizens.tax_payment(rate)
 
     def tax_change(self, tax_delta: IntFl) -> None:
+        self._validate_tax_change(tax_delta)
         self._tax_ratio += tax_delta
 
     def allocate_budget(self, max_share: float = 0.25) -> IntFl:
@@ -59,7 +64,7 @@ class Economy:
     def change_mean_salary(self, citizens: Citizens, new_value: IntFl) -> None:
         citizens.update_mean_salary(new_value)
 
-    def apply_infation(self, citizens: Citizens) -> None:
+    def apply_inflation(self, citizens: Citizens) -> None:
         citizens.apply_inflation(self._inflation_rate)
 
     def change_state_budget(self, new_value: IntFl) -> None:
