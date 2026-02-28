@@ -28,11 +28,19 @@ class NotValidStateBudgetUpdateValueError(Exception):
 
 class NotValidRoadsLengthError(Exception):
     """Значение общей протяженности дорог не может быть отрицательным"""
-    
-    
+
+
 class NotValidSocialBuildingsCountError(Exception):
     """Количество соц здания не может быть отрицательным"""
-    
+
 
 class NotValidResourceAvailabilityError(Exception):
     """Значение доли обеспечения ресурсами не может быть вне интервала 0 < rate < 1"""
+
+
+class LawCantBeSignedError(Exception):
+    """Закон не может быть подписан(не та стадия)"""
+
+
+class LawCantBeAppliedError(Exception):
+    """Закон не может быть принят"""

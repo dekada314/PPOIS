@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from datetime import date
 from uuid import UUID, uuid4
 
+from ..exceptions import NotValidBillStateError
 from .bill_state import BillState
-from .exceptions import NotValidBillStateError
 
 
 class Bill(ABC):

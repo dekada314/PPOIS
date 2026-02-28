@@ -6,12 +6,10 @@ from exceptions import (
     NotValidWorkingAgeRatioError,
 )
 
-from .Interfaces.bill_initializer import BillInitializer
-
 type IntFl = int | float
 
 
-class Citizens(BillInitializer):
+class Citizens:
     def __init__(
         self, total_population: int, working_age_ratio: IntFl, mean_salary: IntFl
     ):

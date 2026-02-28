@@ -1,5 +1,5 @@
-from .bill import Bill
-from .law import Law
+from .bills.bill import Bill
+from .laws.law import Law
 
 
 class State:
@@ -23,7 +23,7 @@ class State:
         bill.submit()
         self._bills.append(bill)
     
-    def ennact_law(self, bill: Bill) -> Law:
+    def enact_law(self, bill: Bill) -> Law:
         law = bill.create_law()
         law.activate()
         self._laws.append(law)

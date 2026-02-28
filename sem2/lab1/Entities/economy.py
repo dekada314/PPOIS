@@ -48,6 +48,9 @@ class Economy:
         rate = self._tax_ratio if tax_ratio is None else tax_ratio
         self._state_budget += citizens.tax_payment(rate)
 
+    def tax_change(self, tax_delta: IntFl) -> None:
+        self._tax_ratio += tax_delta
+
     def allocate_budget(self, max_share: float = 0.25) -> IntFl:
         allocated_budget = self._state_budget * randint(5, int(max_share * 100)) / 100
         self._state_budget -= allocated_budget

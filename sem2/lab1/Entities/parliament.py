@@ -1,6 +1,7 @@
 from random import random
 
-from .bill import Bill
+from bills.bill import Bill
+
 from .economy import Economy
 
 

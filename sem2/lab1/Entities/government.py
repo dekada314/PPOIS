@@ -1,12 +1,10 @@
 from random import random
 
 from .citizens import Citizens
-from .Interfaces.bill_considers import BillConsiders
-from .Interfaces.bill_initializer import BillInitializer
 from .parliament import Parliament
 
 
-class Government(BillConsiders, BillInitializer):
+class Government:
     def __init__(
         self,
         prime_minister: str = "",
