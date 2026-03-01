@@ -6,6 +6,7 @@ from .exceptions import (
     NotValidStateBudgetUpdateValueError,
     NotValidStateBudgetValueError,
     NotValidTaxRatioError,
+    TaxChangeTooHighError,
 )
 
 type IntFl = int | float
@@ -46,7 +47,7 @@ class Economy:
 
     def _validate_tax_change(self, tax_delta: IntFl) -> None:
         if tax_delta / self._tax_ratio > 0.1:
-            raise ValueError
+            raise TaxChangeTooHighError
 
     def taxation(self, citizens: Citizens, tax_ratio: IntFl = None) -> None:
         rate = self._tax_ratio if tax_ratio is None else tax_ratio

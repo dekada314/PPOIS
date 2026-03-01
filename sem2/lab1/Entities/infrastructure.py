@@ -1,5 +1,3 @@
-from random import randint
-
 from .exceptions import (
     NotValidResourceAvailabilityError,
     NotValidRoadsLengthError,
@@ -37,18 +35,10 @@ class Infrastructure:
             raise NotValidResourceAvailabilityError
 
     def update_parametrs(self, allocated_budget: int | float) -> None:
-        target = randint(0, 98) * 100 // 33
-        match target:
-            case 0:
-                if allocated_budget > self.costs["road"]:
-                    self._roads_length += allocated_budget // self.costs["road"]
-            case 1:
-                if allocated_budget > self.costs["building"]:
-                    self._social_buildings_count += (
-                        allocated_budget // self.costs["building"]
-                    )
-            case 2:
-                if allocated_budget > self.costs["resources"]:
-                    self._resource_availability += (
-                        allocated_budget // self.costs["resources"]
-                    )
+        if allocated_budget <= 0:
+            return
+
+        self._roads_length += allocated_budget // self.costs["road"]
+        self._social_buildings_count += allocated_budget // self.costs["building"]
+        resource_delta = allocated_budget / (self.costs["resources"] * 100)
+        self._resource_availability = min(1.0, self._resource_availability + resource_delta)

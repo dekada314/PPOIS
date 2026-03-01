@@ -44,3 +44,7 @@ class LawCantBeSignedError(Exception):
 
 class LawCantBeAppliedError(Exception):
     """Закон не может быть принят"""
+
+
+class TaxChangeTooHighError(ValueError):
+    """Ставка не может так сильно измениться"""
