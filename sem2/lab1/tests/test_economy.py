@@ -1,4 +1,5 @@
 import pytest
+
 from Entities.economic_conditions import EconomicConditions
 from Entities.economy import Economy
 from Entities.exceptions import (

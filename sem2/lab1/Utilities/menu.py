@@ -1,23 +1,28 @@
 import sys
 from pathlib import Path
 
-LAB1_DIR = Path(__file__).resolve().parent
+LAB1_DIR = Path(__file__).resolve().parents[1]
 ENTITIES_DIR = LAB1_DIR / "Entities"
+UTILITIES_DIR = LAB1_DIR / "Utilities"
 
 if str(LAB1_DIR) not in sys.path:
     sys.path.insert(0, str(LAB1_DIR))
 if str(ENTITIES_DIR) not in sys.path:
     sys.path.insert(0, str(ENTITIES_DIR))
+if str(UTILITIES_DIR) not in sys.path:
+    sys.path.insert(0, str(UTILITIES_DIR))
 
 from Entities.bills.economic_bill import EconomicBill
 from Entities.citizens import Citizens
 from Entities.economic_conditions import EconomicConditions
 from Entities.economy import Economy
+from Entities.foreign_relations import ForeignRelations
 from Entities.government import Government
 from Entities.infrastructure import Infrastructure
 from Entities.parliament import Parliament
 from Entities.president import President
 from Entities.state import State
+from Utilities.save_manager import SaveManager
 
 
 def read_float(prompt: str) -> float:
@@ -39,6 +44,7 @@ def print_status(
     infrastructure: Infrastructure,
     government: Government,
     president: President,
+    foreign_relations: ForeignRelations,
 ) -> None:
     print("\n--- Состояние ---")
     print(f"Государство: {state.name}")
@@ -53,6 +59,9 @@ def print_status(
     print(f"Дороги: {infrastructure._roads_length}")
     print(f"Соц. здания: {infrastructure._social_buildings_count}")
     print(f"Ресурсы: {infrastructure._resource_availability}")
+    print(f"Уровень безопасности: {foreign_relations.security_level}")
+    print(f"Партнеры: {', '.join(foreign_relations.partner_countries)}")
+    print(f"Фонд соц. поддержки: {foreign_relations.social_support_fund}")
 
 
 def print_law_stats(state: State) -> None:
@@ -78,7 +87,6 @@ def process_economic_bill(
         print("Парламент не принял законопроект.")
         return
 
-    # В текущей реализации классов до подписи нужен reject.
     bill.reject()
     president.sign(bill)
     law = state.enact_law(bill)
@@ -94,10 +102,12 @@ def main() -> None:
     citizens = Citizens(5_000_000, 0.6, 1200)
     economy = Economy(EconomicConditions.RISE, 0.05, 1_000_000, 0.2)
     infrastructure = Infrastructure(10_000, 350, 0.6)
+    foreign_relations = ForeignRelations(["Poland", "Lithuania"])
 
     state.add_organ("parliament", parliament)
     state.add_organ("government", government)
     state.add_organ("president", president)
+    state.add_organ("foreign_relations", foreign_relations)
 
     while True:
         print(
@@ -117,6 +127,10 @@ def main() -> None:
 12. Показать кол-во законов и законопроектов
 13. Добавить орган в государство
 14. Удалить орган из государства
+15. Усилить безопасность
+16. Социальная поддержка граждан
+17. Сохранить состояние программы в JSON
+18. Загрузить состояние программы из JSON
 0. Выход
 """
         )
@@ -124,7 +138,15 @@ def main() -> None:
 
         try:
             if choice == "1":
-                print_status(state, citizens, economy, infrastructure, government, president)
+                print_status(
+                    state,
+                    citizens,
+                    economy,
+                    infrastructure,
+                    government,
+                    president,
+                    foreign_relations,
+                )
             elif choice == "2":
                 economy.taxation(citizens)
                 print("Налоги собраны.")
@@ -177,6 +199,51 @@ def main() -> None:
                 organ_name = read_str("Введите имя органа для удаления: ")
                 state.remove_organ(organ_name)
                 print(f"Орган '{organ_name}' удален.")
+            elif choice == "15":
+                threat_level = read_float("Введите уровень угрозы (0..10): ")
+                new_level = foreign_relations.ensure_security(threat_level)
+                print(f"Уровень безопасности: {new_level}")
+            elif choice == "16":
+                support_ratio = read_float("Введите долю поддержки (0..0.03): ")
+                support_per_worker = foreign_relations.provide_social_support(
+                    citizens, support_ratio
+                )
+                print(
+                    f"Поддержка на работающего гражданина: {support_per_worker:.2f}"
+                )
+            elif choice == "17":
+                file_name = read_str("Файл сохранения (по умолчанию state_snapshot.json): ")
+                target = file_name or "state_snapshot.json"
+                saved_to = SaveManager.save_program_state(
+                    target,
+                    state,
+                    citizens,
+                    economy,
+                    infrastructure,
+                    government,
+                    president,
+                    foreign_relations,
+                )
+                print(f"Состояние сохранено: {saved_to}")
+            elif choice == "18":
+                file_name = read_str(
+                    "Файл загрузки (по умолчанию state_snapshot.json): "
+                )
+                target = file_name or "state_snapshot.json"
+                loaded_state = SaveManager.load_program_state(target)
+                state = loaded_state["state"]
+                citizens = loaded_state["citizens"]
+                economy = loaded_state["economy"]
+                infrastructure = loaded_state["infrastructure"]
+                government = loaded_state["government"]
+                president = loaded_state["president"]
+                foreign_relations = loaded_state["foreign_relations"]
+                if isinstance(loaded_state["parliament"], Parliament):
+                    parliament = loaded_state["parliament"]
+                else:
+                    parliament = Parliament()
+                    state.add_organ("parliament", parliament)
+                print(f"Состояние загружено: {loaded_state['file_path']}")
             elif choice == "0":
                 print("Завершение работы.")
                 break

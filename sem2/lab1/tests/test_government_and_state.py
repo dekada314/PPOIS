@@ -1,4 +1,5 @@
 import pytest
+
 from Entities.bills.bill_state import BillState
 from Entities.bills.economic_bill import EconomicBill
 from Entities.exceptions import NotValidBillStateError

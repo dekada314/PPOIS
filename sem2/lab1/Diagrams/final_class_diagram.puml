@@ -62,6 +62,26 @@ class Government {
   +change_prime_minister(parliemant: Parliament, new_prime_minister: str): None
 }
 
+class ForeignRelations {
+  -_partner_countries: set[str]
+  -_security_level: int|float
+  -_social_support_fund: int|float
+  -_security_events: list[str]
+  +partner_countries: list[str]
+  +security_level: int|float
+  +social_support_fund: int|float
+  +security_events: list[str]
+  +add_partner_country(country_name: str): None
+  +remove_partner_country(country_name: str): None
+  +ensure_security(threat_level: int|float=1): int|float
+  +provide_social_support(citizens: Citizens, support_ratio: float=0.01): int|float
+}
+
+class SaveManager {
+  +save_program_state(...): Path
+  +load_program_state(...): dict[str, Any]
+}
+
 class Parliament {
   +review(bill: Bill): None
   +give_permission_to_new_pm(): bool
@@ -129,6 +149,14 @@ State o-- "0..*" object : organs
 
 Government ..> Citizens
 Government ..> Parliament
+ForeignRelations ..> Citizens
+SaveManager ..> State
+SaveManager ..> Citizens
+SaveManager ..> Economy
+SaveManager ..> Infrastructure
+SaveManager ..> Government
+SaveManager ..> President
+SaveManager ..> ForeignRelations
 President ..> Bill
 President ..> Economy
 Parliament ..> Bill

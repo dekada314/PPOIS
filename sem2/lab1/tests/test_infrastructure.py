@@ -1,4 +1,5 @@
 import pytest
+
 from Entities.exceptions import (
     NotValidResourceAvailabilityError,
     NotValidRoadsLengthError,

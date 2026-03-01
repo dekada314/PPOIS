@@ -1,0 +1,47 @@
+{
+  "state": {
+    "name": "Belarus",
+    "organs": [
+      "parliament",
+      "government",
+      "president",
+      "foreign_relations"
+    ],
+    "laws_count": 0,
+    "bills_count": 0
+  },
+  "citizens": {
+    "population": 5000000,
+    "working_age_peoples": 3000000,
+    "mean_salary": 1200
+  },
+  "economy": {
+    "economic_condition": "Rise",
+    "inflation_rate": 0.05,
+    "state_budget": 1000000,
+    "tax_ratio": 0.2
+  },
+  "infrastructure": {
+    "roads_length": 10000,
+    "social_buildings_count": 350,
+    "resource_availability": 0.6
+  },
+  "government": {
+    "prime_minister": "И.О. Премьер-министра",
+    "prime_minister_deputies": [],
+    "ministries": []
+  },
+  "president": {
+    "name": "Президент",
+    "age": 50
+  },
+  "foreign_relations": {
+    "partner_countries": [
+      "Lithuania",
+      "Poland"
+    ],
+    "security_level": 50,
+    "social_support_fund": 0,
+    "security_events": []
+  }
+}
