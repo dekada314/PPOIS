@@ -21,7 +21,7 @@
 - `Infrastructure` — дороги, соц. здания, доступность ресурсов
 - `Government`, `Parliament`, `President` — логика институтов власти
 - `ForeignRelations` — партнёры, уровень безопасности, фонд социальной поддержки
-- `SaveManager` — сохранение/загрузка состояния в `Utilities/save_manager.py`
+- `SaveManager` — сохранение/загрузка состояния
 
 Краткая схема API (частично)
 
@@ -54,12 +54,10 @@ pytest -v --cov
 
 ## Подробное описание всех классов
 
-Ниже приведено подробное описание классов, реализованных в `sem2/lab1/Entities` и `sem2/lab1/Utilities` — поля (с типами) и основные методы с кратким описанием поведения.
-
-- `State` (file: `Entities/state.py`)
+- `State`
   - Поля:
     - `name: str` — имя государства
-    - `_organs: dict` — зарегистрированные органы (map name -> объект)
+    - `_organs: dict` — зарегистрированные органы (name -> объект)
     - `_laws: list[Law]` — список принятых законов
     - `_bills: list[Bill]` — список зарегистрированных законопроектов
   - Методы:
@@ -68,8 +66,8 @@ pytest -v --cov
     - `register_bill(bill: Bill) -> None` — зарегистрировать законопроект (вызывает `bill.submit()`)
     - `enact_law(bill: Bill) -> Law` — создать закон из законопроекта (`bill.create_law`) и активировать его
 
-- `Citizens` (file: `Entities/citizens.py`)
-  - Поля (инкапсулированы):
+- `Citizens`
+  - Поля:
     - `_total_population: int` — общее население
     - `_working_age_ratio: int|float` — доля трудоспособных
     - `_mean_salary: int|float` — средняя зарплата
@@ -81,11 +79,11 @@ pytest -v --cov
     - `apply_inflation(inflation_rate: float) -> None` — увеличивает среднюю зарплату с проверками
     - `update_mean_salary(new_value: float) -> None` — валидация и обновление зарплаты
 
-- `EconomicConditions` (file: `Entities/economic_conditions.py`)
+- `EconomicConditions`
   - Enum строковых значений: `RISE`, `PEAK`, `RECESSION`, `CRISIS` — описывает состояние экономики
 
-- `Economy` (file: `Entities/economy.py`)
-  - Поля (инкапсулированы):
+- `Economy`
+  - Поля:
     - `_economic_cond: EconomicConditions`
     - `_inflation_rate: float`
     - `_state_budget: int|float`
@@ -98,16 +96,16 @@ pytest -v --cov
     - `apply_inflation(citizens: Citizens) -> None` — применяет инфляцию к `Citizens`
     - `change_state_budget(new_value: float) -> None` — смена бюджета с валидацией (макс ±20%)
 
-- `Infrastructure` (file: `Entities/infrastructure.py`)
-  - Поля (инкапсулированы):
+- `Infrastructure`
+  - Поля:
     - `_roads_length: int|float`
     - `_social_buildings_count: int`
     - `_resource_availability: float` (0..1)
-    - `costs: dict` — словарь цен для расчётов (road/building/resources)
+    - `costs: dict` — словарь цен для расчётов
   - Методы:
     - `update_parametrs(allocated_budget: int|float) -> None` — увеличивает параметры инфраструктуры пропорционально выделенному бюджету
 
-- `Government` (file: `Entities/government.py`)
+- `Government`
   - Поля (инкапсулированы):
     - `_prime_minister: str`
     - `_prime_minister_deputies: list[str]`
@@ -116,13 +114,13 @@ pytest -v --cov
     - `change_mean_salary(citizens: Citizens, new_value: float) -> None` — делегирует изменение зарплаты
     - `change_prime_minister(parliament: Parliament, new_prime_minister: str) -> None` — просит разрешение у парламента и обновляет премьер-министра
 
-- `Parliament` (file: `Entities/parliament.py`)
+- `Parliament`
   - Методы:
     - `review(bill: Bill) -> None` — рассматривает законопроект, переводя его через стадии (review -> approve/reject)
     - `give_permission_to_new_pm() -> bool` — случайное одобрение назначения премьер-министра
     - `consider_budget_allocation() -> bool` — случайное решение об одобрении выделения бюджета
 
-- `President` (file: `Entities/president.py`)
+- `President`
   - Поля:
     - `name: str`
     - `age: int`
@@ -131,8 +129,8 @@ pytest -v --cov
     - `veto(bill: Bill) -> None` — вызывает `bill.veto()`
     - `approve_state_budget(economy: Economy, new_value: float) -> None` — делегирует изменение бюджета в `Economy`
 
-- `ForeignRelations` (file: `Entities/foreign_relations.py`)
-  - Поля (инкапсулированы):
+- `ForeignRelations`
+  - Поля:
     - `_partner_countries: set[str]`
     - `_security_level: int|float`
     - `_social_support_fund: int|float`
@@ -142,18 +140,18 @@ pytest -v --cov
     - `ensure_security(threat_level: float = 1) -> float` — повышает уровень безопасности, регистрирует событие
     - `provide_social_support(citizens: Citizens, support_ratio: float = 0.01) -> float` — выдаёт поддержку и увеличивает фонд соц. поддержки
 
-- `Bill` (abstract, file: `Entities/bills/bill.py`)
+- `Bill`
   - Поля:
     - `uuid: UUID` — уникальный идентификатор
     - `author: str`
     - `creation_data: date`
     - `state: BillState` — текущее состояние (enum)
-  - Методы (реализованные):
+  - Методы:
     - `submit()`, `review()`, `approve()`, `reject()`, `sign()`, `veto()` — переводят состояние между шагами (с проверками `_require_state`)
     - `_require_state(require_state: BillState) -> None` — приватная проверка правильности перехода
     - `create_law()` — абстрактный метод, должен возвращать объект `Law`
 
-- `BillState` (file: `Entities/bills/bill_state.py`)
+- `BillState`
   - Enum состояний: `CREATE`, `SUBMITTED`, `UNDER_REVIEW`, `APPROVED_BY_PARLIAMENT`, `REJECTED`, `SIGNED`, `VETOED`
 
 - `EconomicBill` (file: `Entities/bills/economic_bill.py`) — наследует `Bill`
@@ -162,20 +160,20 @@ pytest -v --cov
   - Методы:
     - `create_law(bill: Bill) -> EconomicLaw` — проверяет, что законопроект подписан, и возвращает `EconomicLaw`
 
-- `Law` (file: `Entities/laws/law.py`)
+- `Law`
   - Поля:
     - `source_bill_id: UUID` — id исходного законопроекта
     - `active: bool` — флаг активации
   - Методы:
     - `activate()` / `deactivate()` — переключают флаг `active`
 
-- `EconomicLaw` (file: `Entities/laws/economic_law.py`) — наследует `Law`
+- `EconomicLaw` — наследует `Law`
   - Поля:
     - `tax_delta: int|float`
   - Методы:
     - `apply(economy: Economy) -> None` — если закон активен, вызывает `economy.tax_change(self.tax_delta)`, иначе бросает `LawCantBeAppliedError`
 
-- `SaveManager` (file: `Utilities/save_manager.py`)
+- `SaveManager`
   - Статические/классовые методы:
     - `_resolve_path(file_path: str|Path) -> Path` — нормализует путь (относительный к каталогу `Utilities`)
     - `save_program_state(file_path, state, citizens, economy, infrastructure, government, president, foreign_relations) -> Path` — собирает словарь-данные и сохраняет JSON
@@ -183,5 +181,3 @@ pytest -v --cov
 
 - `exceptions` (file: `Entities/exceptions.py`) — кастомные исключения:
   - `NotValidNewMeanSalaryError`, `NotValidPopulationValueError`, `NotValidWorkingAgeRatioError`, `NotValidBillStateError`, `NotValidTaxRatioError`, `NotValidStateBudgetValueError`, `NotValidStateBudgetUpdateValueError`, `NotValidRoadsLengthError`, `NotValidSocialBuildingsCountError`, `NotValidResourceAvailabilityError`, `LawCantBeSignedError`, `LawCantBeAppliedError`, `TaxChangeTooHighError`
-
-Если нужно, могу расширить этот раздел — добавить сигнатуры функций с типами аргументов и возвращаемых значений для каждого метода (например, показать все приватные методы и точные типы), или сгенерировать таблицу/диаграмму классов. Какой формат предпочитаете: текстовый подробный список (как сейчас), таблица или диаграмма?
