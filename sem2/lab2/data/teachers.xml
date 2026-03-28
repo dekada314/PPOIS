@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<teachers>
+  <teacher>
+    <id>1</id>
+    <faculty>a</faculty>
+    <department>b</department>
+    <first_name>fn</first_name>
+    <last_name>lm</last_name>
+    <middle_name>mn</middle_name>
+    <academic_title>at</academic_title>
+    <academic_degree>ad</academic_degree>
+    <work_experience>5</work_experience>
+  </teacher>
+  <teacher>
+    <id>12</id>
+    <faculty>a</faculty>
+    <department>b</department>
+    <first_name>fn</first_name>
+    <last_name>lm</last_name>
+    <middle_name>mn</middle_name>
+    <academic_title>at</academic_title>
+    <academic_degree>ad</academic_degree>
+    <work_experience>5</work_experience>
+  </teacher>
+</teachers>
