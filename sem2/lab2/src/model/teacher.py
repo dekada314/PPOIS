@@ -3,7 +3,6 @@ from dataclasses import dataclass, field
 
 @dataclass(slots=True)
 class Teacher:
-    id: int = 0
     faculty: str = ""
     department: str = ""
     first_name: str = ""
@@ -21,8 +20,10 @@ class Teacher:
         return cls(
             faculty=row[0],
             department=row[1],
-            fio=row[2],
-            academic_title=row[3],
-            academic_degree=row[4],
-            work_experience=row[5],
+            first_name=row[2],
+            last_name=row[3],
+            middle_name=row[4],
+            academic_title=row[5],
+            academic_degree=row[6],
+            work_experience=row[7],
         )

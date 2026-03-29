@@ -29,13 +29,13 @@ class Database:
             conn.commit()
 
     def add_teacher(self, teacher: Teacher):
-        with sqlite3.connect(f"{self.db_name}") as conn:
+        with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
 
             cursor.execute(
                 """
-                    INSERT INTO teachers (faculty, deprtment_name, fio, academic_title, academic_degree, work_experience)
-                    VALUES(?, ?, ?, ?, ?, ?)
+                    INSERT INTO teachers (faculty, department, first_name, last_name, middle_name, academic_title, academic_degree, work_experience)
+                    VALUES(?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                 (
                     teacher.faculty,
@@ -86,13 +86,12 @@ class Database:
             rows = cursor.fetchall()
             return [row[0] for row in rows]
 
-    def get_teachers_page(self, page_id: int, page_size: int):
-        offset = (page_id - 1) * page_size
-        with sqlite3.connect(f"{self.db_name}") as conn:
+    def get_teachers_page(self, limit: int, offset: int):
+        with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
 
             cursor.execute(
-                "SELECT * FROM teachers LIMIT ? OFFSET ?", (page_size, offset)
+                "SELECT * FROM teachers LIMIT ? OFFSET ?", (limit, offset)
             )
             rows = cursor.fetchall()
             return [Teacher.get_teacher_from_row(row) for row in rows]

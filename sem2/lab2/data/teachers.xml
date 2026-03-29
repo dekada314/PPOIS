@@ -1,25 +1,23 @@
 <?xml version="1.0" ?>
 <teachers>
   <teacher>
-    <id>1</id>
-    <faculty>a</faculty>
-    <department>b</department>
-    <first_name>fn</first_name>
-    <last_name>lm</last_name>
-    <middle_name>mn</middle_name>
-    <academic_title>at</academic_title>
-    <academic_degree>ad</academic_degree>
-    <work_experience>5</work_experience>
+    <faculty>ФИТУ</faculty>
+    <department>ИИТ</department>
+    <first_name>Анастасия</first_name>
+    <last_name>Балабенко</last_name>
+    <middle_name>Сергеевна</middle_name>
+    <academic_title>ббб</academic_title>
+    <academic_degree>ввв</academic_degree>
+    <work_experience>1</work_experience>
   </teacher>
   <teacher>
-    <id>12</id>
-    <faculty>a</faculty>
-    <department>b</department>
-    <first_name>fn</first_name>
-    <last_name>lm</last_name>
-    <middle_name>mn</middle_name>
-    <academic_title>at</academic_title>
-    <academic_degree>ad</academic_degree>
-    <work_experience>5</work_experience>
+    <faculty>ФИТУ</faculty>
+    <department>ИИТ</department>
+    <first_name>Матвей</first_name>
+    <last_name>Неводниченко</last_name>
+    <middle_name>Валерьевич</middle_name>
+    <academic_title>asdf</academic_title>
+    <academic_degree>dfgfdg</academic_degree>
+    <work_experience>2</work_experience>
   </teacher>
 </teachers>

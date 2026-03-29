@@ -1,60 +1,88 @@
 import sys
+from dataclasses import asdict
 
+from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
     QApplication,
     QHBoxLayout,
+    QHeaderView,
     QLabel,
+    QMainWindow,
     QPushButton,
+    QStackedWidget,
+    QTableWidget,
+    QTableWidgetItem,
+    QTreeWidget,
     QVBoxLayout,
     QWidget,
 )
+from src.view.pagination import Pagination
 
 
-class MainWindow(QWidget):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         
-        self.setWindowTitle("легенда")
+        self.setWindowTitle("Учителя")
         self.resize(900, 600)
         
-        self.label = QLabel("кликай", self)
-        self.output = QLabel("ответ", self)
-        self.counter_label = QLabel("0:", self)
+        main_widget = QWidget()
+        self.layout = QVBoxLayout(main_widget)
+        self.setCentralWidget(main_widget)
         
-        self.counter = 0
-        
-        self.button1 = QPushButton("Привет")
-        self.button2 = QPushButton("Пока")
-        self.button3 = QPushButton("Поднять счетчик")
-        
-        layout = QHBoxLayout()
-        layout.addWidget(self.label)
-        layout.addWidget(self.output)
-        layout.addWidget(self.counter_label)
-        layout.addWidget(self.button1)
-        layout.addWidget(self.button2)
-        layout.addWidget(self.button3)
-        
-        self.setLayout(layout)
+        self.view_stack = QStackedWidget()
 
+        self.table = QTableWidget()
+        self.table.setColumnCount(8)
+        self.table.setHorizontalHeaderLabels(["Факультет", "Кафедра", "Имя", "Фамилия", "Отчество", "Ученое звание", "Ученая степень", "Стаж работы"])
+        self.table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         
-        self.button1.clicked.connect(self.say_hello)
-        self.button2.clicked.connect(self.say_bye)
-        self.button3.clicked.connect(self.increase_counter)
+        self.tree = QTreeWidget()
+        self.tree.setHeaderLabels(["Данные учителя"])
+
+        self.view_stack.addWidget(self.table)
+        self.view_stack.addWidget(self.tree)
         
+        self.paginator = Pagination()
         
-    def say_hello(self):
-        self.output.setText("Привет!")
+        self.layout.addWidget(self.view_stack)
+        self.layout.addWidget(self.paginator)
         
-    def say_bye(self):
-        self.output.setText("Пока!")
+        self._create_menu_bar()
         
-    def increase_counter(self):
-        self.counter += 1
-        self.counter_label.setText(str(self.counter))
+    def update_table(self, teachers):
+        self.table.setRowCount(len(teachers))
+        for row_idx, row in enumerate(teachers):
+            self.table.insertRow(row_idx)
+            for col_idx, (key, value) in enumerate(asdict(row).items()):
+                self.table.setItem(row_idx, col_idx, QTableWidgetItem(str(value)))
         
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec())
+    def _create_menu_bar(self):
+        menu_bar = self.menuBar()
+        
+        operation_menu = menu_bar.addMenu("Операции")
+        
+        self.addition_action = QAction("Сохранение", self)
+        self.delete_action = QAction("Удаление", self)
+        self.search_action = QAction("Поиск", self)
+        
+        operation_menu.addAction(self.addition_action)
+        operation_menu.addAction(self.delete_action)
+        operation_menu.addAction(self.search_action)
+        
+        file_menu = menu_bar.addMenu("Файл")
+        
+        self.export_into_xml = QAction("Сохранить в xml", self)
+        self.import_from_xml = QAction("Извлечь из xml", self)
+        
+        file_menu.addAction(self.export_into_xml)
+        file_menu.addAction(self.import_from_xml)
+        
+        view_menu = menu_bar.addMenu("Вид")
+        
+        self.table_view = QAction("В виде таблицы", self)
+        self.tree_view = QAction("В виде дерева", self)
+        
+        view_menu.addAction(self.table_view)
+        view_menu.addAction(self.tree_view)
+        
