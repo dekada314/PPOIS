@@ -51,7 +51,6 @@ class MainWindow(QMainWindow):
         self._create_menu_bar()
         
     def update_table(self, teachers):
-        self.table.setRowCount(len(teachers))
         for row_idx, row in enumerate(teachers):
             self.table.insertRow(row_idx)
             for col_idx, (key, value) in enumerate(asdict(row).items()):

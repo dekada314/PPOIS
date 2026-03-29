@@ -31,12 +31,5 @@ class SAXParser(handler.ContentHandler):
     def characters(self, content):
         subnode_text = content.strip()
         self.buffer += subnode_text
-        
 
-if __name__ == "__main__":
-    parser = make_parser()
-    sax_handler = SAXParser()
-    parser.setContentHandler(sax_handler)
-    parser.parse(config.TEACHER_XML_PATH)
-    print(sax_handler.teachers)
         

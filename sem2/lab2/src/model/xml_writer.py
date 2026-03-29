@@ -33,9 +33,3 @@ class DOMParser:
     def _write_to_file(self, file_path: str) -> None:
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(self.doc.toprettyxml(indent="  "))
-
-
-if __name__ == "__main__":
-    parser = DOMParser()
-    teachers = [Teacher(1, "a", "b", "fn", "lm", "mn", "at", "ad", 5), Teacher(12, "a", "b", "fn", "lm", "mn", "at", "ad", 5)]
-    parser.parse_doc(teachers,config.TEACHER_XML_PATH)

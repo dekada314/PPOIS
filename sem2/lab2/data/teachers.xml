@@ -1,23 +1,503 @@
 <?xml version="1.0" ?>
 <teachers>
   <teacher>
-    <faculty>ФИТУ</faculty>
+    <faculty>ФКСИС</faculty>
     <department>ИИТ</department>
+    <first_name>Виктория</first_name>
+    <last_name>Андриевич</last_name>
+    <middle_name>Сергеевна</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>14</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>ИТАС</department>
+    <first_name>Андрей</first_name>
+    <last_name>Аникеенко</last_name>
+    <middle_name>Дмитриевич</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>6</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>СУ</department>
+    <first_name>Богдан</first_name>
+    <last_name>Анкуда</last_name>
+    <middle_name>Викторович</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>2</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ПОИТ</department>
+    <first_name>Юрий</first_name>
+    <last_name>Ануфриев</last_name>
+    <middle_name>Сергеевич</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>28</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>ИИТП</department>
     <first_name>Анастасия</first_name>
     <last_name>Балабенко</last_name>
     <middle_name>Сергеевна</middle_name>
-    <academic_title>ббб</academic_title>
-    <academic_degree>ввв</academic_degree>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>11</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>ВМ</department>
+    <first_name>Богдана</first_name>
+    <last_name>Баленкова</last_name>
+    <middle_name>Игоревна</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>8</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>ГД</department>
+    <first_name>Владислав</first_name>
+    <last_name>Бибко</last_name>
+    <middle_name>Викторович</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
     <work_experience>1</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>ИИТ</department>
+    <first_name>Анна</first_name>
+    <last_name>Васкан</last_name>
+    <middle_name>Дмитриевна</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат педагогических наук</academic_degree>
+    <work_experience>15</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ИТАС</department>
+    <first_name>Владислав</first_name>
+    <last_name>Воинов</last_name>
+    <middle_name>Сергеевич</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор физико-математических наук</academic_degree>
+    <work_experience>32</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>СУ</department>
+    <first_name>Ксения</first_name>
+    <last_name>Ганецкая</last_name>
+    <middle_name>Яновна</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>7</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>ПОИТ</department>
+    <first_name>Алина</first_name>
+    <last_name>Григорчик</last_name>
+    <middle_name>Дмитриевна</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>19</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>ИИТП</department>
+    <first_name>Егор</first_name>
+    <last_name>Жданюк</last_name>
+    <middle_name>Дмитриевич</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>3</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>ВМ</department>
+    <first_name>Иван</first_name>
+    <last_name>Жилин</last_name>
+    <middle_name>Николаевич</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>26</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ГД</department>
+    <first_name>Иван</first_name>
+    <last_name>Заборовский</last_name>
+    <middle_name>Викторович</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>9</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>ИИТ</department>
+    <first_name>Вероника</first_name>
+    <last_name>Кравцова</last_name>
+    <middle_name>Кирилловна</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>13</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>ИТАС</department>
+    <first_name>Анна</first_name>
+    <last_name>Крамич</last_name>
+    <middle_name>Андреевна</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>2</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>СУ</department>
+    <first_name>Тимур</first_name>
+    <last_name>Миронов</last_name>
+    <middle_name>Эрнестович</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>35</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>ПОИТ</department>
+    <first_name>Егор</first_name>
+    <last_name>Мухомедзянов</last_name>
+    <middle_name>Сергеевич</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>5</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ИИТП</department>
+    <first_name>Матвей</first_name>
+    <last_name>Неводниченко</last_name>
+    <middle_name>Валерьевич</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>10</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>ВМ</department>
+    <first_name>Юлия</first_name>
+    <last_name>Рябая</last_name>
+    <middle_name>Сергеевна</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>1</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>ГД</department>
+    <first_name>Станислав</first_name>
+    <last_name>Савошинский</last_name>
+    <middle_name>Викторович</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор физико-математических наук</academic_degree>
+    <work_experience>29</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
     <department>ИИТ</department>
-    <first_name>Матвей</first_name>
-    <last_name>Неводниченко</last_name>
-    <middle_name>Валерьевич</middle_name>
-    <academic_title>asdf</academic_title>
-    <academic_degree>dfgfdg</academic_degree>
+    <first_name>Алексей</first_name>
+    <last_name>Савченко</last_name>
+    <middle_name>Дмитриевич</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>17</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>ИТАС</department>
+    <first_name>Илья</first_name>
+    <last_name>Саевич</last_name>
+    <middle_name>Андреевич</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>7</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>СУ</department>
+    <first_name>Марк</first_name>
+    <last_name>Санюк</last_name>
+    <middle_name>Игоревич</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
     <work_experience>2</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>ПОИТ</department>
+    <first_name>Иван</first_name>
+    <last_name>Синюкович</last_name>
+    <middle_name>Дмитриевич</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>12</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>ИИТП</department>
+    <first_name>Никита</first_name>
+    <last_name>Соловьёв</last_name>
+    <middle_name>Леонидович</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>31</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>ВМ</department>
+    <first_name>Михаил</first_name>
+    <last_name>Сухоруков</last_name>
+    <middle_name>Артурович</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>8</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>ГД</department>
+    <first_name>Павел</first_name>
+    <last_name>Туровец</last_name>
+    <middle_name>Дмитриевич</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>16</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ИИТ</department>
+    <first_name>Егор</first_name>
+    <last_name>Федосов</last_name>
+    <middle_name>Константинович</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>1</work_experience>
+  </teacher>
+<teacher>
+    <faculty>ФИБ</faculty>
+    <department>ИИТ</department>
+    <first_name>Александр</first_name>
+    <last_name>Савельев</last_name>
+    <middle_name>Вадимович</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор физико-математических наук</academic_degree>
+    <work_experience>30</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>ИТАС</department>
+    <first_name>Эдуард</first_name>
+    <last_name>Тарасов</last_name>
+    <middle_name>Витальевич</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>2</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>СУ</department>
+    <first_name>Нелли</first_name>
+    <last_name>Богданова</last_name>
+    <middle_name>Григорьевна</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>9</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>ПОИТ</department>
+    <first_name>Клим</first_name>
+    <last_name>Щербаков</last_name>
+    <middle_name>Денисович</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>17</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>ИИТП</department>
+    <first_name>Стелла</first_name>
+    <last_name>Королёва</last_name>
+    <middle_name>Аркадьевна</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>25</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ВМ</department>
+    <first_name>Юлиан</first_name>
+    <last_name>Родионов</last_name>
+    <middle_name>Андреевич</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>1</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>ГД</department>
+    <first_name>Алина</first_name>
+    <last_name>Цветкова</last_name>
+    <middle_name>Максимовна</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>6</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>ИИТ</department>
+    <first_name>Вадим</first_name>
+    <last_name>Чесноков</last_name>
+    <middle_name>Анатольевич</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>14</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>ИТАС</department>
+    <first_name>Яна</first_name>
+    <last_name>Шевцова</last_name>
+    <middle_name>Дмитриевна</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>33</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>СУ</department>
+    <first_name>Демьян</first_name>
+    <last_name>Фомин</last_name>
+    <middle_name>Вячеславович</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>2</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ПОИТ</department>
+    <first_name>Ева</first_name>
+    <last_name>Блинова</last_name>
+    <middle_name>Егоровна</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>7</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>ИИТП</department>
+    <first_name>Платон</first_name>
+    <last_name>Шубин</last_name>
+    <middle_name>Никитич</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат физико-математических наук</academic_degree>
+    <work_experience>16</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>ВМ</department>
+    <first_name>Лариса</first_name>
+    <last_name>Мухина</last_name>
+    <middle_name>Антоновна</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>29</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>ГД</department>
+    <first_name>Роберт</first_name>
+    <last_name>Быков</last_name>
+    <middle_name>Ильич</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>1</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>ИИТ</department>
+    <first_name>Милана</first_name>
+    <last_name>Дьячкова</last_name>
+    <middle_name>Кирилловна</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>5</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ИТАС</department>
+    <first_name>Святослав</first_name>
+    <last_name>Назаров</last_name>
+    <middle_name>Валерьевич</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>13</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>СУ</department>
+    <first_name>Агата</first_name>
+    <last_name>Крюкова</last_name>
+    <middle_name>Юрьевна</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>27</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>ПОИТ</department>
+    <first_name>Филипп</first_name>
+    <last_name>Галкин</last_name>
+    <middle_name>Матвеевич</middle_name>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>3</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>ИИТП</department>
+    <first_name>Азалия</first_name>
+    <last_name>Панфилова</last_name>
+    <middle_name>Руслановна</middle_name>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>8</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>ВМ</department>
+    <first_name>Елисей</first_name>
+    <last_name>Львов</last_name>
+    <middle_name>Артемович</middle_name>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>10</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ГД</department>
+    <first_name>Кира</first_name>
+    <last_name>Маслова</last_name>
+    <middle_name>Данииловна</middle_name>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор физико-математических наук</academic_degree>
+    <work_experience>35</work_experience>
   </teacher>
 </teachers>

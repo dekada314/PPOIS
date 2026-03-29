@@ -18,12 +18,12 @@ class Teacher:
             return None
 
         return cls(
-            faculty=row[0],
-            department=row[1],
-            first_name=row[2],
-            last_name=row[3],
-            middle_name=row[4],
-            academic_title=row[5],
-            academic_degree=row[6],
-            work_experience=row[7],
+            faculty=row[1],
+            department=row[2],
+            first_name=row[3],
+            last_name=row[4],
+            middle_name=row[5],
+            academic_title=row[6],
+            academic_degree=row[7],
+            work_experience=row[8],
         )

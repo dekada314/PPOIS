@@ -18,11 +18,11 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
-
+ 
 
 class Pagination(QWidget):
-    page_changed = pyqtSignal(str)
-    page_size_changed = pyqtSignal(int)
+    page_changed = pyqtSignal()
+    page_size_changed = pyqtSignal()
     
     def __init__(self):
         super().__init__()
@@ -30,7 +30,7 @@ class Pagination(QWidget):
         self.curr_page = 1
         self.page_size = 10
         self.total_records = 0
-        self.total_pages = 1
+        self.total_pages = 5
         
         layout = QHBoxLayout(self)
         layout.addWidget(QLabel("Записей на стр:"))
@@ -59,19 +59,24 @@ class Pagination(QWidget):
         
         layout.addSpacerItem(QSpacerItem(20, 10, QSizePolicy.Policy.Expanding))
         
-        self.total_info = QLabel(f"Всего записей: {self.total_pages}")
+        self.total_info = QLabel(f"Всего записей: 0")
+        layout.addWidget(self.total_info)
+        
         
         self.to_first_page.clicked.connect(self.go_to_first_page)
         self.to_prev_page.clicked.connect(self.go_to_prev_page)
         self.to_next_page.clicked.connect(self.go_to_next_page)
         self.to_last_page.clicked.connect(self.go_to_last_page)
         
-    def update_table(self):
-        pass
-    
+    def update_values(self, total_records: int):
+        self.total_records = total_records
+        self.total_pages = max(1, self.total_records // self.page_size)
+        
+        self.total_info.setText(f"Всего: {self.total_records}")
     def update_page_size(self):
         self.curr_page = 1
         self.page_size_changed.emit()
+        self.page_changed.emit()
     
     def go_to_first_page(self):
         if self.curr_page != 1:
