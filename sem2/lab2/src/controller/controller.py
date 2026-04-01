@@ -23,19 +23,23 @@ class Controller:
         self.update_display()
 
     def _connect(self):
-        # self.view.addition_action.triggered.connect()
-        # self.view.cha
         self.view.paginator.page_changed.connect(self.update_display)
         self.view.addition_action.triggered.connect(self.show_add_dialog)
         self.view.search_action.triggered.connect(self.show_search_dialog)
         self.view.delete_action.triggered.connect(self.show_delete_dialog)
         self.view.import_from_xml.triggered.connect(self.read_xml)
         self.view.export_into_xml.triggered.connect(self.write_xml)
-        self.view.table_view.triggered.connect(lambda: self.view.view_stack.setCurrentIndex(0))
-        self.view.tree_view.triggered.connect(lambda: self.view.view_stack.setCurrentIndex(1))
+        self.view.table_view.triggered.connect(
+            lambda: self.view.view_stack.setCurrentIndex(0)
+        )
+        self.view.tree_view.triggered.connect(
+            lambda: self.view.view_stack.setCurrentIndex(1)
+        )
 
     def read_xml(self):
-        path, _ = QFileDialog.getOpenFileName(self.view, "Открыть XMl", "", "XML files (*.xml)")
+        path, _ = QFileDialog.getOpenFileName(
+            self.view, "Открыть XMl", "", "XML files (*.xml)"
+        )
         if path:
             try:
                 self.db.drop_table()
@@ -55,7 +59,9 @@ class Controller:
                 )
 
     def write_xml(self):
-        path, _ = QFileDialog.getSaveFileName(self.view, "Сохранить XML", "", "XML files (*.xml)")
+        path, _ = QFileDialog.getSaveFileName(
+            self.view, "Сохранить XML", "", "XML files (*.xml)"
+        )
         print(path)
         if path:
             try:
@@ -70,7 +76,7 @@ class Controller:
         limit, offset = self.view.paginator.get_limit_offset()
         teachers_page = self.db.get_teachers_page(limit, offset)
         total_records = self.db.get_records_count()
-        self.view.update_table(teachers_page)
+        self.view.table.update_table(teachers_page)
         self.view.update_tree(teachers_page)
         self.view.paginator.update_values(total_records)
 

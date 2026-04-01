@@ -107,31 +107,38 @@ class Database:
             cursor = conn.execute("DELETE FROM teachers")
             conn.commit()
 
-    def search_teachers(
-        self, faculty, department, fio, academic_title, academic_degree, limit, offset
+    def _build_search_dongition(
+        self, faculty, department, fio, academic_title, academic_degree
     ):
         sub_query = []
         params = []
 
-        if faculty:
-            sub_query.append("faculty = ?")
-            params.append(faculty)
-
-        if department:
-            sub_query.append("department = ?")
-            params.append(department)
+        criteries = [
+            "faculty",
+            "department",
+            "fio",
+            "academic_title",
+            "academic_degree",
+            "academic_degree",
+        ]
+        for field in criteries:
+            value = locals()[field]
+            if value:
+                sub_query.append(f"{field} = ?")
+                params.append(value)
 
         if fio:
-            sub_query.append("fio LIKE ?")
+            sub_query.append(f"fio LIKE ?")
             params.append(f"%{fio}%")
 
-        if academic_title:
-            sub_query.append("academic_title = ?")
-            params.append(academic_title)
+        return sub_query, params
 
-        if academic_degree:
-            sub_query.append("academic_degree = ?")
-            params.append(academic_degree)
+    def search_teachers(
+        self, faculty, department, fio, academic_title, academic_degree, limit, offset
+    ) -> tuple[int, list[Teacher]]:
+        sub_query, params = self._build_search_dongition(
+            faculty, department, fio, academic_title, academic_degree
+        )
 
         where_sub_query = " WHERE " + " AND ".join(sub_query) if sub_query else ""
 
@@ -154,29 +161,10 @@ class Database:
 
     def delete_teachers(
         self, faculty, department, fio, academic_title, academic_degree
-    ):
-        sub_query = []
-        params = []
-
-        if faculty:
-            sub_query.append("faculty = ?")
-            params.append(faculty)
-
-        if department:
-            sub_query.append("department = ?")
-            params.append(department)
-
-        if fio:
-            sub_query.append("fio LIKE ?")
-            params.append(f"%{fio}%")
-
-        if academic_title:
-            sub_query.append("academic_title = ?")
-            params.append(academic_title)
-
-        if academic_degree:
-            sub_query.append("academic_degree = ?")
-            params.append(academic_degree)
+    ) -> int:
+        sub_query, params = self._build_search_dongition(
+            faculty, department, fio, academic_title, academic_degree
+        )
 
         where_sub_query = " WHERE " + " AND ".join(sub_query) if sub_query else ""
 

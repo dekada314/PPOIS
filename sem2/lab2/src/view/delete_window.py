@@ -26,6 +26,7 @@ from PyQt6.QtWidgets import (
 )
 from src.model.teacher import Teacher
 from src.view.pagination import Pagination
+from src.view.table import Table
 
 
 class DeleteWindow(QDialog):
@@ -69,21 +70,15 @@ class DeleteWindow(QDialog):
 
         layout.addWidget(self.delete_button)
 
-        self.table = QTableWidget()
-        self.table.setColumnCount(6)
-        self.table.setHorizontalHeaderLabels(
-            [
-                "Факультет",
-                "Кафедра",
-                "ФИО",
-                "Ученое звание",
-                "Ученая степень",
-                "Стаж работы",
-            ]
-        )
-        self.table.horizontalHeader().setSectionResizeMode(
-            QHeaderView.ResizeMode.Stretch
-        )
+        labels = [
+            "Факультет",
+            "Кафедра",
+            "ФИО",
+            "Ученое звание",
+            "Ученая степень",
+            "Стаж работы",
+        ]
+        self.table = Table(labels)
 
         self.paginator = Pagination()
 
@@ -104,9 +99,3 @@ class DeleteWindow(QDialog):
         self.department_name.addItems([""] + departments)
         self.academic_title.addItems([""] + academic_titles)
         self.academic_degree.addItems([""] + academic_degrees)
-
-    def update_table(self, teachers: list[Teacher]) -> None:
-        self.table.setRowCount(len(teachers))
-        for row_idx, row in enumerate(teachers):
-            for col_idx, (key, value) in enumerate(asdict(row).items()):
-                self.table.setItem(row_idx, col_idx, QTableWidgetItem(str(value)))

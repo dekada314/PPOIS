@@ -1,14 +1,9 @@
-import sys
 from dataclasses import asdict
 
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
-    QApplication,
-    QHBoxLayout,
     QHeaderView,
-    QLabel,
     QMainWindow,
-    QPushButton,
     QStackedWidget,
     QTableWidget,
     QTableWidgetItem,
@@ -19,6 +14,7 @@ from PyQt6.QtWidgets import (
 )
 from src.model.teacher import Teacher
 from src.view.pagination import Pagination
+from src.view.table import Table
 
 
 class MainWindow(QMainWindow):
@@ -33,22 +29,16 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(main_widget)
 
         self.view_stack = QStackedWidget()
+        labels = [
+            "Факультет",
+            "Кафедра",
+            "ФИО",
+            "Ученое звание",
+            "Ученая степень",
+            "Стаж работы",
+        ]
 
-        self.table = QTableWidget()
-        self.table.setColumnCount(6)
-        self.table.setHorizontalHeaderLabels(
-            [
-                "Факультет",
-                "Кафедра",
-                "ФИО",
-                "Ученое звание",
-                "Ученая степень",
-                "Стаж работы",
-            ]
-        )
-        self.table.horizontalHeader().setSectionResizeMode(
-            QHeaderView.ResizeMode.Stretch
-        )
+        self.table = Table(labels)
 
         self.tree = QTreeWidget()
         self.tree.setHeaderLabels(["Данные учителя"])
@@ -63,12 +53,6 @@ class MainWindow(QMainWindow):
 
         self._create_menu_bar()
 
-    def update_table(self, teachers):
-        self.table.setRowCount(len(teachers))
-        for row_idx, row in enumerate(teachers):
-            for col_idx, (key, value) in enumerate(asdict(row).items()):
-                self.table.setItem(row_idx, col_idx, QTableWidgetItem(str(value)))
-                
     def update_tree(self, teachers: list[Teacher]):
         self.tree.clear()
         for teacher in teachers:
@@ -78,7 +62,6 @@ class MainWindow(QMainWindow):
             QTreeWidgetItem(root, [f"Ученое звание: {teacher.academic_title}"])
             QTreeWidgetItem(root, [f"Ученая степень: {teacher.academic_degree}"])
             QTreeWidgetItem(root, [f"Стаж: {teacher.work_experience}"])
-        
 
     def _create_menu_bar(self):
         menu_bar = self.menuBar()
