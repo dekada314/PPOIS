@@ -12,9 +12,10 @@ def main():
     view = MainWindow()
     db = Database(config.TEACHER_SQLITE3_PATH)
     controller = Controller(view, db)
-    
+
     view.show()
     sys.exit(app.exec())
-    
+
+
 if __name__ == "__main__":
     main()

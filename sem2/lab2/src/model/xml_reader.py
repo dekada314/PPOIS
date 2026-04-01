@@ -10,26 +10,23 @@ class SAXParser(handler.ContentHandler):
         self.curr_teacher: None | Teacher = None
         self.curr_field: None | str = None
         self.buffer: str = ""
-        
-    def startElement(self, name, attrs) -> None:  #noqa 
-        if name == 'teacher':
+
+    def startElement(self, name, attrs) -> None:  # noqa
+        if name == "teacher":
             self.curr_teacher = Teacher()
         elif self.curr_teacher is not None:
             self.curr_field = name
-            
-    def endElement(self, name) -> None: #noqa
+
+    def endElement(self, name) -> None:  # noqa
         if self.curr_field:
             setattr(self.curr_teacher, self.curr_field, self.buffer)
             self.curr_field = None
             self.buffer = ""
-            
-        if name == 'teacher':
+
+        if name == "teacher":
             self.teachers.append(self.curr_teacher)
             self.curr_teacher = None
-        
-    
+
     def characters(self, content):
         subnode_text = content.strip()
         self.buffer += subnode_text
-
-        

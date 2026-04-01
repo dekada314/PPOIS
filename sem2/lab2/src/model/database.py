@@ -17,9 +17,7 @@ class Database:
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     faculty TEXT NOT NULL,
                     department TEXT NOT NULL,
-                    first_name TEXT NOT NULL,
-                    last_name TEXT NOT NULL,
-                    middle_name TEXT,
+                    fio TEXT NOT NULL,
                     academic_title TEXT NOT NULL,
                     academic_degree TEXT NOT NULL,
                     work_experience REAL NOT NULL
@@ -34,15 +32,13 @@ class Database:
 
             cursor.execute(
                 """
-                    INSERT INTO teachers (faculty, department, first_name, last_name, middle_name, academic_title, academic_degree, work_experience)
-                    VALUES(?, ?, ?, ?, ?, ?, ?, ?)
+                    INSERT INTO teachers (faculty, department, fio, academic_title, academic_degree, work_experience)
+                    VALUES(?, ?, ?, ?, ?, ?)
                     """,
                 (
                     teacher.faculty,
                     teacher.department,
-                    teacher.first_name,
-                    teacher.last_name,
-                    teacher.middle_name,
+                    teacher.fio,
                     teacher.academic_title,
                     teacher.academic_degree,
                     teacher.work_experience,
@@ -55,7 +51,7 @@ class Database:
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
 
-            cursor.execute("SELECT faculty FROM teachers")
+            cursor.execute("SELECT DISTINCT faculty FROM teachers")
 
             rows = cursor.fetchall()
             return [row[0] for row in rows]
@@ -64,7 +60,7 @@ class Database:
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
 
-            cursor.execute("SELECT department FROM teachers")
+            cursor.execute("SELECT DISTINCT department FROM teachers")
             rows = cursor.fetchall()
             return [row[0] for row in rows]
 
@@ -72,7 +68,7 @@ class Database:
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
 
-            cursor.execute("SELECT academic_title FROM teachers")
+            cursor.execute("SELECT DISTINCT academic_title FROM teachers")
 
             rows = cursor.fetchall()
             return [row[0] for row in rows]
@@ -81,7 +77,7 @@ class Database:
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
 
-            cursor.execute("SELECT academic_degree FROM teachers")
+            cursor.execute("SELECT DISTINCT academic_degree FROM teachers")
 
             rows = cursor.fetchall()
             return [row[0] for row in rows]
@@ -90,21 +86,105 @@ class Database:
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
 
-            cursor.execute(
-                "SELECT * FROM teachers LIMIT ? OFFSET ?", (limit, offset)
-            )
-            rows = cursor.fetchall()
-            return [Teacher.get_teacher_from_row(row) for row in rows]
-
-    def get_teachers_by_name(self, first_name: str):
-        with sqlite3.connect(self.db_path) as db:
-            cursor = db.cursor()
-
-            cursor.execute("SELECT * FROM teachers WHERE first_name = ?", (first_name,))
+            cursor.execute("SELECT * FROM teachers LIMIT ? OFFSET ?", (limit, offset))
             rows = cursor.fetchall()
             return [Teacher.get_teacher_from_row(row) for row in rows]
 
     def get_records_count(self) -> int:
         with sqlite3.connect(self.db_path) as conn:
-            cursor = conn.execute("SELECT COUNT(*) FROM teachers")
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) FROM teachers")
             return cursor.fetchone()[0]
+
+    def get_all_teachers(self) -> list[Teacher]:
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM teachers")
+            return [Teacher.get_teacher_from_row(row) for row in cursor.fetchall()]
+
+    def drop_table(self) -> None:
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.execute("DELETE FROM teachers")
+            conn.commit()
+
+    def search_teachers(
+        self, faculty, department, fio, academic_title, academic_degree, limit, offset
+    ):
+        sub_query = []
+        params = []
+
+        if faculty:
+            sub_query.append("faculty = ?")
+            params.append(faculty)
+
+        if department:
+            sub_query.append("department = ?")
+            params.append(department)
+
+        if fio:
+            sub_query.append("fio LIKE ?")
+            params.append(f"%{fio}%")
+
+        if academic_title:
+            sub_query.append("academic_title = ?")
+            params.append(academic_title)
+
+        if academic_degree:
+            sub_query.append("academic_degree = ?")
+            params.append(academic_degree)
+
+        where_sub_query = " WHERE " + " AND ".join(sub_query) if sub_query else ""
+
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+
+            total_query = f"SELECT COUNT(*) FROM teachers{where_sub_query}"
+            cursor.execute(total_query, params)
+            total = cursor.fetchone()[0]
+
+            where_sub_query += " LIMIT ? OFFSET ?"
+            params.append(limit)
+            params.append(offset)
+
+            query = f"SELECT * FROM teachers {where_sub_query}"
+            cursor = conn.execute(query, params)
+
+            teachers = [Teacher.get_teacher_from_row(row) for row in cursor.fetchall()]
+            return total, teachers
+
+    def delete_teachers(
+        self, faculty, department, fio, academic_title, academic_degree
+    ):
+        sub_query = []
+        params = []
+
+        if faculty:
+            sub_query.append("faculty = ?")
+            params.append(faculty)
+
+        if department:
+            sub_query.append("department = ?")
+            params.append(department)
+
+        if fio:
+            sub_query.append("fio LIKE ?")
+            params.append(f"%{fio}%")
+
+        if academic_title:
+            sub_query.append("academic_title = ?")
+            params.append(academic_title)
+
+        if academic_degree:
+            sub_query.append("academic_degree = ?")
+            params.append(academic_degree)
+
+        where_sub_query = " WHERE " + " AND ".join(sub_query) if sub_query else ""
+
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+
+            query = f"DELETE FROM teachers{where_sub_query}"
+            cursor = conn.execute(query, params)
+            count = cursor.rowcount
+            conn.commit()
+            return count

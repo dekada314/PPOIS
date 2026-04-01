@@ -15,7 +15,7 @@ class DOMParser:
         for teacher in teachers:
             teacher_el = self.doc.createElement("teacher")
             data = asdict(teacher)
-            
+
             for key, value in data.items():
                 self._add_teacher_subnode(teacher_el, key, str(value))
 
@@ -23,7 +23,9 @@ class DOMParser:
 
         self._write_to_file(file_path)
 
-    def _add_teacher_subnode(self, main_node: minidom.Element, name: str, value: str) -> None:
+    def _add_teacher_subnode(
+        self, main_node: minidom.Element, name: str, value: str
+    ) -> None:
         subnode = self.doc.createElement(name)
         subnode_text = self.doc.createTextNode(value)
         subnode.appendChild(subnode_text)
