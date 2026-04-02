@@ -1,21 +1,12 @@
-import sys
 
 from PyQt6.QtCore import pyqtSignal
-from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
-    QApplication,
     QComboBox,
     QHBoxLayout,
-    QHeaderView,
     QLabel,
-    QMainWindow,
     QPushButton,
     QSizePolicy,
     QSpacerItem,
-    QStackedWidget,
-    QTableWidget,
-    QTreeWidget,
-    QVBoxLayout,
     QWidget,
 )
 

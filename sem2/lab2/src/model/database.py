@@ -116,7 +116,6 @@ class Database:
         criteries = [
             "faculty",
             "department",
-            "fio",
             "academic_title",
             "academic_degree",
             "academic_degree",

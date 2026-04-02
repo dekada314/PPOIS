@@ -53,15 +53,10 @@ class MainWindow(QMainWindow):
 
         self._create_menu_bar()
 
-    def update_tree(self, teachers: list[Teacher]):
-        self.tree.clear()
-        for teacher in teachers:
-            root = QTreeWidgetItem(self.tree, [teacher.fio])
-            QTreeWidgetItem(root, [f"Факультет: {teacher.faculty}"])
-            QTreeWidgetItem(root, [f"Кафедра: {teacher.department}"])
-            QTreeWidgetItem(root, [f"Ученое звание: {teacher.academic_title}"])
-            QTreeWidgetItem(root, [f"Ученая степень: {teacher.academic_degree}"])
-            QTreeWidgetItem(root, [f"Стаж: {teacher.work_experience}"])
+    def set_tree_node(self, params: dict[str: str, str: dict[str: str]]) -> None:
+        root = QTreeWidgetItem(self.tree, [params["root"]])
+        for key, value in params["childrens"].items():
+            QTreeWidgetItem(root, [f"{key}: {value}"])
 
     def _create_menu_bar(self):
         menu_bar = self.menuBar()

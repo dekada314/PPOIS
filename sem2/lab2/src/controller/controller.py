@@ -42,15 +42,18 @@ class Controller:
         )
         if path:
             try:
-                self.db.drop_table()
                 parser = make_parser()
                 sax_handler = SAXParser()
                 parser.setContentHandler(sax_handler)
-                parser.parse(config.TEACHER_XML_PATH)
+                parser.parse(path)
+                
+                if sax_handler.teachers:
+                    self.db.drop_table()
 
-                teachers = sax_handler.teachers
-                for teacher in teachers:
-                    self.db.add_teacher(teacher)
+                    teachers = sax_handler.teachers
+                    for teacher in teachers:
+                        self.db.add_teacher(teacher)
+                    self.update_display()
 
                 QMessageBox.information(self.view, "Успех", "Файл успешно импортирован")
             except Exception as e:
@@ -67,7 +70,7 @@ class Controller:
             try:
                 parser = DOMParser()
                 teachers = self.db.get_all_teachers()
-                parser.parse_doc(teachers, config.TEACHER_XML_PATH)
+                parser.parse_doc(teachers, path)
                 QMessageBox.information(self.view, "Успех", f"Даныне сохранены")
             except Exception as e:
                 QMessageBox.critical(self.view, "Ошибка", f"Не удалось сохранить: {e}")
@@ -76,9 +79,16 @@ class Controller:
         limit, offset = self.view.paginator.get_limit_offset()
         teachers_page = self.db.get_teachers_page(limit, offset)
         total_records = self.db.get_records_count()
-        self.view.table.update_table(teachers_page)
-        self.view.update_tree(teachers_page)
+        
         self.view.paginator.update_values(total_records)
+        self.view.table.update_table(teachers_page)
+        
+        self.view.tree.clear()
+        for teacher in teachers_page:
+            childrens_params = {key: value for (key, value) in asdict(teacher).items() if key != "fio"}
+            teacher_params = {"root": teacher.fio, "childrens": childrens_params}
+            self.view.set_tree_node(teacher_params)
+
 
     def show_add_dialog(self):
         self.add_dialog = AdditionWindow()
@@ -168,6 +178,8 @@ class Controller:
             count = self.db.delete_teachers(
                 faculty, department, fio, academic_title, academic_degree
             )
+            
+            self.update_display()
 
             QMessageBox.information(
                 self.delete_dialog, "Успех", f"Удалено: {count} записей"

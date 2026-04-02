@@ -1,28 +1,15 @@
-import sys
-import traceback
 from dataclasses import asdict
 
-from PyQt6.QtCore import pyqtSignal
-from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
-    QApplication,
     QComboBox,
     QDialog,
     QFormLayout,
-    QHBoxLayout,
     QHeaderView,
-    QLabel,
     QLineEdit,
-    QMainWindow,
     QPushButton,
-    QSizePolicy,
-    QSpacerItem,
-    QStackedWidget,
     QTableWidget,
     QTableWidgetItem,
-    QTreeWidget,
     QVBoxLayout,
-    QWidget,
 )
 from src.model.teacher import Teacher
 from src.view.pagination import Pagination

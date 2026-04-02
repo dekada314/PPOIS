@@ -17,14 +17,6 @@
     <work_experience>6.0</work_experience>
   </teacher>
   <teacher>
-    <faculty>ФКП</faculty>
-    <department>СУ</department>
-    <fio>Анкуда Богдан Викторович</fio>
-    <academic_title>ассистент</academic_title>
-    <academic_degree>магистр</academic_degree>
-    <work_experience>2.0</work_experience>
-  </teacher>
-  <teacher>
     <faculty>ФИБ</faculty>
     <department>ПОИТ</department>
     <fio>Ануфриев Юрий Сергеевич</fio>
@@ -71,14 +63,6 @@
     <academic_title>профессор</academic_title>
     <academic_degree>доктор физико-математических наук</academic_degree>
     <work_experience>32.0</work_experience>
-  </teacher>
-  <teacher>
-    <faculty>ФРЭ</faculty>
-    <department>СУ</department>
-    <fio>Ганецкая Ксения Яновна</fio>
-    <academic_title>старший преподаватель</academic_title>
-    <academic_degree>без степени</academic_degree>
-    <work_experience>7.0</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -129,28 +113,12 @@
     <work_experience>2.0</work_experience>
   </teacher>
   <teacher>
-    <faculty>ФИТУ</faculty>
-    <department>СУ</department>
-    <fio>Миронов Тимур Эрнестович</fio>
-    <academic_title>профессор</academic_title>
-    <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>35.0</work_experience>
-  </teacher>
-  <teacher>
     <faculty>ФКП</faculty>
     <department>ПОИТ</department>
     <fio>Мухомедзянов Егор Сергеевич</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
     <work_experience>5.0</work_experience>
-  </teacher>
-  <teacher>
-    <faculty>ФИБ</faculty>
-    <department>ИИТП</department>
-    <fio>Неводниченко Матвей Валерьевич</fio>
-    <academic_title>доцент</academic_title>
-    <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>10.0</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -183,14 +151,6 @@
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
     <work_experience>7.0</work_experience>
-  </teacher>
-  <teacher>
-    <faculty>ФИБ</faculty>
-    <department>СУ</department>
-    <fio>Санюк Марк Игоревич</fio>
-    <academic_title>ассистент</academic_title>
-    <academic_degree>магистр</academic_degree>
-    <work_experience>2.0</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -249,14 +209,6 @@
     <work_experience>2.0</work_experience>
   </teacher>
   <teacher>
-    <faculty>ФКСИС</faculty>
-    <department>СУ</department>
-    <fio>Богданова Нелли Григорьевна</fio>
-    <academic_title>старший преподаватель</academic_title>
-    <academic_degree>без степени</academic_degree>
-    <work_experience>9.0</work_experience>
-  </teacher>
-  <teacher>
     <faculty>ФИТУ</faculty>
     <department>ПОИТ</department>
     <fio>Щербаков Клим Денисович</fio>
@@ -303,14 +255,6 @@
     <academic_title>профессор</academic_title>
     <academic_degree>доктор технических наук</academic_degree>
     <work_experience>33.0</work_experience>
-  </teacher>
-  <teacher>
-    <faculty>ФКП</faculty>
-    <department>СУ</department>
-    <fio>Фомин Демьян Вячеславович</fio>
-    <academic_title>ассистент</academic_title>
-    <academic_degree>магистр</academic_degree>
-    <work_experience>2.0</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -361,14 +305,6 @@
     <work_experience>13.0</work_experience>
   </teacher>
   <teacher>
-    <faculty>ФРЭ</faculty>
-    <department>СУ</department>
-    <fio>Крюкова Агата Юрьевна</fio>
-    <academic_title>профессор</academic_title>
-    <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>27.0</work_experience>
-  </teacher>
-  <teacher>
     <faculty>ФКСИС</faculty>
     <department>ПОИТ</department>
     <fio>Галкин Филипп Матвеевич</fio>
@@ -399,5 +335,13 @@
     <academic_title>профессор</academic_title>
     <academic_degree>доктор физико-математических наук</academic_degree>
     <work_experience>35.0</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>;jlk</faculty>
+    <department>;hkl</department>
+    <fio>;kl</fio>
+    <academic_title>hjkl</academic_title>
+    <academic_degree>kj</academic_degree>
+    <work_experience>5.0</work_experience>
   </teacher>
 </teachers>
