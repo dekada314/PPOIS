@@ -6,7 +6,7 @@
     <fio>Андриевич Виктория Сергеевна</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>14.0</work_experience>
+    <work_experience>14</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -14,7 +14,15 @@
     <fio>Аникеенко Андрей Дмитриевич</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>6.0</work_experience>
+    <work_experience>6</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>СУ</department>
+    <fio>Анкуда Богдан Викторович</fio>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>2</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -22,7 +30,7 @@
     <fio>Ануфриев Юрий Сергеевич</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>28.0</work_experience>
+    <work_experience>28</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -30,7 +38,7 @@
     <fio>Балабенко Анастасия Сергеевна</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>11.0</work_experience>
+    <work_experience>11</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -38,7 +46,7 @@
     <fio>Баленкова Богдана Игоревна</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>8.0</work_experience>
+    <work_experience>8</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -46,7 +54,7 @@
     <fio>Бибко Владислав Викторович</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>1.0</work_experience>
+    <work_experience>1</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКП</faculty>
@@ -54,7 +62,7 @@
     <fio>Васкан Анна Дмитриевна</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат педагогических наук</academic_degree>
-    <work_experience>15.0</work_experience>
+    <work_experience>15</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -62,7 +70,15 @@
     <fio>Воинов Владислав Сергеевич</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор физико-математических наук</academic_degree>
-    <work_experience>32.0</work_experience>
+    <work_experience>32</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>СУ</department>
+    <fio>Ганецкая Ксения Яновна</fio>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>7</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -70,7 +86,7 @@
     <fio>Григорчик Алина Дмитриевна</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>19.0</work_experience>
+    <work_experience>19</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -78,7 +94,7 @@
     <fio>Жданюк Егор Дмитриевич</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>3.0</work_experience>
+    <work_experience>3</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКП</faculty>
@@ -86,7 +102,7 @@
     <fio>Жилин Иван Николаевич</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>26.0</work_experience>
+    <work_experience>26</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -94,7 +110,7 @@
     <fio>Заборовский Иван Викторович</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>9.0</work_experience>
+    <work_experience>9</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -102,7 +118,7 @@
     <fio>Кравцова Вероника Кирилловна</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>13.0</work_experience>
+    <work_experience>13</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -110,7 +126,15 @@
     <fio>Крамич Анна Андреевна</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>2.0</work_experience>
+    <work_experience>2</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИТУ</faculty>
+    <department>СУ</department>
+    <fio>Миронов Тимур Эрнестович</fio>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>35</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКП</faculty>
@@ -118,7 +142,15 @@
     <fio>Мухомедзянов Егор Сергеевич</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>5.0</work_experience>
+    <work_experience>5</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>ИИТП</department>
+    <fio>Неводниченко Матвей Валерьевич</fio>
+    <academic_title>доцент</academic_title>
+    <academic_degree>кандидат технических наук</academic_degree>
+    <work_experience>10</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -126,7 +158,7 @@
     <fio>Рябая Юлия Сергеевна</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>1.0</work_experience>
+    <work_experience>1</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -134,7 +166,7 @@
     <fio>Савошинский Станислав Викторович</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор физико-математических наук</academic_degree>
-    <work_experience>29.0</work_experience>
+    <work_experience>29</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -142,7 +174,7 @@
     <fio>Савченко Алексей Дмитриевич</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>17.0</work_experience>
+    <work_experience>17</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКП</faculty>
@@ -150,7 +182,15 @@
     <fio>Саевич Илья Андреевич</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>7.0</work_experience>
+    <work_experience>7</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФИБ</faculty>
+    <department>СУ</department>
+    <fio>Санюк Марк Игоревич</fio>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>2</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -158,7 +198,7 @@
     <fio>Синюкович Иван Дмитриевич</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>12.0</work_experience>
+    <work_experience>12</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -166,7 +206,7 @@
     <fio>Соловьёв Никита Леонидович</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>31.0</work_experience>
+    <work_experience>31</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -174,7 +214,7 @@
     <fio>Сухоруков Михаил Артурович</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>8.0</work_experience>
+    <work_experience>8</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКП</faculty>
@@ -182,7 +222,7 @@
     <fio>Туровец Павел Дмитриевич</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>16.0</work_experience>
+    <work_experience>16</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -190,7 +230,7 @@
     <fio>Федосов Егор Константинович</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>1.0</work_experience>
+    <work_experience>1</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -198,7 +238,7 @@
     <fio>Савельев Александр Вадимович</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор физико-математических наук</academic_degree>
-    <work_experience>30.0</work_experience>
+    <work_experience>30</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -206,7 +246,15 @@
     <fio>Тарасов Эдуард Витальевич</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>2.0</work_experience>
+    <work_experience>2</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКСИС</faculty>
+    <department>СУ</department>
+    <fio>Богданова Нелли Григорьевна</fio>
+    <academic_title>старший преподаватель</academic_title>
+    <academic_degree>без степени</academic_degree>
+    <work_experience>9</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -214,7 +262,7 @@
     <fio>Щербаков Клим Денисович</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>17.0</work_experience>
+    <work_experience>17</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКП</faculty>
@@ -222,7 +270,7 @@
     <fio>Королёва Стелла Аркадьевна</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>25.0</work_experience>
+    <work_experience>25</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -230,7 +278,7 @@
     <fio>Родионов Юлиан Андреевич</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>1.0</work_experience>
+    <work_experience>1</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -238,7 +286,7 @@
     <fio>Цветкова Алина Максимовна</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>6.0</work_experience>
+    <work_experience>6</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -246,7 +294,7 @@
     <fio>Чесноков Вадим Анатольевич</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>14.0</work_experience>
+    <work_experience>14</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -254,7 +302,15 @@
     <fio>Шевцова Яна Дмитриевна</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>33.0</work_experience>
+    <work_experience>33</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФКП</faculty>
+    <department>СУ</department>
+    <fio>Фомин Демьян Вячеславович</fio>
+    <academic_title>ассистент</academic_title>
+    <academic_degree>магистр</academic_degree>
+    <work_experience>2</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -262,7 +318,7 @@
     <fio>Блинова Ева Егоровна</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>7.0</work_experience>
+    <work_experience>7</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
@@ -270,7 +326,7 @@
     <fio>Шубин Платон Никитич</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат физико-математических наук</academic_degree>
-    <work_experience>16.0</work_experience>
+    <work_experience>16</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -278,7 +334,7 @@
     <fio>Мухина Лариса Антоновна</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>29.0</work_experience>
+    <work_experience>29</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -286,7 +342,7 @@
     <fio>Быков Роберт Ильич</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>1.0</work_experience>
+    <work_experience>1</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКП</faculty>
@@ -294,7 +350,7 @@
     <fio>Дьячкова Милана Кирилловна</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>5.0</work_experience>
+    <work_experience>5</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -302,7 +358,15 @@
     <fio>Назаров Святослав Валерьевич</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>13.0</work_experience>
+    <work_experience>13</work_experience>
+  </teacher>
+  <teacher>
+    <faculty>ФРЭ</faculty>
+    <department>СУ</department>
+    <fio>Крюкова Агата Юрьевна</fio>
+    <academic_title>профессор</academic_title>
+    <academic_degree>доктор технических наук</academic_degree>
+    <work_experience>27</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКСИС</faculty>
@@ -310,7 +374,7 @@
     <fio>Галкин Филипп Матвеевич</fio>
     <academic_title>ассистент</academic_title>
     <academic_degree>магистр</academic_degree>
-    <work_experience>3.0</work_experience>
+    <work_experience>3</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИТУ</faculty>
@@ -318,7 +382,7 @@
     <fio>Панфилова Азалия Руслановна</fio>
     <academic_title>старший преподаватель</academic_title>
     <academic_degree>без степени</academic_degree>
-    <work_experience>8.0</work_experience>
+    <work_experience>8</work_experience>
   </teacher>
   <teacher>
     <faculty>ФКП</faculty>
@@ -326,7 +390,7 @@
     <fio>Львов Елисей Артемович</fio>
     <academic_title>доцент</academic_title>
     <academic_degree>кандидат технических наук</academic_degree>
-    <work_experience>10.0</work_experience>
+    <work_experience>10</work_experience>
   </teacher>
   <teacher>
     <faculty>ФИБ</faculty>
@@ -334,14 +398,6 @@
     <fio>Маслова Кира Данииловна</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор физико-математических наук</academic_degree>
-    <work_experience>35.0</work_experience>
-  </teacher>
-  <teacher>
-    <faculty>;jlk</faculty>
-    <department>;hkl</department>
-    <fio>;kl</fio>
-    <academic_title>hjkl</academic_title>
-    <academic_degree>kj</academic_degree>
-    <work_experience>5.0</work_experience>
+    <work_experience>35</work_experience>
   </teacher>
 </teachers>

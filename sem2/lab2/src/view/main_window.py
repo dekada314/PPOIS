@@ -1,18 +1,13 @@
-from dataclasses import asdict
 
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
-    QHeaderView,
     QMainWindow,
     QStackedWidget,
-    QTableWidget,
-    QTableWidgetItem,
     QTreeWidget,
     QTreeWidgetItem,
     QVBoxLayout,
     QWidget,
 )
-from src.model.teacher import Teacher
 from src.view.pagination import Pagination
 from src.view.table import Table
 

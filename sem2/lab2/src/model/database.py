@@ -1,4 +1,5 @@
 import sqlite3
+from contextlib import closing
 
 from .teacher import Teacher
 
@@ -9,7 +10,7 @@ class Database:
         self.create_database()
 
     def create_database(self):
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             cursor.execute("""
@@ -27,7 +28,7 @@ class Database:
             conn.commit()
 
     def add_teacher(self, teacher: Teacher):
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             cursor.execute(
@@ -48,7 +49,7 @@ class Database:
             conn.commit()
 
     def get_all_faculties(self) -> list[str]:
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             cursor.execute("SELECT DISTINCT faculty FROM teachers")
@@ -57,7 +58,7 @@ class Database:
             return [row[0] for row in rows]
 
     def get_all_deprtments(self) -> list[str]:
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             cursor.execute("SELECT DISTINCT department FROM teachers")
@@ -65,7 +66,7 @@ class Database:
             return [row[0] for row in rows]
 
     def get_all_academic_titles(self) -> list[str]:
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             cursor.execute("SELECT DISTINCT academic_title FROM teachers")
@@ -74,7 +75,7 @@ class Database:
             return [row[0] for row in rows]
 
     def get_all_academic_degres(self) -> list[str]:
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             cursor.execute("SELECT DISTINCT academic_degree FROM teachers")
@@ -83,7 +84,7 @@ class Database:
             return [row[0] for row in rows]
 
     def get_teachers_page(self, limit: int, offset: int):
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             cursor.execute("SELECT * FROM teachers LIMIT ? OFFSET ?", (limit, offset))
@@ -91,19 +92,19 @@ class Database:
             return [Teacher.get_teacher_from_row(row) for row in rows]
 
     def get_records_count(self) -> int:
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT COUNT(*) FROM teachers")
             return cursor.fetchone()[0]
 
     def get_all_teachers(self) -> list[Teacher]:
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM teachers")
             return [Teacher.get_teacher_from_row(row) for row in cursor.fetchall()]
 
     def drop_table(self) -> None:
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.execute("DELETE FROM teachers")
             conn.commit()
 
@@ -141,7 +142,7 @@ class Database:
 
         where_sub_query = " WHERE " + " AND ".join(sub_query) if sub_query else ""
 
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             total_query = f"SELECT COUNT(*) FROM teachers{where_sub_query}"
@@ -167,7 +168,7 @@ class Database:
 
         where_sub_query = " WHERE " + " AND ".join(sub_query) if sub_query else ""
 
-        with sqlite3.connect(self.db_path) as conn:
+        with closing(sqlite3.connect(self.db_path)) as conn:
             cursor = conn.cursor()
 
             query = f"DELETE FROM teachers{where_sub_query}"

@@ -33,23 +33,23 @@ class SearchWindow(QDialog):
         self.work_experience.setPlaceholderText("Задайте диапозон(например 1-13)...")
         form.addRow("Стаж:", self.work_experience)
 
-        layout.addLayout(form)
-
         self.department_name = QComboBox()
         self.department_name.setFixedSize(200, 50)
-        layout.addWidget(self.department_name)
+        form.addRow("Кафедра:", self.department_name)
 
         self.faculty_name = QComboBox()
         self.faculty_name.setFixedSize(200, 50)
-        layout.addWidget(self.faculty_name)
+        form.addRow("Факультет:", self.faculty_name)
 
         self.academic_title = QComboBox()
         self.academic_title.setFixedSize(200, 50)
-        layout.addWidget(self.academic_title)
+        form.addRow("Ученое звание:", self.academic_title)
 
         self.academic_degree = QComboBox()
         self.academic_degree.setFixedSize(200, 50)
-        layout.addWidget(self.academic_degree)
+        form.addRow("Ученая степень:", self.academic_degree)
+
+        layout.addLayout(form)
 
         self.search_button = QPushButton("Найти записи")
         self.search_button.setFixedHeight(40)
