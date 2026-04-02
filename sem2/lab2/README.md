@@ -47,5 +47,5 @@ python main.py
 cd sem2/lab2
 pytest -q --cov
 ```
-![Покрытие](sem2/lab2/assets/tests.png)
+![Покрытие](./assets/tests.png)
 
