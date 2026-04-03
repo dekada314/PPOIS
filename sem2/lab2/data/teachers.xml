@@ -25,12 +25,12 @@
     <work_experience>2</work_experience>
   </teacher>
   <teacher>
-    <faculty>ФИБ</faculty>
-    <department>ПОИТ</department>
+    <faculty>ФИТУ</faculty>
+    <department>ИИТ</department>
     <fio>Ануфриев Юрий Сергеевич</fio>
     <academic_title>профессор</academic_title>
     <academic_degree>доктор технических наук</academic_degree>
-    <work_experience>28</work_experience>
+    <work_experience>99</work_experience>
   </teacher>
   <teacher>
     <faculty>ФРЭ</faculty>
