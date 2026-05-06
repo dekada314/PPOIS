@@ -1,0 +1,48 @@
+{
+  "window": {
+    "width": 960,
+    "height": 720,
+    "title": "Tetris"
+  },
+  "board": {
+    "cols": 10,
+    "rows": 20,
+    "cell_size": 28,
+    "offset_x": 120,
+    "offset_y": 70
+  },
+  "timings": {
+    "fps": 60,
+    "base_fall_delay_ms": 700,
+    "min_fall_delay_ms": 120,
+    "level_speed_step_ms": 55,
+    "line_clear_animation_ms": 260,
+    "game_over_row_step_ms": 45
+  },
+  "scoring": {
+    "soft_drop_per_cell": 1,
+    "hard_drop_per_cell": 3,
+    "line_clear_points": [0, 100, 300, 500, 800],
+    "level_up_every_lines": 10
+  },
+  "audio": {
+    "music_volume": 0.35,
+    "effects_volume": 0.45
+  },
+  "highscores": {
+    "limit": 10,
+    "default_name": "PLAYER"
+  },
+  "colors": {
+    "background": [16, 21, 32],
+    "panel": [24, 31, 47],
+    "panel_alt": [31, 40, 60],
+    "grid_line": [45, 58, 84],
+    "text": [230, 236, 250],
+    "muted_text": [156, 171, 196],
+    "accent": [65, 154, 255],
+    "danger": [231, 76, 60],
+    "clear_flash": [250, 250, 255],
+    "ghost": [90, 104, 130]
+  }
+}
