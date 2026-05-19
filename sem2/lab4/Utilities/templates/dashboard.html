@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">Население</div>
+            <div class="card-body">
+                <p><strong>Всего:</strong> {{ state.citizens._total_population | int }} чел.</p>
+                <p><strong>Работоспособное:</strong> {{ state.citizens._working_age_peoples }} чел.</p>
+                <p><strong>Средняя з/п:</strong> {{ state.citizens._mean_salary | int }} Б̶</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">Экономика</div>
+            <div class="card-body">
+                <p><strong>Состояние:</strong> {{ state.economy._economic_cond }}</p>
+                <p><strong>Бюджет:</strong> {{ state.economy._state_budget | int }} Б̶</p>
+                <p><strong>Налоги:</strong> {{ (state.economy._tax_ratio*100)|round(2) }}%</p>
+                <p><strong>Инфляция:</strong> {{ (state.economy._inflation_rate*100)|round(1) }}%</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header bg-warning text-white">Инфраструктура</div>
+            <div class="card-body">
+                <p><strong>Дороги:</strong> {{ state.infrastructure._roads_length }} км</p>
+                <p><strong>Соц. здания:</strong> {{ state.infrastructure._social_buildings_count }}</p>
+                <p><strong>Ресурсы:</strong> {{ (state.infrastructure._resource_availability*100)|round(1) }}%</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header bg-danger text-white">Правительство</div>
+            <div class="card-body">
+                <p><strong>Премьер-министр:</strong> {{ state.government._prime_minister }} </p>
+                <p><strong>Заместители:</strong>
+                    {% if state.government._prime_minister_deputies %}
+                     {{ state.government._prime_minister_deputies | join(', ') }}
+                    {% else %}
+                        Заместителей пока не внесено
+                    {% endif %}
+                    </p>
+                
+                <p><strong>Министерства:</strong>
+                    {% if state.government._ministries %}
+                     {{ state.government._ministries | join(', ') }} 
+                    {% else %}
+                        Министерств пока не внеено
+                    {% endif %}
+                    </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">Президент</div>
+            <div class="card-body">
+                <p><strong>Имя:</strong> {{ state.president.name }} </p>
+                <p><strong>Возраст:</strong> {{ state.president.age | int }} </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header bg-secondary text-white">Внешние отношения</div>
+            <div class="card-body">
+                <p><strong>Страны-партнеры:</strong> {{ state.foreign_relations._partner_countries | join(', ') }} </p>
+                <p><strong>Уровень защиты:</strong> {{ state.foreign_relations._security_level | int }} </p>
+                <p><strong>Фонд соц. поддержки:</strong> {{ state.foreign_relations._social_support_fund | int }} </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<h3 class="mt-4 mb-3">Управление государством</h3>
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Налоги и инфляция</div>
+            <div class="card-body">
+
+                <form method="post" action="{{ url_for('taxation') }}" class="mb-3">
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Собрать налоги</button>
+                </form>
+
+                <form method="post" action="{{ url_for('taxation_with_custom_tax') }}" class="mb-3">
+                    <input type="number" name="custom_tax" class="form-control" placeholder="Новый процент налога" required>
+                    <button type="submit" class="btn btn-warning w-100">Собрать налоги по введенному проценту</button>
+                </form>
+
+                <form method="post" action="{{ url_for('tax_change') }}" class="mb-3">
+                    <input type="number" name="tax_delta" class="form-control" placeholder="Введите изменение ставки" required>
+                    <button type="submit" class="btn btn-danger w-100">Изменить налоговую ставку</button>
+                </form>
+
+                <form method="post" action="{{ url_for('apply_inflation') }}" class="mb-3">
+                    <button type="submit" class="btn btn-info w-100">Учесть инфляцию</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Зарплаты и бюджет</div>
+            <div class="card-body">
+                <form method="post" action="{{ url_for('change_salary') }}" class="mb-3">
+                    <input type="number" name="new_salary" class="form-control" placeholder="Новое значение средней зарплаты" required>
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Изменить зарплату</button>
+                </form>
+
+                <form method="post" action="{{ url_for('allocate_budget') }}" class="mb-3">
+                    <button type="submit" class="btn btn-warning w-100">Выделить бюджет на инфраструктуру</button>
+                </form>
+
+                <form method="post" action="{{ url_for('approve_state_budget') }}" class="mb-3">
+                    <input type="number" name="new_budget" class="form-control" placeholder="Введите новое значение бюджета государства" required>
+                    <button type="submit" class="btn btn-success w-100">Обозначить гос. Бюджет</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Гос. Органы и правительство</div>
+            <div class="card-body">
+                <form method="post" action="{{ url_for('change_prime_minister') }}" class="mb-3">
+                    <input type="text" name="new_pm" class="form-control" placeholder="Имя нового премьера" required>
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Изменить премьер министра</button>
+                </form>
+
+                <form method="post" action="{{ url_for('add_organ') }}" class="mb-3">
+                    <input type="number" name="organ_name" class="form-control" placeholder="Название нового органа" required>
+                    <button type="submit" class="btn btn-warning w-100">Добавить орган</button>
+                </form>
+
+                <form method="post" action="{{ url_for('remove_organ') }}" class="mb-3">
+                    <input type="number" name="organ_name" class="form-control" placeholder="Название органа для удаления" required>
+                    <button type="submit" class="btn btn-success w-100">Удалить орган</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Внешняя политика</div>
+            <div class="card-body">
+                <form method="post" action="{{ url_for('ensure_security') }}" class="mb-3">
+                    <input type="number" name="threat_level" class="form-control" placeholder="Уровень безопасности" required>
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Утвердить новый уровень безопасности</button>
+                </form>
+
+                <form method="post" action="{{ url_for('provide_social_support') }}" class="mb-3">
+                    <input type="number" name="support_ratio" class="form-control" placeholder="Значение взноса в соц. поддержку" required>
+                    <button type="submit" class="btn btn-warning w-100">Утвердить взнос в соц. поддержку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Работа с файлом</div>
+            <div class="card-body">
+                <form method="post" action="{{ url_for('save_program_state') }}" class="mb-3">
+                    <button type="submit" class="btn btn-primary w-100 mt-2">Сохранить в json</button>
+                </form>
+
+                <form method="post" action="{{ url_for('load_program_state') }}" class="mb-3">
+                    <button type="submit" class="btn btn-warning w-100">Загрузить из json</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
